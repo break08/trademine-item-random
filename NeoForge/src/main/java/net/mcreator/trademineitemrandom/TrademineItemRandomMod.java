@@ -18,6 +18,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.trademineitemrandom.network.TrademineItemRandomModVariables;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModTabs;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEntities;
@@ -46,6 +47,7 @@ public class TrademineItemRandomMod {
 		TrademineItemRandomModItems.REGISTRY.register(modEventBus);
 		TrademineItemRandomModEntities.REGISTRY.register(modEventBus);
 		TrademineItemRandomModTabs.REGISTRY.register(modEventBus);
+		TrademineItemRandomModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

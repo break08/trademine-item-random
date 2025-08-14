@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "trademine_item_random:block/flower_of_randomness"
+    }
+  }
+}

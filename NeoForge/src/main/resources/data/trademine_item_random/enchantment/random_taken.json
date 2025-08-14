@@ -3,24 +3,6 @@
     "translate": "enchantment.trademine_item_random.random_taken"
   },
   "supported_items": [
-    "minecraft:red_bed",
-    "minecraft:white_bed",
-    "minecraft:orange_bed",
-    "minecraft:magenta_bed",
-    "minecraft:light_blue_bed",
-    "minecraft:yellow_bed",
-    "minecraft:lime_bed",
-    "minecraft:pink_bed",
-    "minecraft:gray_bed",
-    "minecraft:light_gray_bed",
-    "minecraft:cyan_bed",
-    "minecraft:purple_bed",
-    "minecraft:blue_bed",
-    "minecraft:brown_bed",
-    "minecraft:green_bed",
-    "minecraft:black_bed",
-    "minecraft:wooden_sword",
-    "minecraft:stone_sword",
     "minecraft:iron_sword",
     "minecraft:golden_sword",
     "minecraft:diamond_sword",
@@ -28,7 +10,7 @@
     "minecraft:mace"
   ],
   "weight": 10,
-  "max_level": 4,
+  "max_level": 1,
   "min_cost": {
     "base": 1,
     "per_level_above_first": 10

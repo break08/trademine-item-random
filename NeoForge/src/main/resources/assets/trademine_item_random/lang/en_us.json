@@ -3,5 +3,10 @@
   "enchantment.trademine_item_random.random_taken": "Random Taken",
   "item.trademine_item_random.potion_of_random": "Potion Of Random",
   "item.trademine_item_random.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-  "entity.trademine_item_random.randomness_hostile": "Randomness Hostile"
+  "entity.trademine_item_random.randomness_hostile": "Randomness Hostile",
+  "item.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
+  "item.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
+  "item.trademine_item_random.splash_potion_of_random": "Splash Potion Of Random",
+  "item.trademine_item_random.flower_of_randomness": "Flower Of Randomness",
+  "item.trademine_item_random.rainbow_dye": "Rainbow Dye"
 }

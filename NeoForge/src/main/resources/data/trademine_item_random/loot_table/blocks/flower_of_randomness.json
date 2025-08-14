@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "trademine_item_random:blocks/flower_of_randomness",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "trademine_item_random:rainbow_dye",
+          "functions": [
+            {
+              "count": 2,
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

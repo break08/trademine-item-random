@@ -24,6 +24,8 @@ public class TrademineItemRandomModTabs {
 			tabData.accept(TrademineItemRandomModBlocks.ORE_OF_RANDOMNESS.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(TrademineItemRandomModItems.RANDOMNESS_HOSTILE_SPAWN_EGG.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+			tabData.accept(TrademineItemRandomModBlocks.FLOWER_OF_RANDOMNESS.get().asItem());
 		}
 	}
 }

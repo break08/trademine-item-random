@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "trademine_item_random:blocks/ore_of_randomness",
+  "random_sequence": "trademine_item_random:blocks/deepslate_ore_of_randomness",
   "pools": [
     {
       "rolls": {"min": 1, "max": 2},
@@ -16,7 +16,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.173
+              "chance": 0.03
             }
           ]
         },
@@ -26,7 +26,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.13
+              "chance": 0.03
             }
           ]
         },
@@ -46,7 +46,7 @@
           "conditions": [
             {
               "condition": "minecraft: random_chance",
-              "chance": 0.15
+              "chance": 0.18
             }
           ]
         },
@@ -56,7 +56,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.075
+              "chance": 0.2
             }
           ]
         },
@@ -76,7 +76,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.106
+              "chance": 0.2
             }
           ]
         },
@@ -86,7 +86,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.106
+              "chance": 0.1
             }
           ]
         }

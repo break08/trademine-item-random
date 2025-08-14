@@ -12,6 +12,8 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.trademineitemrandom.item.SplashPotionOfRandomItem;
+import net.mcreator.trademineitemrandom.item.RainbowDyeItem;
 import net.mcreator.trademineitemrandom.item.PotionOfRandomItem;
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
@@ -22,6 +24,11 @@ public class TrademineItemRandomModItems {
 	public static final DeferredItem<Item> ORE_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.ORE_OF_RANDOMNESS);
 	public static final DeferredItem<Item> POTION_OF_RANDOM = register("potion_of_random", PotionOfRandomItem::new);
 	public static final DeferredItem<Item> RANDOMNESS_HOSTILE_SPAWN_EGG = register("randomness_hostile_spawn_egg", properties -> new SpawnEggItem(TrademineItemRandomModEntities.RANDOMNESS_HOSTILE.get(), properties));
+	public static final DeferredItem<Item> DEEPSLATE_ORE_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.DEEPSLATE_ORE_OF_RANDOMNESS);
+	public static final DeferredItem<Item> NETHER_ORE_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.NETHER_ORE_OF_RANDOMNESS);
+	public static final DeferredItem<Item> SPLASH_POTION_OF_RANDOM = register("splash_potion_of_random", SplashPotionOfRandomItem::new);
+	public static final DeferredItem<Item> FLOWER_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.FLOWER_OF_RANDOMNESS);
+	public static final DeferredItem<Item> RAINBOW_DYE = register("rainbow_dye", RainbowDyeItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items
