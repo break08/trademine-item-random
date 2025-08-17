@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": "trademine_item_random:flower_of_randomness"
+  },
+  "result": {
+    "id": "trademine_item_random:rainbow_dye",
+    "count": 1
+  }
+}

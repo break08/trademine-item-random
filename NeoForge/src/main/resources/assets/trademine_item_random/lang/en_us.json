@@ -8,5 +8,12 @@
   "item.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
   "item.trademine_item_random.splash_potion_of_random": "Splash Potion Of Random",
   "item.trademine_item_random.flower_of_randomness": "Flower Of Randomness",
-  "item.trademine_item_random.rainbow_dye": "Rainbow Dye"
+  "item.trademine_item_random.rainbow_dye": "Rainbow Dye",
+  "item.trademine_item_random.random_seed": "Random Seed",
+  "item.trademine_item_random.random_crop_stage_0": "Random Crop Stage 0",
+  "item.trademine_item_random.random_crop_stage_1": "Random Crop Stage 1",
+  "item.trademine_item_random.random_crop_stage_2": "Random Crop Stage 2",
+  "item.trademine_item_random.random_crop_stage_3": "Random Crop Stage 3",
+  "item.trademine_item_random.random_crop_stage_4": "Random Crop Stage 4",
+  "item.trademine_item_random.random_crop_stage_5": "Random Crop Stage 5"
 }

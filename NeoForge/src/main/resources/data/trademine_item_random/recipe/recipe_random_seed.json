@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab"
+  ],
+  "key": {
+    "a": "minecraft:wheat_seeds",
+    "b": "trademine_item_random:rainbow_dye"
+  },
+  "result": {
+    "id": "trademine_item_random:random_seed",
+    "count": 1
+  }
+}

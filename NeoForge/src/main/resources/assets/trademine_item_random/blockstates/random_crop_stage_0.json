@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "trademine_item_random:block/random_crop_stage_0"
+    }
+  }
+}
