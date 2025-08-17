@@ -18,11 +18,11 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.mcreator.trademineitemrandom.network.TrademineItemRandomModVariables;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModTabs;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEntities;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlocks;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlockEntities;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
@@ -43,11 +43,10 @@ public class TrademineItemRandomMod {
 		modEventBus.addListener(this::registerNetworking);
 
 		TrademineItemRandomModBlocks.REGISTRY.register(modEventBus);
-
+		TrademineItemRandomModBlockEntities.REGISTRY.register(modEventBus);
 		TrademineItemRandomModItems.REGISTRY.register(modEventBus);
 		TrademineItemRandomModEntities.REGISTRY.register(modEventBus);
 		TrademineItemRandomModTabs.REGISTRY.register(modEventBus);
-		TrademineItemRandomModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

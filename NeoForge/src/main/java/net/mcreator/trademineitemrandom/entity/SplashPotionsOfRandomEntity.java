@@ -85,7 +85,7 @@ public class SplashPotionsOfRandomEntity extends AbstractArrow implements ItemSu
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		SplashPotionsOfRandomProjectileHitsLivingEntityProcedure.execute(this.level(), entityHitResult.getEntity());
+		SplashPotionsOfRandomProjectileHitsLivingEntityProcedure.execute(entityHitResult.getEntity());
 	}
 
 	@Override

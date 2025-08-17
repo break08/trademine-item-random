@@ -19,8 +19,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
-import net.mcreator.trademineitemrandom.network.TrademineItemRandomModVariables;
-
 import javax.annotation.Nullable;
 
 @EventBusSubscriber
@@ -39,48 +37,48 @@ public class RandomTakenProcedureProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity sourceentity) {
 		if (sourceentity == null)
 			return;
+		double random_taken_drop = 0;
 		if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem()) == false) {
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 					.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("trademine_item_random:random_taken")))) == 1) {
-				TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting = Mth.nextInt(RandomSource.create(), 1, 11);
-				TrademineItemRandomModVariables.MapVariables.get(world).syncData(world);
-				if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 1) {
+				random_taken_drop = Mth.nextInt(RandomSource.create(), 1, 11);
+				if (random_taken_drop == 1) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EXPERIENCE_BOTTLE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 2) {
+				} else if (random_taken_drop == 2) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 3) {
+				} else if (random_taken_drop == 3) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 4) {
+				} else if (random_taken_drop == 4) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.GOLDEN_CARROT));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 5) {
+				} else if (random_taken_drop == 5) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.TOTEM_OF_UNDYING));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 6) {
+				} else if (random_taken_drop == 6) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.HEAVY_CORE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 7) {
+				} else if (random_taken_drop == 7) {
 					for (int index0 = 0; index0 < 2; index0++) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.DIAMOND));
@@ -88,25 +86,25 @@ public class RandomTakenProcedureProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 8) {
+				} else if (random_taken_drop == 8) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.OMINOUS_BOTTLE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 9) {
+				} else if (random_taken_drop == 9) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 10) {
+				} else if (random_taken_drop == 10) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.GLISTERING_MELON_SLICE));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
-				} else if (TrademineItemRandomModVariables.MapVariables.get(world).random_taken_enchanting == 11) {
+				} else if (random_taken_drop == 11) {
 					for (int index1 = 0; index1 < 2; index1++) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));

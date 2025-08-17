@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.trademineitemrandom.item.SplashPotionOfRandomItem;
+import net.mcreator.trademineitemrandom.item.RandomSeedItem;
 import net.mcreator.trademineitemrandom.item.RainbowDyeItem;
 import net.mcreator.trademineitemrandom.item.PotionOfRandomItem;
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
@@ -29,6 +30,13 @@ public class TrademineItemRandomModItems {
 	public static final DeferredItem<Item> SPLASH_POTION_OF_RANDOM = register("splash_potion_of_random", SplashPotionOfRandomItem::new);
 	public static final DeferredItem<Item> FLOWER_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.FLOWER_OF_RANDOMNESS);
 	public static final DeferredItem<Item> RAINBOW_DYE = register("rainbow_dye", RainbowDyeItem::new);
+	public static final DeferredItem<Item> RANDOM_SEED = register("random_seed", RandomSeedItem::new);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_0 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_0);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_1 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_1);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_2 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_2);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_3 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_3);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_4 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_4);
+	public static final DeferredItem<Item> RANDOM_CROP_STAGE_5 = block(TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_5);
 
 	// Start of user code block custom items
 	// End of user code block custom items
