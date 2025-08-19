@@ -16,7 +16,7 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 1.0
+              "chance": 0.5
             }
           ]
         },
@@ -32,7 +32,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron",
+          "name": "minecraft:iron_ingot",
           "conditions": [
             {
               "condition": "minecraft:random_chance",
@@ -42,10 +42,10 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:gold",
+          "name": "minecraft:gold_ingot",
           "conditions": [
             {
-              "condition": "minecraft: random_chance",
+              "condition": "minecraft:random_chance",
               "chance": 0.5
             }
           ]
@@ -82,7 +82,7 @@
         },
         {
           "type": "minecraft:item",
-          "name":"minecraft:copper",
+          "name": "minecraft:copper_ingot",
           "conditions": [
             {
               "condition": "minecraft:random_chance",

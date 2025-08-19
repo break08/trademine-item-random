@@ -22,7 +22,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:nether_quartz_ore",
+          "name": "minecraft:quartz",
           "conditions": [
             {
               "condition": "minecraft:random_chance",
@@ -32,7 +32,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite",
+          "name": "minecraft:netherite_ingot",
           "conditions": [
             {
               "condition": "minecraft:random_chance",

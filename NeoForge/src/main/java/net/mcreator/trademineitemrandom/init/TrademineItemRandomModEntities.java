@@ -17,19 +17,16 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
-import net.mcreator.trademineitemrandom.entity.SplashPotionsOfRandomEntity;
 import net.mcreator.trademineitemrandom.entity.RandomnessHostileEntity;
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class TrademineItemRandomModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, TrademineItemRandomMod.MODID);
 	public static final DeferredHolder<EntityType<?>, EntityType<RandomnessHostileEntity>> RANDOMNESS_HOSTILE = register("randomness_hostile",
 			EntityType.Builder.<RandomnessHostileEntity>of(RandomnessHostileEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
-	public static final DeferredHolder<EntityType<?>, EntityType<SplashPotionsOfRandomEntity>> SPLASH_POTIONS_OF_RANDOM = register("splash_potions_of_random",
-			EntityType.Builder.<SplashPotionsOfRandomEntity>of(SplashPotionsOfRandomEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

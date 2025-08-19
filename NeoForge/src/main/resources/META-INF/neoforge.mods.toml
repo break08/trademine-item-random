@@ -20,7 +20,7 @@ authors="MCreator"
 [[dependencies.trademine_item_random]]
     modId="neoforge"
     type="required"
-    versionRange="[21.4.137,)"
+    versionRange="[21.4.145,)"
     ordering="AFTER"
     side="BOTH"
 

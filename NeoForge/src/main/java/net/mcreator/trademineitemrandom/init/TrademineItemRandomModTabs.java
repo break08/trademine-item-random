@@ -14,7 +14,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class TrademineItemRandomModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TrademineItemRandomMod.MODID);
 

@@ -24,7 +24,7 @@ import net.mcreator.trademineitemrandom.block.entity.RandomCropStage1BlockEntity
 import net.mcreator.trademineitemrandom.block.entity.RandomCropStage0BlockEntity;
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class TrademineItemRandomModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, TrademineItemRandomMod.MODID);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RandomCropStage0BlockEntity>> RANDOM_CROP_STAGE_0 = register("random_crop_stage_0", TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_0, RandomCropStage0BlockEntity::new);
