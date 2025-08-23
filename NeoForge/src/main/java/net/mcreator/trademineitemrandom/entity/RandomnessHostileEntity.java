@@ -8,12 +8,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -30,10 +32,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.trademineitemrandom.procedures.RandomnessHostileThisEntityKillsAnotherOneProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileEntityDiesProcedure;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEntities;
 
-public class RandomnessHostileEntity extends Monster {
+public class RandomnessHostileEntity extends Zombie {
 	public RandomnessHostileEntity(EntityType<RandomnessHostileEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
@@ -49,10 +52,10 @@ public class RandomnessHostileEntity extends Monster {
 				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
 			}
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.8));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
 
 	@Override
@@ -98,6 +101,12 @@ public class RandomnessHostileEntity extends Monster {
 		RandomnessHostileEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
+	@Override
+	public void awardKillScore(Entity entity, DamageSource damageSource) {
+		super.awardKillScore(entity, damageSource);
+		RandomnessHostileThisEntityKillsAnotherOneProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), entity);
+	}
+
 	public static void init(RegisterSpawnPlacementsEvent event) {
 		event.register(TrademineItemRandomModEntities.RANDOMNESS_HOSTILE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)),
@@ -114,6 +123,7 @@ public class RandomnessHostileEntity extends Monster {
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.2);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.2);
+		builder = builder.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
 		return builder;
 	}
 }

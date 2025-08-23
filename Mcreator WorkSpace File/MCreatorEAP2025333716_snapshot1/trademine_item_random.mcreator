@@ -4,7 +4,7 @@
       "name": "OreOfRandomness",
       "type": "block",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "ore_of_randomness",
       "metadata": {
         "files": [
@@ -122,7 +122,7 @@
       "name": "DeepslateOreOfRandomness",
       "type": "block",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "deepslate_ore_of_randomness",
       "metadata": {
         "files": [
@@ -141,7 +141,7 @@
       "name": "NetherOreOfRandomness",
       "type": "block",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "nether_ore_of_randomness",
       "metadata": {
         "files": [
@@ -641,6 +641,111 @@
           "src/main/java/net/mcreator/trademineitemrandom/recipe/brewing/RecipePotionOfInfestedMobBrewingRecipe.java"
         ]
       }
+    },
+    {
+      "name": "FlowerOfRandomnessAdditionalPlacinggrowthCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flower_of_randomness_additional_placinggrowth_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/FlowerOfRandomnessAdditionalPlacinggrowthConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileThisEntityKillsAnotherOne",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_this_entity_kills_another_one",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileThisEntityKillsAnotherOneProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Random",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "FlowerOfRandomnessOnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flower_of_randomness_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/FlowerOfRandomnessOnBoneMealSuccessProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -655,8 +760,15 @@
     "ENCHANTMENTS:minecraft:non_treasure": [
       "~CUSTOM:RandomTaken"
     ],
-    "BLOCKS:minecraft:mineable/pickaxe": [],
-    "BLOCKS:minecraft:needs_iron_tool": [],
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:DeepslateOreOfRandomness",
+      "~CUSTOM:OreOfRandomness",
+      "~CUSTOM:NetherOreOfRandomness"
+    ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~CUSTOM:DeepslateOreOfRandomness",
+      "~CUSTOM:NetherOreOfRandomness"
+    ],
     "BLOCKS:minecraft:air": [
       "Blocks.AIR",
       "Blocks.CAVE_AIR",
@@ -691,7 +803,8 @@
       "item.minecraft.potion.effect.potion_of_infested_mob": "Potion of Potion Of Infested Mob",
       "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Lingering Potion of Potion Of Infested Mob",
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Potion Of Infested Mob",
-      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob"
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob",
+      "item_group.trademine_item_random.random": "Random"
     }
   },
   "metadata": {

@@ -1,0 +1,22 @@
+{
+  "_fv": 79,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Potion Of Infested Item",
+    "splashName": "Splash Potion of Potion Of Infested Item",
+    "lingeringName": "Lingering Potion of Potion Of Infested Item",
+    "arrowName": "Arrow of Potion Of Infested Item",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:InfestedItem"
+        },
+        "duration": 3600,
+        "infinite": false,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

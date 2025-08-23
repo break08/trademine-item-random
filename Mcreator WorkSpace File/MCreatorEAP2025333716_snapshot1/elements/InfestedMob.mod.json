@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Infested Mob",
+    "icon": "infested_mob",
+    "color": {
+      "value": -16724992,
+      "falpha": 0.0
+    },
+    "particle": {
+      "value": "OMINOUS_SPAWNING"
+    },
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [],
+    "onMobHurt": {
+      "name": "InfestedMobOnEntityHurt"
+    }
+  }
+}

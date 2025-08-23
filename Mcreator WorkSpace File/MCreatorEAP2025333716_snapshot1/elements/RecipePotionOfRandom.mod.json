@@ -1,0 +1,30 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Brewing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:RainbowDye"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "brewingInputStack": {
+      "value": "POTION:WATER"
+    },
+    "brewingIngredientStack": {
+      "value": "CUSTOM:RainbowDye"
+    },
+    "brewingReturnStack": {
+      "value": "CUSTOM:PotionOfRandom"
+    },
+    "name": "recipe_potion_of_random",
+    "namespace": "mod"
+  }
+}

@@ -24,5 +24,6 @@
   "item.minecraft.potion.effect.potion_of_infested_mob": "Potion of Potion Of Infested Mob",
   "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Lingering Potion of Potion Of Infested Mob",
   "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Potion Of Infested Mob",
-  "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob"
+  "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob",
+  "item_group.trademine_item_random.random": "Random"
 }
