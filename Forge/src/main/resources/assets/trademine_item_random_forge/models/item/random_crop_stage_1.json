@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "trademine_item_random_forge:block/randomcrop_stage1"
+  }
+}

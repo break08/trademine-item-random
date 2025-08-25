@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "features": "trademine_item_random_forge:ore_of_randomness",
+  "step": "underground_ores"
+}

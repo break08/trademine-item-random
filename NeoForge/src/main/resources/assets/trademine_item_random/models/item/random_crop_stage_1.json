@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "trademine_item_random:block/randomcrop_stage1"
-  }
-}

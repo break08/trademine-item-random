@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "deep_dark",
-  "features": "trademine_item_random:deepslate_ore_of_randomness",
-  "step": "underground_ores"
-}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "trademine_item_random_forge:block/ore_of_randomness"
+    }
+  }
+}

@@ -1,0 +1,847 @@
+{
+  "mod_elements": [
+    {
+      "name": "OreOfRandomness",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/worldgen/placed_feature/ore_of_randomness.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/OreOfRandomnessBlock.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/forge/biome_modifier/ore_of_randomness_biome_modifier.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/configured_feature/ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "EmeraldtoOreOfRandomness",
+      "type": "villagertrade",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emeraldto_ore_of_randomness",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "RandomTaken",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_taken",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/enchantment/RandomTakenEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "PotionOfRandom",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potion_of_random",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/item/PotionOfRandomItem.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/potion_of_random.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostile",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/forge/biome_modifier/randomness_hostile_biome_modifier.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/randomness_hostile_spawn_egg.json",
+          "src/main/java/net/mcreator/trademineitemrandom/client/renderer/RandomnessHostileRenderer.java",
+          "src/main/java/net/mcreator/trademineitemrandom/entity/RandomnessHostileEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileEntityDiesProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "PotionOfRandomPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potion_of_random_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/PotionOfRandomPlayerFinishesUsingItemProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "DeepslateOreOfRandomness",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deepslate_ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/DeepslateOreOfRandomnessBlock.java",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/placed_feature/deepslate_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/forge/biome_modifier/deepslate_ore_of_randomness_biome_modifier.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/deepslate_ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/deepslate_ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/deepslate_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/configured_feature/deepslate_ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "NetherOreOfRandomness",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/NetherOreOfRandomnessBlock.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/nether_ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/nether_ore_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/nether_ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomTakenProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_taken_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomTakenProcedureProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlowerOfRandomness",
+      "type": "plant",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flower_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/forge/biome_modifier/flower_of_randomness_biome_modifier.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/placed_feature/flower_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/flower_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/configured_feature/flower_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/flower_of_randomness.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/flower_of_randomness.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/FlowerOfRandomnessBlock.java",
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/flower_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "RainbowDye",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rainbow_dye",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/trademine_item_random_forge/models/item/rainbow_dye.json",
+          "src/main/java/net/mcreator/trademineitemrandom/item/RainbowDyeItem.java"
+        ]
+      }
+    },
+    {
+      "name": "RecipePotionOfRandom",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_potion_of_random",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/recipes/brewing/RecipePotionOfRandomBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "RecipeOreOfRandomness",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/advancements/recipes/recipe_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/recipes/recipe_ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "RecipeDeepslateOreOfRandomness",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_deepslate_ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/advancements/recipes/recipe_deepslate_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/recipes/recipe_deepslate_ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "RecipeNetherOreOfRandomness",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_nether_ore_of_randomness",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/advancements/recipes/recipe_nether_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/recipes/recipe_nether_ore_of_randomness.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomSeed",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_seed",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_seed.json",
+          "src/main/java/net/mcreator/trademineitemrandom/item/RandomSeedItem.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomSeedRightclickedOnBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_seed_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomSeedRightclickedOnBlockProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RecipeRainbowDye",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_rainbow_dye",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/advancements/recipes/recipe_rainbow_dye.json",
+          "src/main/resources/data/trademine_item_random_forge/recipes/recipe_rainbow_dye.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage0",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_0",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage0Block.java",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_0.json",
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/random_crop_stage_0.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_0.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage0BlockEntity.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_0.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage0BlockValidPlacementCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_0_block_valid_placement_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage0BlockValidPlacementConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage0OnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_0_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage0OnTickUpdateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RecipeRandomSeed",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_random_seed",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/advancements/recipes/recipe_random_seed.json",
+          "src/main/resources/data/trademine_item_random_forge/recipes/recipe_random_seed.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage1",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage1BlockEntity.java",
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/random_crop_stage_1.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_1.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage1Block.java",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_1.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_1.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage2",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_2.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_2.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage2Block.java",
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/random_crop_stage_2.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage2BlockEntity.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_2.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage3",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage3BlockEntity.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_3.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_3.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage3Block.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_3.json",
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/random_crop_stage_3.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage4",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random_forge/loot_tables/blocks/random_crop_stage_4.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_4.json",
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_4.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage4BlockEntity.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_4.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage4Block.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage5",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/random_crop_stage_5.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomCropStage5Block.java",
+          "src/main/resources/assets/trademine_item_random_forge/models/block/random_crop_stage_5.json",
+          "src/main/resources/assets/trademine_item_random_forge/models/item/random_crop_stage_5.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage5BlockEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "InfestedItemOnEntityHurt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infested_item_on_entity_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/InfestedItemOnEntityHurtProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "InfestedItem",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infested_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/potion/InfestedItemMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "PotionOfInfestedItem",
+      "type": "potion",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potion_of_infested_item",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "InfestedMob",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infested_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/potion/InfestedMobMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "InfestedMobOnEntityHurt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infested_mob_on_entity_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/InfestedMobOnEntityHurtProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "PotionOfInfestedMob",
+      "type": "potion",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potion_of_infested_mob",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "RecipePotionOfInfestedItem",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_potion_of_infested_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/recipes/brewing/RecipePotionOfInfestedItemBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "RecipePotionOfInfestedMob",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_potion_of_infested_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/recipes/brewing/RecipePotionOfInfestedMobBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "FlowerOfRandomnessAdditionalPlacinggrowthCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flower_of_randomness_additional_placinggrowth_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/FlowerOfRandomnessAdditionalPlacinggrowthConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileThisEntityKillsAnotherOne",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_this_entity_kills_another_one",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileThisEntityKillsAnotherOneProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Random",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "FlowerOfRandomnessOnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flower_of_randomness_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/FlowerOfRandomnessOnBoneMealSuccessProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {
+    "ENCHANTMENTS:minecraft:tradeable": [],
+    "ENCHANTMENTS:minecraft:on_random_loot": [],
+    "ENCHANTMENTS:minecraft:non_treasure": [],
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:NetherOreOfRandomness",
+      "~CUSTOM:DeepslateOreOfRandomness",
+      "~CUSTOM:OreOfRandomness"
+    ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~CUSTOM:NetherOreOfRandomness",
+      "~CUSTOM:DeepslateOreOfRandomness"
+    ],
+    "BLOCKS:minecraft:air": [
+      "Blocks.AIR",
+      "Blocks.CAVE_AIR",
+      "Blocks.VOID_AIR"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
+      "enchantment.trademine_item_random.random_taken": "Random Taken",
+      "item.trademine_item_random.potion_of_random": "Potion Of Random",
+      "item.trademine_item_random.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
+      "entity.trademine_item_random.randomness_hostile": "Randomness Hostile",
+      "item.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
+      "item.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
+      "item.trademine_item_random.flower_of_randomness": "Flower Of Randomness",
+      "item.trademine_item_random.rainbow_dye": "Rainbow Dye",
+      "item.trademine_item_random.random_seed": "Random Seed",
+      "item.trademine_item_random.random_crop_stage_0": "Random Crop Stage 0",
+      "item.trademine_item_random.random_crop_stage_1": "Random Crop Stage 1",
+      "item.trademine_item_random.random_crop_stage_2": "Random Crop Stage 2",
+      "item.trademine_item_random.random_crop_stage_3": "Random Crop Stage 3",
+      "item.trademine_item_random.random_crop_stage_4": "Random Crop Stage 4",
+      "item.trademine_item_random.random_crop_stage_5": "Random Crop Stage 5",
+      "effect.trademine_item_random.infested_item": "Infested Item",
+      "item.minecraft.potion.effect.potion_of_infested_item": "Potion of Potion Of Infested Item",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_item": "Arrow of Potion Of Infested Item",
+      "item.minecraft.splash_potion.effect.potion_of_infested_item": "Splash Potion of Potion Of Infested Item",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_item": "Lingering Potion of Potion Of Infested Item",
+      "effect.trademine_item_random.infested_mob": "Infested Mob",
+      "item.minecraft.potion.effect.potion_of_infested_mob": "Potion of Potion Of Infested Mob",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Lingering Potion of Potion Of Infested Mob",
+      "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Potion Of Infested Mob",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob",
+      "item_group.trademine_item_random.random": "Random",
+      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
+      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
+      "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
+      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
+      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
+      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
+      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
+      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
+      "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
+      "item.trademine_item_random_forge.random_seed": "Random Seed",
+      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
+      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
+      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
+      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
+      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
+      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
+      "effect.trademine_item_random_forge.infested_item": "Infested Item",
+      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
+      "item_group.trademine_item_random_forge.random": "Random"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/trademineitemrandom/TrademineItemRandomForgeMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModTabs.java",
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModEnchantments.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModMobEffects.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModPotions.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModTrades.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModBlocks.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModBlockEntities.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModItems.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModEntities.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomForgeModEntityRenderers.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "trademine_item_random_forge",
+    "modName": "TradeMine Item Random Forge",
+    "version": "1.0.0",
+    "author": "break08",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT LICENSE",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "net.mcreator.trademineitemrandom"
+  },
+  "mcreatorVersion": 202500228610
+}
