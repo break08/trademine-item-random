@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:redstone_block",
+    "minecraft:iron_ingot",
+    "minecraft:netherite_scrap",
+    "minecraft:enchanted_golden_apple",
+    "minecraft:name_tag",
+    "minecraft:copper_ingot",
+    "minecraft:sweet_berries",
+    "minecraft:gold_ingot",
+    "minecraft:slime_ball",
+    "minecraft:coal",
+    "minecraft:carrot",
+    "minecraft:sandstone",
+    "minecraft:apple",
+    "minecraft:water_bucket",
+    "minecraft:tipped_arrow",
+    "minecraft:glistering_melon_slice",
+    "minecraft:golden_carrot",
+    "minecraft:lily_pad",
+    "minecraft:glass",
+    "minecraft:flint_and_steel",
+    "minecraft:porkchop",
+    "minecraft:experience_bottle",
+    "minecraft:lava_bucket",
+    "minecraft:sugar_cane",
+    "minecraft:potion"
+  ]
+}

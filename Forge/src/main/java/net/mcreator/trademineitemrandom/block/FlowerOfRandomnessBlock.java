@@ -1,5 +1,8 @@
 package net.mcreator.trademineitemrandom.block;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,6 +27,12 @@ import net.mcreator.trademineitemrandom.procedures.FlowerOfRandomnessAdditionalP
 public class FlowerOfRandomnessBlock extends FlowerBlock implements BonemealableBlock {
 	public FlowerOfRandomnessBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		Vec3 offset = state.getOffset(world, pos);
+		return box(0, 0, 0, 1, 0.8125, 1).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override

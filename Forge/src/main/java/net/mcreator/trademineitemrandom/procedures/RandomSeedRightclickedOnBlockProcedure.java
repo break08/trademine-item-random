@@ -1,17 +1,16 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModBlocks;
@@ -20,32 +19,23 @@ public class RandomSeedRightclickedOnBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		ItemStack random_seeds = ItemStack.EMPTY;
-		BlockState stage0 = Blocks.AIR.defaultBlockState();
-		random_seeds = new ItemStack(TrademineItemRandomForgeModItems.RANDOM_SEED.get()).copy();
-		stage0 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == random_seeds.getItem()
-				&& (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.FARMLAND && ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR
-						|| (world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.CAVE_AIR || (world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.VOID_AIR)
-				&& stage0.canSurvive(world, BlockPos.containing(x, y + 1, z))) {
-			world.setBlock(BlockPos.containing(x, y + 1, z), stage0, 3);
-			if (!(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
-					}
-					return false;
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.FARMLAND && world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
+			world.setBlock(BlockPos.containing(x, y + 1, z), TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState(), 3);
+			if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(TrademineItemRandomForgeModItems.RANDOM_SEED.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 				}
-			}.checkGamemode(entity))) {
-				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).copy();
-					_setstack.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-					if (_entity instanceof Player _player)
-						_player.getInventory().setChanged();
+			}
+			if (!(entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
+					&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("minecraft:husbandry/plant_seed"))).isDone())) {
+				if (entity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("minecraft:husbandry/plant_seed"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
 				}
 			}
 		}

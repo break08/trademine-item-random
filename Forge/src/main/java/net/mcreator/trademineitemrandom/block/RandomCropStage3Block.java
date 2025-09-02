@@ -8,15 +8,21 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.trademineitemrandom.procedures.RandomCropStage3OnBoneMealSuccessProcedure;
+import net.mcreator.trademineitemrandom.procedures.RandomCropStage0BoneMealSuccessConditionProcedure;
 import net.mcreator.trademineitemrandom.block.entity.RandomCropStage3BlockEntity;
 
-public class RandomCropStage3Block extends Block implements EntityBlock {
+public class RandomCropStage3Block extends Block implements EntityBlock, BonemealableBlock {
 	public RandomCropStage3Block() {
 		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(0f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
@@ -34,6 +40,21 @@ public class RandomCropStage3Block extends Block implements EntityBlock {
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
+	}
+
+	@Override
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+		return true;
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		return RandomCropStage0BoneMealSuccessConditionProcedure.execute();
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		RandomCropStage3OnBoneMealSuccessProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import net.minecraftforge.common.DungeonHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
@@ -21,23 +22,30 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileThisEntityKillsAnotherOneProcedure;
+import net.mcreator.trademineitemrandom.procedures.RandomnessHostileOnInitialEntitySpawnProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileEntityDiesProcedure;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModEntities;
+
+import javax.annotation.Nullable;
 
 public class RandomnessHostileEntity extends Zombie {
 	public RandomnessHostileEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -117,6 +125,13 @@ public class RandomnessHostileEntity extends Zombie {
 	public void die(DamageSource source) {
 		super.die(source);
 		RandomnessHostileEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+	}
+
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
+		RandomnessHostileOnInitialEntitySpawnProcedure.execute(world, this);
+		return retval;
 	}
 
 	@Override
