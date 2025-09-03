@@ -131,50 +131,50 @@ public class RandomnessHostileOnInitialEntitySpawnProcedure {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(103, new ItemStack(Items.GOLDEN_HELMET));
+						_player.getInventory().armor.set(3, new ItemStack(Items.GOLDEN_HELMET));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 103), new ItemStack(Items.GOLDEN_HELMET));
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.GOLDEN_HELMET));
 					}
 				}
 			} else if (random_helmet == 2) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(103, new ItemStack(Items.LEATHER_HELMET));
+						_player.getInventory().armor.set(3, new ItemStack(Items.LEATHER_HELMET));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 103), new ItemStack(Items.LEATHER_HELMET));
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
 					}
 				}
 			} else if (random_helmet == 3) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(103, new ItemStack(Items.IRON_HELMET));
+						_player.getInventory().armor.set(3, new ItemStack(Items.IRON_HELMET));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 103), new ItemStack(Items.IRON_HELMET));
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
 					}
 				}
 			} else if (random_helmet == 4) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(103, new ItemStack(Items.DIAMOND_HELMET));
+						_player.getInventory().armor.set(3, new ItemStack(Items.DIAMOND_HELMET));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 103), new ItemStack(Items.DIAMOND_HELMET));
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.DIAMOND_HELMET));
 					}
 				}
 			} else if (random_helmet == 5) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(103, new ItemStack(Items.CHAINMAIL_HELMET));
+						_player.getInventory().armor.set(3, new ItemStack(Items.CHAINMAIL_HELMET));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 103), new ItemStack(Items.CHAINMAIL_HELMET));
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.CHAINMAIL_HELMET));
 					}
 				}
 			}
@@ -182,50 +182,50 @@ public class RandomnessHostileOnInitialEntitySpawnProcedure {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(102, new ItemStack(Items.LEATHER_CHESTPLATE));
+						_player.getInventory().armor.set(2, new ItemStack(Items.LEATHER_CHESTPLATE));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 102), new ItemStack(Items.LEATHER_CHESTPLATE));
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
 					}
 				}
 			} else if (random_chestplate == 2) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(102, new ItemStack(Items.CHAINMAIL_CHESTPLATE));
+						_player.getInventory().armor.set(2, new ItemStack(Items.CHAINMAIL_CHESTPLATE));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 102), new ItemStack(Items.CHAINMAIL_CHESTPLATE));
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.CHAINMAIL_CHESTPLATE));
 					}
 				}
 			} else if (random_chestplate == 3) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(102, new ItemStack(Items.IRON_CHESTPLATE));
+						_player.getInventory().armor.set(2, new ItemStack(Items.IRON_CHESTPLATE));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 102), new ItemStack(Items.IRON_CHESTPLATE));
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
 					}
 				}
 			} else if (random_chestplate == 4) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(102, new ItemStack(Items.GOLDEN_CHESTPLATE));
+						_player.getInventory().armor.set(2, new ItemStack(Items.GOLDEN_CHESTPLATE));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 102), new ItemStack(Items.GOLDEN_CHESTPLATE));
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.GOLDEN_CHESTPLATE));
 					}
 				}
 			} else if (random_chestplate == 5) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(102, new ItemStack(Items.DIAMOND_CHESTPLATE));
+						_player.getInventory().armor.set(2, new ItemStack(Items.DIAMOND_CHESTPLATE));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 102), new ItemStack(Items.DIAMOND_CHESTPLATE));
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.DIAMOND_CHESTPLATE));
 					}
 				}
 			}
@@ -233,50 +233,50 @@ public class RandomnessHostileOnInitialEntitySpawnProcedure {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(101, new ItemStack(Items.LEATHER_LEGGINGS));
+						_player.getInventory().armor.set(1, new ItemStack(Items.LEATHER_LEGGINGS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 101), new ItemStack(Items.LEATHER_LEGGINGS));
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
 					}
 				}
 			} else if (random_leg_armor == 2) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(101, new ItemStack(Items.CHAINMAIL_LEGGINGS));
+						_player.getInventory().armor.set(1, new ItemStack(Items.CHAINMAIL_LEGGINGS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 101), new ItemStack(Items.CHAINMAIL_LEGGINGS));
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.CHAINMAIL_LEGGINGS));
 					}
 				}
 			} else if (random_leg_armor == 3) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(101, new ItemStack(Items.IRON_LEGGINGS));
+						_player.getInventory().armor.set(1, new ItemStack(Items.IRON_LEGGINGS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 101), new ItemStack(Items.IRON_LEGGINGS));
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.IRON_LEGGINGS));
 					}
 				}
 			} else if (random_leg_armor == 4) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(101, new ItemStack(Items.GOLDEN_LEGGINGS));
+						_player.getInventory().armor.set(1, new ItemStack(Items.GOLDEN_LEGGINGS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 101), new ItemStack(Items.GOLDEN_LEGGINGS));
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.GOLDEN_LEGGINGS));
 					}
 				}
 			} else if (random_leg_armor == 5) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(101, new ItemStack(Items.DIAMOND_LEGGINGS));
+						_player.getInventory().armor.set(1, new ItemStack(Items.DIAMOND_LEGGINGS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 101), new ItemStack(Items.DIAMOND_LEGGINGS));
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.DIAMOND_LEGGINGS));
 					}
 				}
 			}
@@ -284,50 +284,50 @@ public class RandomnessHostileOnInitialEntitySpawnProcedure {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(100, new ItemStack(Items.LEATHER_BOOTS));
+						_player.getInventory().armor.set(0, new ItemStack(Items.LEATHER_BOOTS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 100), new ItemStack(Items.LEATHER_BOOTS));
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.LEATHER_BOOTS));
 					}
 				}
 			} else if (random_boots == 2) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(100, new ItemStack(Items.CHAINMAIL_BOOTS));
+						_player.getInventory().armor.set(0, new ItemStack(Items.CHAINMAIL_BOOTS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 100), new ItemStack(Items.CHAINMAIL_BOOTS));
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.CHAINMAIL_BOOTS));
 					}
 				}
 			} else if (random_boots == 3) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(100, new ItemStack(Items.IRON_BOOTS));
+						_player.getInventory().armor.set(0, new ItemStack(Items.IRON_BOOTS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 100), new ItemStack(Items.IRON_BOOTS));
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
 					}
 				}
 			} else if (random_boots == 4) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(100, new ItemStack(Items.GOLDEN_BOOTS));
+						_player.getInventory().armor.set(0, new ItemStack(Items.GOLDEN_BOOTS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 100), new ItemStack(Items.GOLDEN_BOOTS));
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.GOLDEN_BOOTS));
 					}
 				}
 			} else if (random_boots == 5) {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(100, new ItemStack(Items.DIAMOND_BOOTS));
+						_player.getInventory().armor.set(0, new ItemStack(Items.DIAMOND_BOOTS));
 						_player.getInventory().setChanged();
 					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.byTypeAndIndex(EquipmentSlot.Type.ARMOR, 100), new ItemStack(Items.DIAMOND_BOOTS));
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.DIAMOND_BOOTS));
 					}
 				}
 			}

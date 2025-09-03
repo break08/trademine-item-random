@@ -105,7 +105,16 @@
     "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
-    "isBonemealable": false,
+    "placingCondition": {
+      "name": "RandomCropStage0BlockValidPlacementCondition"
+    },
+    "isBonemealable": true,
+    "bonemealSuccessCondition": {
+      "name": "RandomCropStage0BoneMealSuccessCondition"
+    },
+    "onBonemealSuccess": {
+      "name": "RandomCropStage3OnBoneMealSuccess"
+    },
     "sensitiveToVibration": false,
     "vibrationalEvents": [],
     "vibrationSensitivityRadius": {

@@ -17,28 +17,33 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		BlockState stage3 = Blocks.AIR.defaultBlockState();
 		BlockState stage4 = Blocks.AIR.defaultBlockState();
 		BlockState stage5 = Blocks.AIR.defaultBlockState();
-		double count = 0;
-		double row = 0;
 		boolean found = false;
+		double sx = 0;
+		double sy = 0;
+		double sz = 0;
 		stage0 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
 		stage1 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_1.get().defaultBlockState();
 		stage2 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState();
 		stage3 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_3.get().defaultBlockState();
 		stage4 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_4.get().defaultBlockState();
 		stage5 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_5.get().defaultBlockState();
+		sx = -3;
+		found = false;
 		if (!world.getLevelData().isRaining()) {
-			found = false;
-			row = 4;
-			while (!found && row > -5) {
-				count = -4;
-				while (count < 5) {
-					if ((world.getBlockState(BlockPos.containing(x + count, y - 1, z + row))).getBlock() == Blocks.WATER || (world.getBlockState(BlockPos.containing(x + count, y, z + row))).getBlock() == Blocks.WATER) {
-						found = true;
-						break;
+			for (int index0 = 0; index0 < 4; index0++) {
+				sy = -2;
+				for (int index1 = 0; index1 < 4; index1++) {
+					sz = -2;
+					for (int index2 = 0; index2 < 4; index2++) {
+						if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).getBlock() == Blocks.WATER) {
+							found = true;
+							break;
+						}
+						sz = sz + 1;
 					}
-					count = count + 1;
+					sy = sy + 1;
 				}
-				row = row - 1;
+				sx = sx + 1;
 			}
 		} else {
 			found = true;

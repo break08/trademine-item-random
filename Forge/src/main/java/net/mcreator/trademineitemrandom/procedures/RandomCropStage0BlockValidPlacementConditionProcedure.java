@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 
 public class RandomCropStage0BlockValidPlacementConditionProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) >= 9 && (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.FARMLAND) {
+		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.FARMLAND) {
 			return true;
 		}
 		return false;

@@ -72,7 +72,7 @@ public class RandomnessHostileEntityDiesProcedure {
 			}
 			if (random_spawn == 8) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.CAMEL.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = EntityType.CAVE_SPIDER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}

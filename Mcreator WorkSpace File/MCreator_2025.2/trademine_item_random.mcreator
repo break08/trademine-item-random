@@ -143,9 +143,12 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/trademineitemrandom/block/NetherOreOfRandomnessBlock.java",
+          "src/main/resources/data/trademine_item_random_forge/forge/biome_modifier/nether_ore_of_randomness_biome_modifier.json",
           "src/main/resources/assets/trademine_item_random_forge/models/block/nether_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/placed_feature/nether_ore_of_randomness.json",
           "src/main/resources/assets/trademine_item_random_forge/models/item/nether_ore_of_randomness.json",
-          "src/main/resources/assets/trademine_item_random_forge/blockstates/nether_ore_of_randomness.json"
+          "src/main/resources/assets/trademine_item_random_forge/blockstates/nether_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random_forge/worldgen/configured_feature/nether_ore_of_randomness.json"
         ]
       }
     },
@@ -510,6 +513,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -573,6 +580,10 @@
       "registry_name": "infested_mob_on_entity_hurt",
       "metadata": {
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"
@@ -733,6 +744,290 @@
           "src/main/java/net/mcreator/trademineitemrandom/procedures/FlowerOfRandomnessOnBoneMealSuccessProcedure.java"
         ]
       }
+    },
+    {
+      "name": "RandomCropStage0BoneMealSuccessCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_0_bone_meal_success_condition",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage0BoneMealSuccessConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage0OnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_0_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage0OnBoneMealSuccessProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage1OnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_1_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage1OnBoneMealSuccessProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage2OnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_2_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage2OnBoneMealSuccessProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage3OnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_3_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage3OnBoneMealSuccessProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomCropStage4OnBoneMealSuccess",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_4_on_bone_meal_success",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage4OnBoneMealSuccessProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileOnInitialEntitySpawnProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileItIsStruckByLightning",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_it_is_struck_by_lightning",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileItIsStruckByLightningProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomnessHostileRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "randomness_hostile_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomnessHostileRightClickedOnEntityProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "MobRightClick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mob_right_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/MobRightClickProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -754,6 +1049,66 @@
       "Blocks.AIR",
       "Blocks.CAVE_AIR",
       "Blocks.VOID_AIR"
+    ],
+    "ITEMS:minecraft:random_taken_drop": [
+      "Items.NETHERITE_UPGRADE",
+      "Items.IRON_INGOT",
+      "CUSTOM:RainbowDye",
+      "Blocks.AMETHYST_CLUSTER",
+      "Blocks.HAY_BLOCK",
+      "Items.DIAMOND",
+      "Items.GOLD_INGOT",
+      "Items.EMERALD",
+      "Items.RAW_COPPER",
+      "Items.COOKED_PORKCHOP",
+      "Items.FISH#3",
+      "Blocks.LOG#2",
+      "Blocks.CHERRY_LOG",
+      "Blocks.GOLDEN_RAIL",
+      "Blocks.SKULL#4",
+      "Items.BLAZE_ROD",
+      "Items.BREAD",
+      "Items.DRAGON_BREATH",
+      "Items.ARROW",
+      "Items.FIREWORKS",
+      "Blocks.DIRT#0",
+      "Blocks.GRASS",
+      "Blocks.TNT",
+      "Items.TNT_MINECART"
+    ],
+    "ITEMS:minecraft:infested_item_drop": [
+      "Items.GOLD_INGOT",
+      "Items.IRON_INGOT",
+      "Items.COAL#0",
+      "Items.LAVA_BUCKET",
+      "Items.WATER_BUCKET",
+      "Blocks.WATERLILY",
+      "Items.FLINT_AND_STEEL",
+      "Items.PORKCHOP",
+      "Items.NETHERITE_SCRAP",
+      "Blocks.SANDSTONE#0",
+      "Items.COPPER_INGOT",
+      "Items.TIPPED_ARROW",
+      "Items.SLIME_BALL",
+      "Items.SPECKLED_MELON",
+      "Items.APPLE",
+      "Items.CARROT",
+      "Items.EXPERIENCE_BOTTLE",
+      "Items.GOLDEN_APPLE#1",
+      "Items.GOLDEN_CARROT",
+      "Items.SWEET_BERRIES",
+      "Blocks.REEDS",
+      "Blocks.GLASS",
+      "Items.NAME_TAG",
+      "Items.POTIONITEM",
+      "Blocks.REDSTONE_BLOCK"
+    ],
+    "ENTITIES:minecraft:zombie_catalog": [
+      "EntityZombie",
+      "EntityZombieVillager"
+    ],
+    "ENTITIES:minecraft:villager_catalog": [
+      "EntityVillager"
     ]
   },
   "tab_element_order": {},
@@ -776,15 +1131,15 @@
       "item.trademine_item_random.random_crop_stage_4": "Random Crop Stage 4",
       "item.trademine_item_random.random_crop_stage_5": "Random Crop Stage 5",
       "effect.trademine_item_random.infested_item": "Infested Item",
-      "item.minecraft.potion.effect.potion_of_infested_item": "Potion of Potion Of Infested Item",
-      "item.minecraft.tipped_arrow.effect.potion_of_infested_item": "Arrow of Potion Of Infested Item",
-      "item.minecraft.splash_potion.effect.potion_of_infested_item": "Splash Potion of Potion Of Infested Item",
-      "item.minecraft.lingering_potion.effect.potion_of_infested_item": "Lingering Potion of Potion Of Infested Item",
+      "item.minecraft.potion.effect.potion_of_infested_item": "Potion of Item Infestation",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_item": "Arrow of Item Infestation",
+      "item.minecraft.splash_potion.effect.potion_of_infested_item": "Splash Potion of Item Infestation",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_item": "Lingering Potion of Item Infestation",
       "effect.trademine_item_random.infested_mob": "Infested Mob",
-      "item.minecraft.potion.effect.potion_of_infested_mob": "Potion of Potion Of Infested Mob",
-      "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Lingering Potion of Potion Of Infested Mob",
-      "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Potion Of Infested Mob",
-      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Potion Of Infested Mob",
+      "item.minecraft.potion.effect.potion_of_infested_mob": "Potion of Mob Infestation",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Lingering Potion of Mob Infestation",
+      "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
       "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
       "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
@@ -805,6 +1160,54 @@
       "effect.trademine_item_random_forge.infested_item": "Infested Item",
       "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
       "item_group.trademine_item_random_forge.random": "Random"
+    },
+    "vi_vn": {
+      "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
+      "enchantment.trademine_item_random.random_taken": "Lấy Ngẫu Nhiên",
+      "item.trademine_item_random.potion_of_random": "Thuốc Ngẫu Nhiên",
+      "item.trademine_item_random.randomness_hostile_spawn_egg": "Trứng Sinh Ra Thù Địch Ngẫu Nhiên",
+      "entity.trademine_item_random.randomness_hostile": "Thù Địch Ngẫu Nhiên",
+      "item.trademine_item_random.deepslate_ore_of_randomness": "Quặng Đá Phiến Sâu Ngẫu Nhiên",
+      "item.trademine_item_random.nether_ore_of_randomness": "Quặng Địa Ngục Ngẫu Nhiên",
+      "item.trademine_item_random.flower_of_randomness": "Hoa Ngẫu Nhiên",
+      "item.trademine_item_random.rainbow_dye": "Thuốc Nhuộm Cầu Vồng",
+      "item.trademine_item_random.random_seed": "Hạt Giống Cây Ngẫu Nhiên",
+      "item.trademine_item_random.random_crop_stage_0": "Cây Trồng Ngẫu Nhiên Giai Đoạn 0",
+      "item.trademine_item_random.random_crop_stage_1": "Cây Trồng Ngẫu Nhiên Giai Đoạn 1",
+      "item.trademine_item_random.random_crop_stage_2": "Cây Trồng Ngẫu Nhiên Giai Đoạn 2",
+      "item.trademine_item_random.random_crop_stage_3": "Cây Trồng Ngẫu Nhiên Giai Đoạn 3",
+      "item.trademine_item_random.random_crop_stage_4": "Cây Trồng Ngẫu Nhiên Giai Đoạn 4",
+      "item.trademine_item_random.random_crop_stage_5": "Cây Trồng Ngẫu Nhiên Giai Đoạn 5",
+      "effect.trademine_item_random.infested_item": "Infested Item",
+      "item.minecraft.potion.effect.potion_of_infested_item": "Thuốc Item Infestation",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_item": "Mũi Tên Item Infestation",
+      "item.minecraft.splash_potion.effect.potion_of_infested_item": "Thuốc Bắn Tung Tóe Item Infestation",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_item": "Thuốc lưu lại Item Infestation",
+      "effect.trademine_item_random.infested_mob": "Infested Mob",
+      "item.minecraft.potion.effect.potion_of_infested_mob": "Thuốc Mob Infestation",
+      "item.minecraft.lingering_potion.effect.potion_of_infested_mob": "Thuốc lưu lại Mob Infestation",
+      "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Thuốc Bắn Tung Tóe Mob Infestation",
+      "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Mũi Tên Mob Infestation",
+      "item_group.trademine_item_random.random": "Ngẫu Nhiên",
+      "block.trademine_item_random_forge.ore_of_randomness": "Quặng Ngẫu Nhiên",
+      "enchantment.trademine_item_random_forge.random_taken": "Lấy Ngẫu Nhiên",
+      "item.trademine_item_random_forge.potion_of_random": "Thuốc Ngẫu Nhiên",
+      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Trứng Sinh Ra Thù Địch Ngẫu Nhiên",
+      "entity.trademine_item_random_forge.randomness_hostile": "Thù Địch Ngẫu Nhiên",
+      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Quặng Đá Phiến Sâu Ngẫu Nhiên",
+      "block.trademine_item_random_forge.nether_ore_of_randomness": "Quặng Địa Ngục Ngẫu Nhiên",
+      "block.trademine_item_random_forge.flower_of_randomness": "Hoa Ngẫu Nhiên",
+      "item.trademine_item_random_forge.rainbow_dye": "Thuốc Nhuộm Cầu Vồng",
+      "item.trademine_item_random_forge.random_seed": "Hạt Giống Ngẫu Nhiên",
+      "block.trademine_item_random_forge.random_crop_stage_0": "Cây Trồng Ngẫu Nhiên Giai Đoạn 0",
+      "block.trademine_item_random_forge.random_crop_stage_1": "Cây Trồng Ngẫu Nhiên Giai Đoạn 1",
+      "block.trademine_item_random_forge.random_crop_stage_2": "Cây Trồng Ngẫu Nhiên Giai Đoạn 2",
+      "block.trademine_item_random_forge.random_crop_stage_3": "Cây Trồng Ngẫu Nhiên Giai Đoạn 3",
+      "block.trademine_item_random_forge.random_crop_stage_4": "Cây Trồng Ngẫu Nhiên Giai Đoạn 4",
+      "block.trademine_item_random_forge.random_crop_stage_5": "Cây Trồng Ngẫu Nhiên Giai Đoạn 5",
+      "effect.trademine_item_random_forge.infested_item": "Infested Item",
+      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
+      "item_group.trademine_item_random_forge.random": "Ngẫu Nhiên"
     }
   },
   "metadata": {

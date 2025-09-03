@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "potion",
   "definition": {
-    "potionName": "Potion of Potion Of Infested Mob",
-    "splashName": "Splash Potion of Potion Of Infested Mob",
-    "lingeringName": "Lingering Potion of Potion Of Infested Mob",
-    "arrowName": "Arrow of Potion Of Infested Mob",
+    "potionName": "Potion of Mob Infestation",
+    "splashName": "Splash Potion of Mob Infestation",
+    "lingeringName": "Lingering Potion of Mob Infestation",
+    "arrowName": "Arrow of Mob Infestation",
     "effects": [
       {
         "effect": {

@@ -85,7 +85,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "GROUND"
+      "value": "CROP"
     },
     "breakSound": {
       "value": ""
@@ -105,7 +105,16 @@
     "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
-    "isBonemealable": false,
+    "placingCondition": {
+      "name": "RandomCropStage0BlockValidPlacementCondition"
+    },
+    "isBonemealable": true,
+    "bonemealSuccessCondition": {
+      "name": "RandomCropStage0BoneMealSuccessCondition"
+    },
+    "onBonemealSuccess": {
+      "name": "RandomCropStage0OnBoneMealSuccess"
+    },
     "sensitiveToVibration": false,
     "vibrationalEvents": [],
     "vibrationSensitivityRadius": {
@@ -127,6 +136,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "RandomCropStage0OnTickUpdate"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

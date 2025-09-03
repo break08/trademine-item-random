@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "potion",
   "definition": {
-    "potionName": "Potion of Potion Of Infested Item",
-    "splashName": "Splash Potion of Potion Of Infested Item",
-    "lingeringName": "Lingering Potion of Potion Of Infested Item",
-    "arrowName": "Arrow of Potion Of Infested Item",
+    "potionName": "Potion of Item Infestation",
+    "splashName": "Splash Potion of Item Infestation",
+    "lingeringName": "Lingering Potion of Item Infestation",
+    "arrowName": "Arrow of Item Infestation",
     "effects": [
       {
         "effect": {

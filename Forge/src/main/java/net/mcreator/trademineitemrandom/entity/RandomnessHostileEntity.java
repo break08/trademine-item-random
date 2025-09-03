@@ -27,13 +27,17 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
@@ -41,7 +45,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileThisEntityKillsAnotherOneProcedure;
+import net.mcreator.trademineitemrandom.procedures.RandomnessHostileRightClickedOnEntityProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileOnInitialEntitySpawnProcedure;
+import net.mcreator.trademineitemrandom.procedures.RandomnessHostileItIsStruckByLightningProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomnessHostileEntityDiesProcedure;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModEntities;
 
@@ -115,6 +121,12 @@ public class RandomnessHostileEntity extends Zombie {
 	}
 
 	@Override
+	public void thunderHit(ServerLevel serverWorld, LightningBolt lightningBolt) {
+		super.thunderHit(serverWorld, lightningBolt);
+		RandomnessHostileItIsStruckByLightningProcedure.execute(this.level(), this);
+	}
+
+	@Override
 	public boolean hurt(DamageSource damagesource, float amount) {
 		if (damagesource.is(DamageTypes.FALL))
 			return false;
@@ -135,6 +147,21 @@ public class RandomnessHostileEntity extends Zombie {
 	}
 
 	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+		super.mobInteract(sourceentity, hand);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level();
+
+		RandomnessHostileRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
+		return retval;
+	}
+
+	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
 		RandomnessHostileThisEntityKillsAnotherOneProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), entity);
@@ -148,8 +175,8 @@ public class RandomnessHostileEntity extends Zombie {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 2);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
+		builder = builder.add(Attributes.MAX_HEALTH, 12);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 4);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 25);
