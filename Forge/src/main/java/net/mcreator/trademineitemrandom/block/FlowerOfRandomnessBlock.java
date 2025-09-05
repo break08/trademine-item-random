@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.effect.MobEffects;
@@ -21,8 +20,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.trademineitemrandom.procedures.RandomCropStage0BoneMealSuccessConditionProcedure;
 import net.mcreator.trademineitemrandom.procedures.FlowerOfRandomnessOnBoneMealSuccessProcedure;
-import net.mcreator.trademineitemrandom.procedures.FlowerOfRandomnessAdditionalPlacinggrowthConditionProcedure;
 
 public class FlowerOfRandomnessBlock extends FlowerBlock implements BonemealableBlock {
 	public FlowerOfRandomnessBlock() {
@@ -52,15 +51,7 @@ public class FlowerOfRandomnessBlock extends FlowerBlock implements Bonemealable
 
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-		boolean additionalCondition = true;
-		if (worldIn instanceof LevelAccessor world) {
-			int x = pos.getX();
-			int y = pos.getY() + 1;
-			int z = pos.getZ();
-			BlockState blockstate = world.getBlockState(pos.above());
-			additionalCondition = FlowerOfRandomnessAdditionalPlacinggrowthConditionProcedure.execute(world, x, y, z);
-		}
-		return groundState.is(Blocks.GRASS_BLOCK) && additionalCondition;
+		return groundState.is(Blocks.GRASS_BLOCK);
 	}
 
 	@Override
@@ -77,7 +68,7 @@ public class FlowerOfRandomnessBlock extends FlowerBlock implements Bonemealable
 
 	@Override
 	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
-		return true;
+		return RandomCropStage0BoneMealSuccessConditionProcedure.execute();
 	}
 
 	@Override

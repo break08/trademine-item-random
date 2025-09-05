@@ -4,5 +4,5 @@
     "crop": "trademine_item_random_forge:block/random_crop__stage4",
     "particle": "trademine_item_random_forge:block/random_crop__stage4"
   },
-  "render_type": "cutout_mipped"
+  "render_type": "cutout"
 }

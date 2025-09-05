@@ -5,13 +5,14 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
 
 import net.mcreator.trademineitemrandom.procedures.PotionOfRandomPlayerFinishesUsingItemProcedure;
 
 public class PotionOfRandomItem extends Item {
 	public PotionOfRandomItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(0).saturationMod(0f).alwaysEat().build()));
 	}
 
 	@Override

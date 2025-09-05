@@ -15,6 +15,8 @@ import net.minecraft.world.item.BlockItem;
 import net.mcreator.trademineitemrandom.item.RandomSeedItem;
 import net.mcreator.trademineitemrandom.item.RainbowDyeItem;
 import net.mcreator.trademineitemrandom.item.PotionOfRandomItem;
+import net.mcreator.trademineitemrandom.item.AnyFoodItem;
+import net.mcreator.trademineitemrandom.item.AnyArmorTrimItem;
 import net.mcreator.trademineitemrandom.TrademineItemRandomForgeMod;
 
 public class TrademineItemRandomForgeModItems {
@@ -33,6 +35,9 @@ public class TrademineItemRandomForgeModItems {
 	public static final RegistryObject<Item> RANDOM_CROP_STAGE_3 = block(TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_3);
 	public static final RegistryObject<Item> RANDOM_CROP_STAGE_4 = block(TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_4);
 	public static final RegistryObject<Item> RANDOM_CROP_STAGE_5 = block(TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_5);
+	public static final RegistryObject<Item> ANY_FOOD = REGISTRY.register("any_food", () -> new AnyFoodItem());
+	public static final RegistryObject<Item> ANY_ARMOR_TRIM = REGISTRY.register("any_armor_trim", () -> new AnyArmorTrimItem());
+	public static final RegistryObject<Item> ANY_MINERALS = REGISTRY.register("any_minerals", () -> new AnyMineralsItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

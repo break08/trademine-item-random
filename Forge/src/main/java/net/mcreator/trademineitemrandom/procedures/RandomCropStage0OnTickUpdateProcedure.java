@@ -17,10 +17,11 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		BlockState stage3 = Blocks.AIR.defaultBlockState();
 		BlockState stage4 = Blocks.AIR.defaultBlockState();
 		BlockState stage5 = Blocks.AIR.defaultBlockState();
-		boolean found = false;
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
+		boolean found = false;
+		boolean farmland_bool = false;
 		stage0 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
 		stage1 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_1.get().defaultBlockState();
 		stage2 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState();
@@ -29,6 +30,7 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		stage5 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_5.get().defaultBlockState();
 		sx = -3;
 		found = false;
+		farmland_bool = false;
 		if (!world.getLevelData().isRaining()) {
 			for (int index0 = 0; index0 < 4; index0++) {
 				sy = -2;
@@ -48,7 +50,10 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		} else {
 			found = true;
 		}
-		if (found == true) {
+		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.FARMLAND) {
+			farmland_bool = true;
+		}
+		if (found == true && farmland_bool == true) {
 			if (new Object() {
 				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -57,15 +62,15 @@ public class RandomCropStage0OnTickUpdateProcedure {
 					return -1;
 				}
 			}.getValue(world, BlockPos.containing(x, y, z), "growing") <= 0) {
-				if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage0.getBlock() && stage1.canSurvive(world, BlockPos.containing(x, y, z))) {
+				if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage0.getBlock()) {
 					world.setBlock(BlockPos.containing(x, y, z), stage1, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage1.getBlock() && stage2.canSurvive(world, BlockPos.containing(x, y, z))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage1.getBlock()) {
 					world.setBlock(BlockPos.containing(x, y, z), stage2, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage2.getBlock() && stage3.canSurvive(world, BlockPos.containing(x, y, z))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage2.getBlock()) {
 					world.setBlock(BlockPos.containing(x, y, z), stage3, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage3.getBlock() && stage4.canSurvive(world, BlockPos.containing(x, y, z))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage3.getBlock()) {
 					world.setBlock(BlockPos.containing(x, y, z), stage4, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage4.getBlock() && stage5.canSurvive(world, BlockPos.containing(x, y, z))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage4.getBlock()) {
 					world.setBlock(BlockPos.containing(x, y, z), stage5, 3);
 				}
 				if (!world.isClientSide()) {
