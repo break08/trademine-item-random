@@ -3,21 +3,17 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "potionofrandom",
+    "texture": "any_armor_trim_smithing_template",
     "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Potion Of Random",
+    "name": "Any Armor Trim",
     "rarity": "COMMON",
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:Random"
-      }
-    ],
+    "creativeTabs": [],
     "stackSize": 64,
     "enchantability": 0,
-    "useDuration": 32,
+    "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 0,
     "recipeRemainder": {
@@ -35,11 +31,8 @@
     "glowCondition": {
       "fixedValue": false
     },
-    "inventorySize": 0,
-    "inventoryStackSize": 64,
-    "onFinishUsingItem": {
-      "name": "PotionOfRandomPlayerFinishesUsingItem"
-    },
+    "inventorySize": 9,
+    "inventoryStackSize": 99,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
@@ -47,15 +40,15 @@
       "value": "Arrow"
     },
     "projectileDisableAmmoCheck": false,
-    "isFood": true,
-    "nutritionalValue": 0,
-    "saturation": 0.0,
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
     "eatResultItem": {
       "value": ""
     },
     "isMeat": false,
-    "isAlwaysEdible": true,
-    "animation": "drink",
+    "isAlwaysEdible": false,
+    "animation": "none",
     "isMusicDisc": false,
     "musicDiscMusic": {
       "value": ""

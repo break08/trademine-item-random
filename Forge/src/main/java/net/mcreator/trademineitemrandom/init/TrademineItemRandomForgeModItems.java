@@ -15,6 +15,7 @@ import net.minecraft.world.item.BlockItem;
 import net.mcreator.trademineitemrandom.item.RandomSeedItem;
 import net.mcreator.trademineitemrandom.item.RainbowDyeItem;
 import net.mcreator.trademineitemrandom.item.PotionOfRandomItem;
+import net.mcreator.trademineitemrandom.item.AnyMineralsItem;
 import net.mcreator.trademineitemrandom.item.AnyFoodItem;
 import net.mcreator.trademineitemrandom.item.AnyArmorTrimItem;
 import net.mcreator.trademineitemrandom.TrademineItemRandomForgeMod;

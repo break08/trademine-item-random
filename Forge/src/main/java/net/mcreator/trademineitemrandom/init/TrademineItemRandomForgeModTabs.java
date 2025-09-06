@@ -23,6 +23,7 @@ public class TrademineItemRandomForgeModTabs {
 	public static final RegistryObject<CreativeModeTab> RANDOM = REGISTRY.register("random",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.trademine_item_random_forge.random")).icon(() -> new ItemStack(TrademineItemRandomForgeModItems.RAINBOW_DYE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TrademineItemRandomForgeModBlocks.ORE_OF_RANDOMNESS.get().asItem());
+				tabData.accept(TrademineItemRandomForgeModItems.POTION_OF_RANDOM.get());
 				tabData.accept(TrademineItemRandomForgeModBlocks.DEEPSLATE_ORE_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomForgeModBlocks.NETHER_ORE_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomForgeModBlocks.FLOWER_OF_RANDOMNESS.get().asItem());

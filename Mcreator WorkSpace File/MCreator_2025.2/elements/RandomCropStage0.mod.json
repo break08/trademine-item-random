@@ -22,7 +22,7 @@
     "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
       {
@@ -40,7 +40,7 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 0.3,
+    "hardness": 0.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -82,7 +82,7 @@
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
-    "isNotColidable": false,
+    "isNotColidable": true,
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "CROP"
@@ -105,9 +105,6 @@
     "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
-    "placingCondition": {
-      "name": "RandomCropStage0BlockValidPlacementCondition"
-    },
     "isBonemealable": true,
     "bonemealSuccessCondition": {
       "name": "RandomCropStage0BoneMealSuccessCondition"
@@ -136,6 +133,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onNeighbourBlockChanges": {
+      "name": "RandomCropStage0NeighbourBlockChanges"
+    },
     "onTickUpdate": {
       "name": "RandomCropStage0OnTickUpdate"
     },

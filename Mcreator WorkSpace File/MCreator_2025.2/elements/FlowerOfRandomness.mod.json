@@ -104,13 +104,7 @@
         "value": "Blocks.GRASS"
       }
     ],
-    "placingCondition": {
-      "name": "FlowerOfRandomnessAdditionalPlacinggrowthCondition"
-    },
-    "isBonemealable": true,
-    "onBonemealSuccess": {
-      "name": "FlowerOfRandomnessOnBoneMealSuccess"
-    },
+    "isBonemealable": false,
     "frequencyOnChunks": 5,
     "generateFeature": true,
     "restrictionBiomes": [
@@ -120,6 +114,6 @@
     ],
     "generationType": "Flower",
     "patchSize": 26,
-    "generateAtAnyHeight": true
+    "generateAtAnyHeight": false
   }
 }
