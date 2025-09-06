@@ -10,6 +10,6 @@
 
 ́**MCreator WorkSpace File**:
 
-|Version           |Mcreator Version|Plugin                     |
-|------------------|----------------|---------------------------|
-|Forge 1.20.1|     |2025.2          |Forge 1.20.1 Generator     |
+|Version           |MCreator Version |Plugin                     |
+|------------------|-----------------|---------------------------|
+|Forge 1.20.1      |2025.2           |Forge 1.20.1 Generator     |
