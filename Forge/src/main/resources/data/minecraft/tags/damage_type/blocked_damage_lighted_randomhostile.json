@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "freeze",
+    "in_wall",
+    "wither",
+    "falling_anvil",
+    "cactus",
+    "sweet_berry_bush",
+    "hot_floor",
+    "explosion",
+    "drown",
+    "wither_skull"
+  ]
+}

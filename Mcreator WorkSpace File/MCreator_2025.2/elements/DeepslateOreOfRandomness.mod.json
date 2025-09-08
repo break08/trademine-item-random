@@ -132,7 +132,11 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "generateFeature": true,
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      {
+        "value": "#minecraft:is_overworld"
+      }
+    ],
     "blocksToReplace": [],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 12,

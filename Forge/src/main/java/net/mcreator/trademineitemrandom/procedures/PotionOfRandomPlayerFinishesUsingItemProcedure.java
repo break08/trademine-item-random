@@ -26,43 +26,43 @@ public class PotionOfRandomPlayerFinishesUsingItemProcedure {
 			random_receive_effects = Mth.nextInt(RandomSource.create(), 1, 6);
 			if (random_receive_effects == 1) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.LUCK, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.LUCK, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, false, true));
 			} else if (random_receive_effects == 2) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 5), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 5), false, true));
 			} else if (random_receive_effects == 3) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, false, true));
 			} else if (random_receive_effects == 4) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 5), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 5), false, true));
 			} else if (random_receive_effects == 5) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 2), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 2), false, true));
 			} else if (random_receive_effects == 6) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, false, true));
 			}
 		} else {
 			random_receive_effects = Mth.nextInt(RandomSource.create(), 1, 6);
 			if (random_receive_effects == 1) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, false, true));
 			} else if (random_receive_effects == 2) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.BAD_OMEN, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 4), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.BAD_OMEN, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 4), false, true));
 			} else if (random_receive_effects == 3) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, Mth.nextInt(RandomSource.create(), 7200, 9600), 0, false, true));
 			} else if (random_receive_effects == 4) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 4), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 4), false, true));
 			} else if (random_receive_effects == 5) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 3), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, Mth.nextInt(RandomSource.create(), 7200, 9600), Mth.nextInt(RandomSource.create(), 0, 3), false, true));
 			} else if (random_receive_effects == 6) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.POISON, Mth.nextInt(RandomSource.create(), 200, 300), 0, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.POISON, Mth.nextInt(RandomSource.create(), 200, 300), 0, false, true));
 			}
 		}
 	}

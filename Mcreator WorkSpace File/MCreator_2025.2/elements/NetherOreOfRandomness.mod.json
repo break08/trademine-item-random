@@ -134,7 +134,7 @@
     "generateFeature": true,
     "restrictionBiomes": [
       {
-        "value": "nether"
+        "value": "#minecraft:is_nether"
       }
     ],
     "blocksToReplace": [

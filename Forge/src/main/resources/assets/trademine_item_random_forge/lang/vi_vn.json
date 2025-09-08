@@ -45,7 +45,8 @@
   "effect.trademine_item_random_forge.infested_item": "Infested Item",
   "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
   "item_group.trademine_item_random_forge.random": "Ngẫu Nhiên",
-  "item.trademine_item_random_forge.any_food": "Any Food",
-  "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-  "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+  "item.trademine_item_random_forge.any_food": "Bất Kì Thức Ăn",
+  "item.trademine_item_random_forge.any_armor_trim": "Bất Kì Mảnh Trang Trí Giáp",
+  "item.trademine_item_random_forge.any_minerals": "Bất Kì Khoáng Sản",
+  "enchantment.trademine_item_random_forge.disaster": "Disaster"
 }

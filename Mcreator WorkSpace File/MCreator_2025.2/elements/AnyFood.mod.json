@@ -31,8 +31,8 @@
     "glowCondition": {
       "fixedValue": false
     },
-    "inventorySize": 9,
-    "inventoryStackSize": 99,
+    "inventorySize": 0,
+    "inventoryStackSize": 1,
     "onRightClickedInAir": {
       "name": "AnyFoodRightclicked"
     },

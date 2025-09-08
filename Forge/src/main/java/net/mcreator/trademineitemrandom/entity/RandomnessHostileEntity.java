@@ -30,7 +30,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -124,13 +123,6 @@ public class RandomnessHostileEntity extends Zombie {
 	public void thunderHit(ServerLevel serverWorld, LightningBolt lightningBolt) {
 		super.thunderHit(serverWorld, lightningBolt);
 		RandomnessHostileItIsStruckByLightningProcedure.execute(this.level(), this);
-	}
-
-	@Override
-	public boolean hurt(DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.FALL))
-			return false;
-		return super.hurt(damagesource, amount);
 	}
 
 	@Override

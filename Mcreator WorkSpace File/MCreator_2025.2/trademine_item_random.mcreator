@@ -1106,16 +1106,82 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "x",
-            "type": "number"
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/AnyFoodRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "AnyArmorTrimRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "any_armor_trim_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/AnyArmorTrimRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "AnyMineralsRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "any_minerals_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/AnyMineralsRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Disaster",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/enchantment/DisasterEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "DisasterEnchantmentProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_enchantment_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
           },
           {
-            "name": "y",
-            "type": "number"
+            "name": "entity",
+            "type": "entity"
           },
           {
-            "name": "z",
-            "type": "number"
+            "name": "sourceentity",
+            "type": "entity"
           },
           {
             "name": "world",
@@ -1123,7 +1189,29 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/trademineitemrandom/procedures/AnyFoodRightclickedProcedure.java"
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/DisasterEnchantmentProcedureProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "LightedRandomnessHostileReinstant",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lighted_randomness_hostile_reinstant",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/LightedRandomnessHostileReinstantProcedure.java"
         ]
       }
     }
@@ -1255,6 +1343,48 @@
       "Items.GOLDEN_CARROT",
       "Items.SPECKLED_MELON",
       "Items.CHORUS_FRUIT"
+    ],
+    "ITEMS:minecraft:triming": [
+      "Items.SENTRY_ARMOR_TRIM",
+      "Items.DUNE_ARMOR_TRIM",
+      "Items.COAST_ARMOR_TRIM",
+      "Items.WILD_ARMOR_TRIM",
+      "Items.WARD_ARMOR_TRIM",
+      "Items.EYE_ARMOR_TRIM",
+      "Items.VEX_ARMOR_TRIM",
+      "Items.TIDE_ARMOR_TRIM",
+      "Items.SNOUT_ARMOR_TRIM",
+      "Items.RIB_ARMOR_TRIM",
+      "Items.SPIRE_ARMOR_TRIM",
+      "Items.WAYFINDER_ARMOR_TRIM",
+      "Items.SHAPER_ARMOR_TRIM",
+      "Items.SILENCE_ARMOR_TRIM",
+      "Items.RAISER_ARMOR_TRIM",
+      "Items.HOST_ARMOR_TRIM"
+    ],
+    "ITEMS:minecraft:normal_minerals": [
+      "Items.COAL#0",
+      "Items.COPPER_INGOT",
+      "Items.RAW_IRON",
+      "Items.GOLD_INGOT"
+    ],
+    "DAMAGE_TYPES:minecraft:damage_arrow_check": [
+      "ARROW"
+    ],
+    "ENTITIES:minecraft:randomness_hostile": [
+      "CUSTOM:RandomnessHostile"
+    ],
+    "DAMAGE_TYPES:minecraft:blocked_damage_lighted_randomhostile": [
+      "ANVIL",
+      "EXPLOSION",
+      "WITHER",
+      "WITHER_SKULL",
+      "DROWN",
+      "CACTUS",
+      "SWEET_BERRY_BUSH",
+      "FREEZE",
+      "IN_WALL",
+      "HOT_FLOOR"
     ]
   },
   "tab_element_order": {},
@@ -1307,8 +1437,9 @@
       "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
       "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
-      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-      "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
+      "item.trademine_item_random_forge.any_minerals": "Any Minerals",
+      "enchantment.trademine_item_random_forge.disaster": "Disaster"
     },
     "vi_vn": {
       "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
@@ -1357,9 +1488,10 @@
       "effect.trademine_item_random_forge.infested_item": "Infested Item",
       "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
       "item_group.trademine_item_random_forge.random": "Ngẫu Nhiên",
-      "item.trademine_item_random_forge.any_food": "Any Food",
-      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-      "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+      "item.trademine_item_random_forge.any_food": "Bất Kì Thức Ăn",
+      "item.trademine_item_random_forge.any_armor_trim": "Bất Kì Mảnh Trang Trí Giáp",
+      "item.trademine_item_random_forge.any_minerals": "Bất Kì Khoáng Sản",
+      "enchantment.trademine_item_random_forge.disaster": "Disaster"
     },
     "en_ca": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1409,8 +1541,9 @@
       "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
       "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
-      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-      "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
+      "item.trademine_item_random_forge.any_minerals": "Any Minerals",
+      "enchantment.trademine_item_random_forge.disaster": "Disaster"
     },
     "en_au": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1460,8 +1593,9 @@
       "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
       "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
-      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-      "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+      "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
+      "item.trademine_item_random_forge.any_minerals": "Any Minerals",
+      "enchantment.trademine_item_random_forge.disaster": "Disaster"
     }
   },
   "metadata": {

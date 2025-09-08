@@ -8,7 +8,7 @@
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Any Armor Trim",
+    "name": "Any Armor Trims",
     "rarity": "COMMON",
     "creativeTabs": [],
     "stackSize": 64,
@@ -31,8 +31,11 @@
     "glowCondition": {
       "fixedValue": false
     },
-    "inventorySize": 9,
-    "inventoryStackSize": 99,
+    "inventorySize": 0,
+    "inventoryStackSize": 1,
+    "onRightClickedInAir": {
+      "name": "AnyArmorTrimRightclicked"
+    },
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,

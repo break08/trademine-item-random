@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "nether_wastes",
+  "biomes": "#minecraft:is_nether",
   "features": "trademine_item_random_forge:nether_ore_of_randomness",
   "step": "underground_ores"
 }

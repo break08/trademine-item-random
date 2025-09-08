@@ -46,6 +46,7 @@
   "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
   "item_group.trademine_item_random_forge.random": "Random",
   "item.trademine_item_random_forge.any_food": "Any Food",
-  "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trim",
-  "item.trademine_item_random_forge.any_minerals": "Any Minerals"
+  "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
+  "item.trademine_item_random_forge.any_minerals": "Any Minerals",
+  "enchantment.trademine_item_random_forge.disaster": "Disaster"
 }

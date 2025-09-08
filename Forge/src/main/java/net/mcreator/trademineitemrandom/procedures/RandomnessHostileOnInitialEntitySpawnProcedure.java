@@ -1,5 +1,8 @@
 package net.mcreator.trademineitemrandom.procedures;
 
+import net.minecraft.world.scores.criteria.ObjectiveCriteria;
+import net.minecraft.world.scores.Scoreboard;
+import net.minecraft.world.scores.Objective;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
@@ -11,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.network.chat.Component;
 
 public class RandomnessHostileOnInitialEntitySpawnProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -22,6 +26,14 @@ public class RandomnessHostileOnInitialEntitySpawnProcedure {
 		double random_chestplate = 0;
 		double random_leg_armor = 0;
 		double random_boots = 0;
+		{
+			Entity _ent = entity;
+			Scoreboard _sc = _ent.level().getScoreboard();
+			Objective _so = _sc.getObjective("lighted");
+			if (_so == null)
+				_so = _sc.addObjective("lighted", ObjectiveCriteria.DUMMY, Component.literal("lighted"), ObjectiveCriteria.RenderType.INTEGER);
+			_sc.getOrCreatePlayerScore(_ent.getScoreboardName(), _so).setScore(0);
+		}
 		if (Math.random() < 0.25 && (world.getLevelData().isRaining() || world.getLevelData().isThundering())) {
 			random_inventory = Mth.nextInt(RandomSource.create(), 1, 10);
 			random_offhand = Mth.nextInt(RandomSource.create(), 1, 4);
