@@ -58,7 +58,7 @@ public class TrademineItemRandomForgeModTrades {
 			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD),
 
 					new ItemStack(TrademineItemRandomForgeModItems.RAINBOW_DYE.get(), 3), 10, 5, 0.05f));
-			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.EMERALD, 2),
+			event.getTrades().get(2).add(new BasicItemListing(new ItemStack(Items.EMERALD, 3),
 
 					new ItemStack(TrademineItemRandomForgeModItems.ANY_FOOD.get()), 10, 5, 0.05f));
 		}

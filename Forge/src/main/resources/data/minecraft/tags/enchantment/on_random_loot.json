@@ -1,4 +1,7 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "TrademineItemRandomForgeModEnchantments.DISASTER.get()",
+    "TrademineItemRandomForgeModEnchantments.RANDOM_TAKEN.get()"
+  ]
 }

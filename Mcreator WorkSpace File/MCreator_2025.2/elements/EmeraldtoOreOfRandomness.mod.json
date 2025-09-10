@@ -209,7 +209,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 2,
+            "countPrice1": 3,
             "price2": {
               "value": ""
             },
@@ -218,7 +218,7 @@
               "value": "CUSTOM:AnyFood"
             },
             "countOffer": 1,
-            "level": 1,
+            "level": 2,
             "maxTrades": 10,
             "xp": 5,
             "priceMultiplier": 0.05

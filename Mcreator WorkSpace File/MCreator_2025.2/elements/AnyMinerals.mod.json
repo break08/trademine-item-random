@@ -10,7 +10,14 @@
     "states": [],
     "name": "Any Minerals",
     "rarity": "COMMON",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "MATERIALS"
+      },
+      {
+        "value": "CUSTOM:Random"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

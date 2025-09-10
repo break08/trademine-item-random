@@ -29,12 +29,19 @@ public class TrademineItemRandomForgeModTabs {
 				tabData.accept(TrademineItemRandomForgeModBlocks.FLOWER_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomForgeModItems.RAINBOW_DYE.get());
 				tabData.accept(TrademineItemRandomForgeModItems.RANDOM_SEED.get());
+				tabData.accept(TrademineItemRandomForgeModItems.ANY_FOOD.get());
+				tabData.accept(TrademineItemRandomForgeModItems.ANY_ARMOR_TRIM.get());
+				tabData.accept(TrademineItemRandomForgeModItems.ANY_MINERALS.get());
 			}).build());
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(TrademineItemRandomForgeModItems.RANDOMNESS_HOSTILE_SPAWN_EGG.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+			tabData.accept(TrademineItemRandomForgeModItems.ANY_FOOD.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+			tabData.accept(TrademineItemRandomForgeModItems.ANY_MINERALS.get());
 		}
 	}
 }

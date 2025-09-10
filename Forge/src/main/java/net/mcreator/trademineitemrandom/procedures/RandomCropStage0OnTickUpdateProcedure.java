@@ -22,6 +22,7 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		double sz = 0;
 		boolean found = false;
 		boolean farmland_bool = false;
+		boolean light_bool = false;
 		stage0 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
 		stage1 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_1.get().defaultBlockState();
 		stage2 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState();
@@ -31,6 +32,7 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		sx = -3;
 		found = false;
 		farmland_bool = false;
+		light_bool = false;
 		if (!world.getLevelData().isRaining()) {
 			for (int index0 = 0; index0 < 4; index0++) {
 				sy = -2;
@@ -53,7 +55,10 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.FARMLAND) {
 			farmland_bool = true;
 		}
-		if (found == true && farmland_bool == true) {
+		if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y + 1, z)) >= 9) {
+			light_bool = true;
+		}
+		if (found == true && farmland_bool == true && light_bool == true) {
 			if (new Object() {
 				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);

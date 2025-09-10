@@ -51,19 +51,19 @@ public class DisasterEnchantmentProcedureProcedure {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 3);
 				if (disaster_id == 1) {
 					bad_effect_id = Mth.nextInt(RandomSource.create(), 1, 5);
-					if (disaster_id == 1) {
+					if (bad_effect_id == 1) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 140, 0, false, true));
-					} else if (disaster_id == 2) {
+					} else if (bad_effect_id == 2) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 1, false, true));
-					} else if (disaster_id == 3) {
+					} else if (bad_effect_id == 3) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 140, 1, false, true));
-					} else if (disaster_id == 4) {
+					} else if (bad_effect_id == 4) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0, false, true));
-					} else if (disaster_id == 5) {
+					} else if (bad_effect_id == 5) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0, false, true));
 					}
@@ -74,7 +74,11 @@ public class DisasterEnchantmentProcedureProcedure {
 						for (int index1 = 0; index1 < 4; index1++) {
 							sz = -2;
 							for (int index2 = 0; index2 < 4; index2++) {
-								world.setBlock(BlockPos.containing(sx, sy, sz), Blocks.COBWEB.defaultBlockState(), 3);
+								if (!world.isEmptyBlock(BlockPos.containing(sx, sy, sz))) {
+									world.setBlock(BlockPos.containing(sx, sy, sz), Blocks.COBWEB.defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(sx, sy, sz), Blocks.COBWEB.defaultBlockState(), 3);
+								}
 								sz = sz + 1;
 							}
 							sy = sy + 1;

@@ -1219,7 +1219,10 @@
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
-    "ENCHANTMENTS:minecraft:on_random_loot": [],
+    "ENCHANTMENTS:minecraft:on_random_loot": [
+      "CUSTOM:RandomTaken",
+      "CUSTOM:Disaster"
+    ],
     "ENCHANTMENTS:minecraft:non_treasure": [],
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:NetherOreOfRandomness",
