@@ -30,15 +30,15 @@ public class DisasterEnchantmentProcedureProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingHurtEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getSource(), event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity) {
-		execute(null, world, damagesource, entity, sourceentity);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity) {
+		execute(null, world, x, y, z, damagesource, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity) {
 		if (damagesource == null || entity == null || sourceentity == null)
 			return;
 		double disaster_id = 0;
@@ -46,14 +46,15 @@ public class DisasterEnchantmentProcedureProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:damage_arrow_check"))) && !(sourceentity == null)) {
+		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrows"))) && !(sourceentity == null)) {
 			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomForgeModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 3);
+				bad_effect_id = 0;
 				if (disaster_id == 1) {
 					bad_effect_id = Mth.nextInt(RandomSource.create(), 1, 5);
 					if (bad_effect_id == 1) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 140, 0, false, true));
+							_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 140, 1, false, true));
 					} else if (bad_effect_id == 2) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 1, false, true));
@@ -62,10 +63,10 @@ public class DisasterEnchantmentProcedureProcedure {
 							_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 140, 1, false, true));
 					} else if (bad_effect_id == 4) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0, false, true));
+							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 1, false, true));
 					} else if (bad_effect_id == 5) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0, false, true));
+							_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 1, false, true));
 					}
 				} else if (disaster_id == 2) {
 					sx = -2;
@@ -75,9 +76,9 @@ public class DisasterEnchantmentProcedureProcedure {
 							sz = -2;
 							for (int index2 = 0; index2 < 4; index2++) {
 								if (!world.isEmptyBlock(BlockPos.containing(sx, sy, sz))) {
-									world.setBlock(BlockPos.containing(sx, sy, sz), Blocks.COBWEB.defaultBlockState(), 3);
+									world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), Blocks.COBWEB.defaultBlockState(), 3);
 								} else {
-									world.setBlock(BlockPos.containing(sx, sy, sz), Blocks.COBWEB.defaultBlockState(), 3);
+									world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), Blocks.COBWEB.defaultBlockState(), 3);
 								}
 								sz = sz + 1;
 							}

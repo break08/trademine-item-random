@@ -1184,6 +1184,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -1219,10 +1231,7 @@
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
-    "ENCHANTMENTS:minecraft:on_random_loot": [
-      "CUSTOM:RandomTaken",
-      "CUSTOM:Disaster"
-    ],
+    "ENCHANTMENTS:minecraft:on_random_loot": [],
     "ENCHANTMENTS:minecraft:non_treasure": [],
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:NetherOreOfRandomness",
@@ -1371,9 +1380,6 @@
       "Items.RAW_IRON",
       "Items.GOLD_INGOT"
     ],
-    "DAMAGE_TYPES:minecraft:damage_arrow_check": [
-      "ARROW"
-    ],
     "ENTITIES:minecraft:randomness_hostile": [
       "CUSTOM:RandomnessHostile"
     ],
@@ -1388,6 +1394,15 @@
       "FREEZE",
       "IN_WALL",
       "HOT_FLOOR"
+    ],
+    "ITEMS:minecraft:arrows": [],
+    "BLOCKS:minecraft:random_crop": [
+      "CUSTOM:RandomCropStage0",
+      "CUSTOM:RandomCropStage1",
+      "CUSTOM:RandomCropStage2",
+      "CUSTOM:RandomCropStage3",
+      "CUSTOM:RandomCropStage4",
+      "CUSTOM:RandomCropStage5"
     ]
   },
   "tab_element_order": {},
