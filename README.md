@@ -12,4 +12,4 @@
 
 |Version           |MCreator Version |Plugin                     |
 |------------------|-----------------|---------------------------|
-|Forge 1.20.1      |2025.2           |Forge 1.20.1 Generator     |
+|Forge 1.20.1      |2025.2           |Custom plugin in  Source   |
