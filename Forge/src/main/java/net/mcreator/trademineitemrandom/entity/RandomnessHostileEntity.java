@@ -122,7 +122,7 @@ public class RandomnessHostileEntity extends Zombie {
 	@Override
 	public void thunderHit(ServerLevel serverWorld, LightningBolt lightningBolt) {
 		super.thunderHit(serverWorld, lightningBolt);
-		RandomnessHostileItIsStruckByLightningProcedure.execute(this.level(), this);
+		RandomnessHostileItIsStruckByLightningProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override

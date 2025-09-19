@@ -46,7 +46,7 @@ public class DisasterEnchantmentProcedureProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrows"))) && !(sourceentity == null)) {
+		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrow_check"))) && !(sourceentity == null)) {
 			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomForgeModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 3);
 				bad_effect_id = 0;
@@ -75,7 +75,7 @@ public class DisasterEnchantmentProcedureProcedure {
 						for (int index1 = 0; index1 < 4; index1++) {
 							sz = -2;
 							for (int index2 = 0; index2 < 4; index2++) {
-								if (!world.isEmptyBlock(BlockPos.containing(sx, sy, sz))) {
+								if (!world.isEmptyBlock(BlockPos.containing(x + sx, y + sy, z + sz))) {
 									world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), Blocks.COBWEB.defaultBlockState(), 3);
 								} else {
 									world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), Blocks.COBWEB.defaultBlockState(), 3);

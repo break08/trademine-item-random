@@ -1,110 +1,39 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraft.world.scores.criteria.ObjectiveCriteria;
-import net.minecraft.world.scores.Scoreboard;
-import net.minecraft.world.scores.Objective;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.Component;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
 
 public class RandomnessHostileItIsStruckByLightningProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
-		if (entity == null)
-			return;
-		ItemStack helmet = ItemStack.EMPTY;
-		ItemStack chest = ItemStack.EMPTY;
-		ItemStack legging = ItemStack.EMPTY;
-		ItemStack boots = ItemStack.EMPTY;
-		ItemStack sword = ItemStack.EMPTY;
-		ItemStack offhand = ItemStack.EMPTY;
-		{
-			Entity _ent = entity;
-			Scoreboard _sc = _ent.level().getScoreboard();
-			Objective _so = _sc.getObjective("lighted");
-			if (_so == null)
-				_so = _sc.addObjective("lighted", ObjectiveCriteria.DUMMY, Component.literal("lighted"), ObjectiveCriteria.RenderType.INTEGER);
-			_sc.getOrCreatePlayerScore(_ent.getScoreboardName(), _so).setScore(1);
-		}
-		helmet = new ItemStack(Items.NETHERITE_HELMET).copy();
-		chest = new ItemStack(Items.NETHERITE_CHESTPLATE).copy();
-		legging = new ItemStack(Items.NETHERITE_LEGGINGS).copy();
-		sword = new ItemStack(Items.NETHERITE_SWORD).copy();
-		offhand = new ItemStack(Items.TOTEM_OF_UNDYING).copy();
-		helmet.enchant(Enchantments.ALL_DAMAGE_PROTECTION, 1);
-		chest.enchant(Enchantments.ALL_DAMAGE_PROTECTION, 1);
-		legging.enchant(Enchantments.ALL_DAMAGE_PROTECTION, 1);
-		boots.enchant(Enchantments.ALL_DAMAGE_PROTECTION, 1);
-		sword.enchant(Enchantments.SHARPNESS, 1);
-		sword.enchant(Enchantments.KNOCKBACK, 1);
-		sword.enchant(Enchantments.FIRE_ASPECT, 2);
-		if (entity instanceof LivingEntity _entity) {
-			ItemStack _setstack = sword.copy();
-			_setstack.setCount(1);
-			_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-			if (_entity instanceof Player _player)
-				_player.getInventory().setChanged();
-		}
-		if (entity instanceof LivingEntity _entity) {
-			ItemStack _setstack = offhand.copy();
-			_setstack.setCount(1);
-			_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
-			if (_entity instanceof Player _player)
-				_player.getInventory().setChanged();
-		}
-		{
-			Entity _entity = entity;
-			if (_entity instanceof Player _player) {
-				_player.getInventory().armor.set(3, helmet);
-				_player.getInventory().setChanged();
-			} else if (_entity instanceof LivingEntity _living) {
-				_living.setItemSlot(EquipmentSlot.HEAD, helmet);
+	public static void execute(LevelAccessor world, double x, double y, double z) {
+		double boss = 0;
+		boss = Mth.nextInt(RandomSource.create(), 1, 3);
+		if (boss == 1) {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = EntityType.WITHER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		} else if (boss == 2) {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = EntityType.ELDER_GUARDIAN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		} else if (boss == 3) {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = EntityType.WARDEN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
 			}
 		}
-		{
-			Entity _entity = entity;
-			if (_entity instanceof Player _player) {
-				_player.getInventory().armor.set(2, chest);
-				_player.getInventory().setChanged();
-			} else if (_entity instanceof LivingEntity _living) {
-				_living.setItemSlot(EquipmentSlot.CHEST, chest);
-			}
-		}
-		{
-			Entity _entity = entity;
-			if (_entity instanceof Player _player) {
-				_player.getInventory().armor.set(1, legging);
-				_player.getInventory().setChanged();
-			} else if (_entity instanceof LivingEntity _living) {
-				_living.setItemSlot(EquipmentSlot.LEGS, legging);
-			}
-		}
-		{
-			Entity _entity = entity;
-			if (_entity instanceof Player _player) {
-				_player.getInventory().armor.set(0, boots);
-				_player.getInventory().setChanged();
-			} else if (_entity instanceof LivingEntity _living) {
-				_living.setItemSlot(EquipmentSlot.FEET, boots);
-			}
-		}
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 2147483647, 0));
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 2147483647, 0));
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2147483647, 1));
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2147483647, 0));
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 2147483647, 0));
 	}
 }

@@ -11,6 +11,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
+
 public class AnyMineralsRightclickedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -35,6 +37,10 @@ public class AnyMineralsRightclickedProcedure {
 					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
 			}
+		}
+		if (entity instanceof Player _player) {
+			ItemStack _stktoremove = new ItemStack(TrademineItemRandomForgeModItems.ANY_MINERALS.get());
+			_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 		}
 	}
 }

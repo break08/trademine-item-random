@@ -11,6 +11,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
+
 public class AnyArmorTrimRightclickedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -19,6 +21,10 @@ public class AnyArmorTrimRightclickedProcedure {
 			ItemStack _setstack = new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:triming"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))).copy();
 			_setstack.setCount(1);
 			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		}
+		if (entity instanceof Player _player) {
+			ItemStack _stktoremove = new ItemStack(TrademineItemRandomForgeModItems.ANY_ARMOR_TRIM.get());
+			_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 		}
 	}
 }

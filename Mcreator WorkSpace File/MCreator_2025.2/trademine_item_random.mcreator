@@ -879,8 +879,16 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -1206,24 +1214,21 @@
       }
     },
     {
-      "name": "LightedRandomnessHostileReinstant",
+      "name": "CreativeCheck",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "lighted_randomness_hostile_reinstant",
+      "registry_name": "creative_check",
       "metadata": {
         "dependencies": [
-          {
-            "name": "damagesource",
-            "type": "damagesource"
-          },
           {
             "name": "entity",
             "type": "entity"
           }
         ],
+        "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/trademineitemrandom/procedures/LightedRandomnessHostileReinstantProcedure.java"
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/CreativeCheckProcedure.java"
         ]
       }
     }
@@ -1378,24 +1383,12 @@
       "Items.COAL#0",
       "Items.COPPER_INGOT",
       "Items.RAW_IRON",
-      "Items.GOLD_INGOT"
+      "Items.GOLD_INGOT",
+      "Items.IRON_INGOT"
     ],
     "ENTITIES:minecraft:randomness_hostile": [
       "CUSTOM:RandomnessHostile"
     ],
-    "DAMAGE_TYPES:minecraft:blocked_damage_lighted_randomhostile": [
-      "ANVIL",
-      "EXPLOSION",
-      "WITHER",
-      "WITHER_SKULL",
-      "DROWN",
-      "CACTUS",
-      "SWEET_BERRY_BUSH",
-      "FREEZE",
-      "IN_WALL",
-      "HOT_FLOOR"
-    ],
-    "ITEMS:minecraft:arrows": [],
     "BLOCKS:minecraft:random_crop": [
       "CUSTOM:RandomCropStage0",
       "CUSTOM:RandomCropStage1",
@@ -1403,6 +1396,9 @@
       "CUSTOM:RandomCropStage3",
       "CUSTOM:RandomCropStage4",
       "CUSTOM:RandomCropStage5"
+    ],
+    "DAMAGE_TYPES:minecraft:arrow_check": [
+      "ARROW"
     ]
   },
   "tab_element_order": {},

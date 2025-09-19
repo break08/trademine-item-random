@@ -56,7 +56,7 @@ public class RandomnessHostileEntityDiesProcedure {
 			}
 			if (random_spawn == 6) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.ELDER_GUARDIAN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = EntityType.VINDICATOR.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -105,23 +105,6 @@ public class RandomnessHostileEntityDiesProcedure {
 			if (random_spawn == 12) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = EntityType.GHAST.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-					}
-				}
-			}
-		} else {
-			random_spawn = Mth.nextInt(RandomSource.create(), 1, 5);
-			if (random_spawn == 1) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.WARDEN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-					}
-				}
-			} else {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.WITHER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
