@@ -4,12 +4,12 @@
 
 **Support**:
 
-|Mod Loaders  |Version Minecraft|
+|Mod Loaders  |Minecraft Ver.   |
 |-------------|-----------------|
 |Forge        |1.20.1           |
 
 ́**MCreator WorkSpace File**:
 
-|Version           |MCreator Version |Plugin                     |
-|------------------|-----------------|---------------------------|
-|Forge 1.20.1      |2025.2           |Custom plugin in  Source   |
+|Version           |MCreator Version |Plugin                      |
+|------------------|-----------------|----------------------------|
+|Forge 1.20.1      |2025.2           |Forge-1.20.1-Generator(Pylo)|
