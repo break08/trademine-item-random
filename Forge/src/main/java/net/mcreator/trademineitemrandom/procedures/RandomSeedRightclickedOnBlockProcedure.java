@@ -12,18 +12,18 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModBlocks;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlocks;
 
 public class RandomSeedRightclickedOnBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.FARMLAND && world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
-			world.setBlock(BlockPos.containing(x, y + 1, z), TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y + 1, z), TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState(), 3);
 			if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
 				if (entity instanceof Player _player) {
-					ItemStack _stktoremove = new ItemStack(TrademineItemRandomForgeModItems.RANDOM_SEED.get());
+					ItemStack _stktoremove = new ItemStack(TrademineItemRandomModItems.RANDOM_SEED.get());
 					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 				}
 			}

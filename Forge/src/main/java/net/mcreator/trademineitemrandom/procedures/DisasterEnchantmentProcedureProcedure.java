@@ -21,7 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModEnchantments;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEnchantments;
 
 import javax.annotation.Nullable;
 
@@ -47,9 +47,8 @@ public class DisasterEnchantmentProcedureProcedure {
 		double sy = 0;
 		double sz = 0;
 		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrow_check"))) && !(sourceentity == null)) {
-			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomForgeModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
+			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 3);
-				bad_effect_id = 0;
 				if (disaster_id == 1) {
 					bad_effect_id = Mth.nextInt(RandomSource.create(), 1, 5);
 					if (bad_effect_id == 1) {

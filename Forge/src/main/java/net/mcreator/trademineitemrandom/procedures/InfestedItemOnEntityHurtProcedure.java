@@ -17,7 +17,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModMobEffects;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -37,7 +37,7 @@ public class InfestedItemOnEntityHurtProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TrademineItemRandomForgeModMobEffects.INFESTED_ITEM.get())) {
+		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TrademineItemRandomModMobEffects.INFESTED_ITEM.get())) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z,
 						new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:infested_item_drop"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))));

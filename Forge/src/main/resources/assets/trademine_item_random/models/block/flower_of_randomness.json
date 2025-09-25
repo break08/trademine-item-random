@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "trademine_item_random:block/flower_of_randomness",
+    "particle": "trademine_item_random:block/flower_of_randomness"
+  },
+  "render_type": "cutout"
+}

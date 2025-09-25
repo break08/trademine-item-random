@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "trademine_item_random:blocks/random_trader",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "trademine_item_random:random_trader"
+        }
+      ]
+    }
+  ]
+}

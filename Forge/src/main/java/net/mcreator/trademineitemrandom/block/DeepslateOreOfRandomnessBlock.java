@@ -9,7 +9,7 @@ import net.minecraft.core.BlockPos;
 
 public class DeepslateOreOfRandomnessBlock extends Block {
 	public DeepslateOreOfRandomnessBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(1.6f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).strength(1.6f, 10f).requiresCorrectToolForDrops());
 	}
 
 	@Override

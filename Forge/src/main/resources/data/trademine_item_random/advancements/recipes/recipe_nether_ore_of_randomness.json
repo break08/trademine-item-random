@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "trademine_item_random:recipe_nether_ore_of_randomness"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ingredient_0": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "trademine_item_random:rainbow_dye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ingredient_0"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "trademine_item_random:recipe_nether_ore_of_randomness"
+    ]
+  }
+}

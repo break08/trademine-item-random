@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "up": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "north": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "east": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "south": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "west": "trademine_item_random:block/deepslate_ore_of_randomness",
+    "particle": "trademine_item_random:block/deepslate_ore_of_randomness"
+  },
+  "render_type": "solid"
+}

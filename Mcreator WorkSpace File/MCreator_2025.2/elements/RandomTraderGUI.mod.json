@@ -1,0 +1,140 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 258,
+    "height": 172,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 171,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 227,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 207,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_1_egg_1_rainbow_dye_1_random",
+          "text": {
+            "fixedValue": "1 Egg + 1 Rainbow Dye = 1 Random Spawn Egg"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 105,
+          "y": 60,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_2_nether_wart_1_water_potion",
+          "text": {
+            "fixedValue": "2 Nether Wart + 1 Water Bucket = 1 Random Potion"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 88,
+          "y": 70,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_5_gold_ingot_1_book_1_random",
+          "text": {
+            "fixedValue": "5 Gold Ingot + 1 Book = 1 Random Enchatment Book"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 88,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_receive_item",
+          "text": "Receive Item",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "RTGUIProcdure"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 165,
+          "y": 93,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

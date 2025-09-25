@@ -21,7 +21,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModBlockEntities;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlockEntities;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +32,7 @@ public class RandomCropStage0BlockEntity extends RandomizableContainerBlockEntit
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public RandomCropStage0BlockEntity(BlockPos position, BlockState state) {
-		super(TrademineItemRandomForgeModBlockEntities.RANDOM_CROP_STAGE_0.get(), position, state);
+		super(TrademineItemRandomModBlockEntities.RANDOM_CROP_STAGE_0.get(), position, state);
 	}
 
 	@Override

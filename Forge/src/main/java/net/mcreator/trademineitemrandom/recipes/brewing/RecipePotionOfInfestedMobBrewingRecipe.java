@@ -11,8 +11,8 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModPotions;
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModPotions;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RecipePotionOfInfestedMobBrewingRecipe implements IBrewingRecipe {
@@ -23,7 +23,7 @@ public class RecipePotionOfInfestedMobBrewingRecipe implements IBrewingRecipe {
 
 	@Override
 	public boolean isInput(ItemStack input) {
-		return Ingredient.of(new ItemStack(TrademineItemRandomForgeModItems.POTION_OF_RANDOM.get())).test(input);
+		return Ingredient.of(new ItemStack(TrademineItemRandomModItems.POTION_OF_RANDOM.get())).test(input);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class RecipePotionOfInfestedMobBrewingRecipe implements IBrewingRecipe {
 	@Override
 	public ItemStack getOutput(ItemStack input, ItemStack ingredient) {
 		if (isInput(input) && isIngredient(ingredient)) {
-			return PotionUtils.setPotion(new ItemStack(Items.POTION), TrademineItemRandomForgeModPotions.POTION_OF_INFESTED_MOB.get());
+			return PotionUtils.setPotion(new ItemStack(Items.POTION), TrademineItemRandomModPotions.POTION_OF_INFESTED_MOB.get());
 		}
 		return ItemStack.EMPTY;
 	}

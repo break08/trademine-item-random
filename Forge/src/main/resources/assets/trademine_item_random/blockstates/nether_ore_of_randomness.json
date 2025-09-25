@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "trademine_item_random:block/nether_ore_of_randomness"
+    }
+  }
+}

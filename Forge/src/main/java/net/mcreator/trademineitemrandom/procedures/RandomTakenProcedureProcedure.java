@@ -18,7 +18,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModEnchantments;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEnchantments;
 
 import javax.annotation.Nullable;
 
@@ -40,7 +40,7 @@ public class RandomTakenProcedureProcedure {
 			return;
 		double random_taken_drop = 0;
 		if (!((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem() && sourceentity == null)
-				&& EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomForgeModEnchantments.RANDOM_TAKEN.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
+				&& EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomModEnchantments.RANDOM_TAKEN.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z,
 						new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:random_taken_drop"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))));

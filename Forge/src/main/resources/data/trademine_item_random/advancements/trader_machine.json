@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "trademine_item_random:random_trader"
+    },
+    "title": {
+      "translate": "advancements.trader_machine.title"
+    },
+    "description": {
+      "translate": "advancements.trader_machine.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "trader_machine_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "trademine_item_random:make_anything_random"
+}

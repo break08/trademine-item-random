@@ -127,6 +127,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onNeighbourBlockChanges": {
+      "name": "RandomCropStage0NeighbourBlockChanges"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

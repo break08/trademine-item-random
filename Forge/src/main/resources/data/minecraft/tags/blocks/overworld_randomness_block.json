@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "trademine_item_random:deepslate_ore_of_randomness",
+    "trademine_item_random:ore_of_randomness"
+  ]
+}

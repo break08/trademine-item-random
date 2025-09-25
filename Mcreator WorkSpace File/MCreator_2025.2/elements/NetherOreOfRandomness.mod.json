@@ -139,13 +139,13 @@
     ],
     "blocksToReplace": [
       {
-        "value": "TAG:stone_ore_replaceables"
+        "value": "TAG:minecraft:netherrack"
       }
     ],
     "generationShape": "UNIFORM",
-    "frequencyPerChunks": 8,
-    "frequencyOnChunk": 12,
+    "frequencyPerChunks": 12,
+    "frequencyOnChunk": 15,
     "minGenerateHeight": 0,
-    "maxGenerateHeight": 127
+    "maxGenerateHeight": 300
   }
 }

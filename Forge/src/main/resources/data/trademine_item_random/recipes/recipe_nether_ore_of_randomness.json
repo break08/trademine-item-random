@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "trademine_item_random:rainbow_dye"
+    },
+    "b": {
+      "item": "minecraft:netherrack"
+    }
+  },
+  "result": {
+    "item": "trademine_item_random:nether_ore_of_randomness",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    " c "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_nugget"
+    },
+    "b": {
+      "item": "minecraft:crafting_table"
+    },
+    "c": {
+      "item": "trademine_item_random:rainbow_dye"
+    }
+  },
+  "result": {
+    "item": "trademine_item_random:random_trader",
+    "count": 1
+  }
+}

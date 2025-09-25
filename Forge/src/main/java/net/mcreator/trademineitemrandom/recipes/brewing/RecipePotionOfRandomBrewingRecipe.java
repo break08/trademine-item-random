@@ -13,7 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModItems;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RecipePotionOfRandomBrewingRecipe implements IBrewingRecipe {
@@ -30,13 +30,13 @@ public class RecipePotionOfRandomBrewingRecipe implements IBrewingRecipe {
 
 	@Override
 	public boolean isIngredient(ItemStack ingredient) {
-		return Ingredient.of(new ItemStack(TrademineItemRandomForgeModItems.RAINBOW_DYE.get())).test(ingredient);
+		return Ingredient.of(new ItemStack(TrademineItemRandomModItems.RAINBOW_DYE.get())).test(ingredient);
 	}
 
 	@Override
 	public ItemStack getOutput(ItemStack input, ItemStack ingredient) {
 		if (isInput(input) && isIngredient(ingredient)) {
-			return new ItemStack(TrademineItemRandomForgeModItems.POTION_OF_RANDOM.get());
+			return new ItemStack(TrademineItemRandomModItems.POTION_OF_RANDOM.get());
 		}
 		return ItemStack.EMPTY;
 	}

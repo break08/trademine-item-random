@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "trademine_item_random_forge:random_crop_stage_2",
-    "trademine_item_random_forge:random_crop_stage_3",
-    "trademine_item_random_forge:random_crop_stage_4",
-    "trademine_item_random_forge:random_crop_stage_5",
-    "trademine_item_random_forge:random_crop_stage_0",
-    "trademine_item_random_forge:random_crop_stage_1"
+    "trademine_item_random:random_crop_stage_2",
+    "trademine_item_random:random_crop_stage_3",
+    "trademine_item_random:random_crop_stage_4",
+    "trademine_item_random:random_crop_stage_5",
+    "trademine_item_random:random_crop_stage_0",
+    "trademine_item_random:random_crop_stage_1"
   ]
 }

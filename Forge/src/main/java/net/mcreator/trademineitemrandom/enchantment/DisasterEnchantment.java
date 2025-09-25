@@ -11,7 +11,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import java.util.List;
 
 public class DisasterEnchantment extends Enchantment {
-	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("trademine_item_random_forge_disaster", item -> Ingredient.of(new ItemStack(Items.BOW), new ItemStack(Items.CROSSBOW)).test(new ItemStack(item)));
+	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("trademine_item_random_disaster", item -> Ingredient.of(new ItemStack(Items.BOW), new ItemStack(Items.CROSSBOW)).test(new ItemStack(item)));
 
 	public DisasterEnchantment() {
 		super(Enchantment.Rarity.COMMON, ENCHANTMENT_CATEGORY, EquipmentSlot.values());

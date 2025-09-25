@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "plains",
+  "features": "trademine_item_random:flower_of_randomness",
+  "step": "vegetal_decoration"
+}

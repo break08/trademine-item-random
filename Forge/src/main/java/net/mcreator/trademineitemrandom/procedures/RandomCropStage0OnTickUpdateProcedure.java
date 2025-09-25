@@ -1,13 +1,11 @@
 package net.mcreator.trademineitemrandom.procedures;
 
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModBlocks;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlocks;
 
 public class RandomCropStage0OnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
@@ -23,12 +21,12 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		boolean found = false;
 		boolean farmland_bool = false;
 		boolean light_bool = false;
-		stage0 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
-		stage1 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_1.get().defaultBlockState();
-		stage2 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState();
-		stage3 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_3.get().defaultBlockState();
-		stage4 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_4.get().defaultBlockState();
-		stage5 = TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_5.get().defaultBlockState();
+		stage0 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_0.get().defaultBlockState();
+		stage1 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_1.get().defaultBlockState();
+		stage2 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState();
+		stage3 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_3.get().defaultBlockState();
+		stage4 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_4.get().defaultBlockState();
+		stage5 = TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_5.get().defaultBlockState();
 		sx = -3;
 		found = false;
 		farmland_bool = false;
@@ -55,55 +53,20 @@ public class RandomCropStage0OnTickUpdateProcedure {
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.FARMLAND) {
 			farmland_bool = true;
 		}
-		if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y + 1, z)) >= 9) {
+		if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y + 1, z)) >= 7) {
 			light_bool = true;
 		}
 		if (found == true && farmland_bool == true && light_bool == true) {
-			if (new Object() {
-				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
-					BlockEntity blockEntity = world.getBlockEntity(pos);
-					if (blockEntity != null)
-						return blockEntity.getPersistentData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(world, BlockPos.containing(x, y, z), "growing") <= 0) {
-				if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage0.getBlock()) {
-					world.setBlock(BlockPos.containing(x, y, z), stage1, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage1.getBlock()) {
-					world.setBlock(BlockPos.containing(x, y, z), stage2, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage2.getBlock()) {
-					world.setBlock(BlockPos.containing(x, y, z), stage3, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage3.getBlock()) {
-					world.setBlock(BlockPos.containing(x, y, z), stage4, 3);
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage4.getBlock()) {
-					world.setBlock(BlockPos.containing(x, y, z), stage5, 3);
-				}
-				if (!world.isClientSide()) {
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null)
-						_blockEntity.getPersistentData().putDouble("growing", 0);
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
-			} else {
-				if (!world.isClientSide()) {
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null)
-						_blockEntity.getPersistentData().putDouble("growing", ((new Object() {
-							public double getValue(LevelAccessor world, BlockPos pos, String tag) {
-								BlockEntity blockEntity = world.getBlockEntity(pos);
-								if (blockEntity != null)
-									return blockEntity.getPersistentData().getDouble(tag);
-								return -1;
-							}
-						}.getValue(world, BlockPos.containing(x, y, z), "growing")) - 1));
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage0.getBlock()) {
+				world.setBlock(BlockPos.containing(x, y, z), stage1, 3);
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage1.getBlock()) {
+				world.setBlock(BlockPos.containing(x, y, z), stage2, 3);
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage2.getBlock()) {
+				world.setBlock(BlockPos.containing(x, y, z), stage3, 3);
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage3.getBlock()) {
+				world.setBlock(BlockPos.containing(x, y, z), stage4, 3);
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == stage4.getBlock()) {
+				world.setBlock(BlockPos.containing(x, y, z), stage5, 3);
 			}
 		}
 	}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trademine_item_random:block/random_ore_face",
+    "up": "trademine_item_random:block/random_ore_face",
+    "north": "trademine_item_random:block/random_ore_face",
+    "east": "trademine_item_random:block/random_ore_face",
+    "south": "trademine_item_random:block/random_ore_face",
+    "west": "trademine_item_random:block/random_ore_face",
+    "particle": "trademine_item_random:block/random_ore_face"
+  },
+  "render_type": "solid"
+}

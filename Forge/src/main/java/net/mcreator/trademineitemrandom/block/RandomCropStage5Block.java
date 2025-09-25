@@ -14,6 +14,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.trademineitemrandom.procedures.RandomCropStage0NeighbourBlockChangesProcedure;
 import net.mcreator.trademineitemrandom.block.entity.RandomCropStage5BlockEntity;
 
 public class RandomCropStage5Block extends Block implements EntityBlock {
@@ -34,6 +35,12 @@ public class RandomCropStage5Block extends Block implements EntityBlock {
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		RandomCropStage0NeighbourBlockChangesProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

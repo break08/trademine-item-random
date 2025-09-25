@@ -15,8 +15,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModMobEffects;
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModEntities;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -37,11 +36,11 @@ public class InfestedMobOnEntityHurtProcedure {
 		if (entity == null)
 			return;
 		double SpawnRandom = 0;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TrademineItemRandomForgeModMobEffects.INFESTED_MOB.get())) {
+		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TrademineItemRandomModMobEffects.INFESTED_MOB.get())) {
 			SpawnRandom = Mth.nextInt(RandomSource.create(), 1, 21);
 			if (SpawnRandom == 1) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = TrademineItemRandomForgeModEntities.RANDOMNESS_HOSTILE.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = EntityType.FROG.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}

@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:panda_spawn_egg",
+    "minecraft:cod_spawn_egg",
+    "minecraft:pig_spawn_egg",
+    "minecraft:axolotl_spawn_egg",
+    "minecraft:villager_spawn_egg",
+    "minecraft:chicken_spawn_egg",
+    "minecraft:creeper_spawn_egg",
+    "minecraft:frog_spawn_egg",
+    "minecraft:blaze_spawn_egg",
+    "minecraft:sheep_spawn_egg",
+    "minecraft:cow_spawn_egg",
+    "minecraft:wither_skeleton_spawn_egg",
+    "minecraft:zombie_spawn_egg",
+    "minecraft:skeleton_spawn_egg",
+    "minecraft:sniffer_spawn_egg",
+    "minecraft:magma_cube_spawn_egg",
+    "minecraft:pillager_spawn_egg",
+    "minecraft:wolf_spawn_egg",
+    "minecraft:bee_spawn_egg",
+    "minecraft:zombified_piglin_spawn_egg",
+    "minecraft:cat_spawn_egg",
+    "minecraft:turtle_spawn_egg",
+    "minecraft:tadpole_spawn_egg"
+  ]
+}

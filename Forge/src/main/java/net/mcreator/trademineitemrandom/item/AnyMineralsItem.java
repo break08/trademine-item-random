@@ -18,7 +18,7 @@ public class AnyMineralsItem extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		AnyMineralsRightclickedProcedure.execute(entity);
+		AnyMineralsRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
 		return ar;
 	}
 }

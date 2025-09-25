@@ -1,0 +1,36 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "trademine_item_random:rainbow_dye"
+    },
+    "title": {
+      "translate": "advancements.make_anything_random.title"
+    },
+    "description": {
+      "translate": "advancements.make_anything_random.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "make_anything_random_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "trademine_item_random:rainbow_dye"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trademine_item_random:block/random_trader",
+    "up": "trademine_item_random:block/random_trader",
+    "north": "trademine_item_random:block/random_trader",
+    "east": "trademine_item_random:block/random_trader",
+    "south": "trademine_item_random:block/random_trader",
+    "west": "trademine_item_random:block/random_trader",
+    "particle": "trademine_item_random:block/random_trader"
+  },
+  "render_type": "solid"
+}

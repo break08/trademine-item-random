@@ -11,7 +11,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import java.util.List;
 
 public class RandomTakenEnchantment extends Enchantment {
-	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("trademine_item_random_forge_random_taken",
+	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("trademine_item_random_random_taken",
 			item -> Ingredient.of(new ItemStack(Items.IRON_SWORD), new ItemStack(Items.GOLDEN_SWORD), new ItemStack(Items.DIAMOND_SWORD), new ItemStack(Items.NETHERITE_SWORD)).test(new ItemStack(item)));
 
 	public RandomTakenEnchantment() {

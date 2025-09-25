@@ -3,10 +3,10 @@ package net.mcreator.trademineitemrandom.procedures;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.trademineitemrandom.init.TrademineItemRandomForgeModBlocks;
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModBlocks;
 
 public class RandomCropStage1OnBoneMealSuccessProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		world.setBlock(BlockPos.containing(x, y, z), TrademineItemRandomForgeModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), TrademineItemRandomModBlocks.RANDOM_CROP_STAGE_2.get().defaultBlockState(), 3);
 	}
 }
