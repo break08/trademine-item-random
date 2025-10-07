@@ -2,12 +2,12 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "random_trader",
-    "textureTop": "random_trader",
-    "textureLeft": "random_trader",
-    "textureFront": "random_trader",
-    "textureRight": "random_trader",
-    "textureBack": "random_trader",
+    "texture": "random_spawner",
+    "textureTop": "random_spawner",
+    "textureLeft": "random_spawner",
+    "textureFront": "random_spawner",
+    "textureRight": "random_spawner",
+    "textureBack": "random_spawner",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -36,7 +36,7 @@
       }
     ],
     "customProperties": [],
-    "name": "Random Trader",
+    "name": "Random Spawner",
     "specialInformation": {
       "fixedValue": []
     },
@@ -48,19 +48,12 @@
     "maxStackSize": 64,
     "rarity": "COMMON",
     "immuneToFire": false,
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:Random"
-      },
-      {
-        "value": "TRANSPORTATION"
-      }
-    ],
-    "destroyTool": "Not specified",
+    "creativeTabs": [],
+    "destroyTool": "pickaxe",
     "customDrop": {
       "value": ""
     },
-    "dropAmount": 1,
+    "dropAmount": 0,
     "useLootTableForDrops": false,
     "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
@@ -68,7 +61,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "tickRate": 0,
-    "tickRandomly": false,
+    "tickRandomly": true,
     "isReplaceable": false,
     "canProvidePower": false,
     "emittedRedstonePower": {
@@ -92,7 +85,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "GROUND"
+      "value": "STONE"
     },
     "breakSound": {
       "value": ""
@@ -118,11 +111,10 @@
     "vibrationSensitivityRadius": {
       "fixedValue": 7.0
     },
-    "hasInventory": true,
-    "guiBoundTo": "RandomTraderGUI",
-    "openGUIOnRightClick": true,
-    "inventorySize": 2,
-    "inventoryStackSize": 64,
+    "hasInventory": false,
+    "openGUIOnRightClick": false,
+    "inventorySize": 9,
+    "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
@@ -135,6 +127,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "RandomSpawnerOnTickUpdate"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

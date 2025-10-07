@@ -85,7 +85,7 @@
         "data": {
           "name": "label_2_nether_wart_1_water_potion",
           "text": {
-            "fixedValue": "2 Nether Wart + 1 Water Bucket = 1 Random Potion"
+            "fixedValue": "5 Nether Wart + 1 Water Bucket = 1 Random Potion"
           },
           "color": {
             "value": -12829636,
@@ -101,7 +101,7 @@
         "data": {
           "name": "label_5_gold_ingot_1_book_1_random",
           "text": {
-            "fixedValue": "5 Gold Ingot + 1 Book = 1 Random Enchatment Book"
+            "fixedValue": "7 Gold Ingot + 1 Book = 1 Random Enchatment Book"
           },
           "color": {
             "value": -12829636,

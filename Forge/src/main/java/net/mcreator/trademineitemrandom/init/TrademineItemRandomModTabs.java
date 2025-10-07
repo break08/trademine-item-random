@@ -23,9 +23,9 @@ public class TrademineItemRandomModTabs {
 	public static final RegistryObject<CreativeModeTab> RANDOM = REGISTRY.register("random",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.trademine_item_random.random")).icon(() -> new ItemStack(TrademineItemRandomModItems.RAINBOW_DYE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TrademineItemRandomModBlocks.ORE_OF_RANDOMNESS.get().asItem());
-				tabData.accept(TrademineItemRandomModItems.POTION_OF_RANDOM.get());
 				tabData.accept(TrademineItemRandomModBlocks.DEEPSLATE_ORE_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomModBlocks.NETHER_ORE_OF_RANDOMNESS.get().asItem());
+				tabData.accept(TrademineItemRandomModItems.POTION_OF_RANDOM.get());
 				tabData.accept(TrademineItemRandomModBlocks.FLOWER_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomModItems.RAINBOW_DYE.get());
 				tabData.accept(TrademineItemRandomModItems.RANDOM_SEED.get());

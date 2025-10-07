@@ -40,6 +40,7 @@ public class TrademineItemRandomModItems {
 	public static final RegistryObject<Item> ANY_MINERALS = REGISTRY.register("any_minerals", () -> new AnyMineralsItem());
 	public static final RegistryObject<Item> SUMMONER_ARMOR_HELMET = REGISTRY.register("summoner_armor_helmet", () -> new SummonerArmorItem.Helmet());
 	public static final RegistryObject<Item> RANDOM_TRADER = block(TrademineItemRandomModBlocks.RANDOM_TRADER);
+	public static final RegistryObject<Item> RANDOM_SPAWNER = block(TrademineItemRandomModBlocks.RANDOM_SPAWNER);
 
 	// Start of user code block custom items
 	// End of user code block custom items

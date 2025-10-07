@@ -136,6 +136,9 @@
     "onNeighbourBlockChanges": {
       "name": "RandomCropStage0NeighbourBlockChanges"
     },
+    "onTickUpdate": {
+      "name": "RandomCropStage0OnTickUpdate"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

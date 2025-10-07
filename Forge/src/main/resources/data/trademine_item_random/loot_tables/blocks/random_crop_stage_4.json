@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "trademine_item_random_forge:blocks/random_crop_stage_4",
+  "random_sequence": "trademine_item_random:blocks/random_crop_stage_4",
   "pools": [
     {
       "rolls": 1.0,
@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "trademine_item_random_forge:random_seed"
+          "name": "trademine_item_random:random_seed"
         }
       ]
     }

@@ -31,7 +31,7 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 public class RandomTraderBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(0, ItemStack.EMPTY);
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public RandomTraderBlockEntity(BlockPos position, BlockState state) {
@@ -84,7 +84,7 @@ public class RandomTraderBlockEntity extends RandomizableContainerBlockEntity im
 
 	@Override
 	public int getMaxStackSize() {
-		return 99;
+		return 64;
 	}
 
 	@Override

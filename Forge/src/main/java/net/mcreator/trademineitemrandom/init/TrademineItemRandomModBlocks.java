@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.Block;
 
 import net.mcreator.trademineitemrandom.block.RandomTraderBlock;
+import net.mcreator.trademineitemrandom.block.RandomSpawnerBlock;
 import net.mcreator.trademineitemrandom.block.RandomCropStage5Block;
 import net.mcreator.trademineitemrandom.block.RandomCropStage4Block;
 import net.mcreator.trademineitemrandom.block.RandomCropStage3Block;
@@ -35,6 +36,7 @@ public class TrademineItemRandomModBlocks {
 	public static final RegistryObject<Block> RANDOM_CROP_STAGE_4 = REGISTRY.register("random_crop_stage_4", () -> new RandomCropStage4Block());
 	public static final RegistryObject<Block> RANDOM_CROP_STAGE_5 = REGISTRY.register("random_crop_stage_5", () -> new RandomCropStage5Block());
 	public static final RegistryObject<Block> RANDOM_TRADER = REGISTRY.register("random_trader", () -> new RandomTraderBlock());
+	public static final RegistryObject<Block> RANDOM_SPAWNER = REGISTRY.register("random_spawner", () -> new RandomSpawnerBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.procedures.RandomCropStage2OnBoneMealSuccessProcedure;
+import net.mcreator.trademineitemrandom.procedures.RandomCropStage0OnTickUpdateProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomCropStage0NeighbourBlockChangesProcedure;
 import net.mcreator.trademineitemrandom.procedures.RandomCropStage0BoneMealSuccessConditionProcedure;
 import net.mcreator.trademineitemrandom.block.entity.RandomCropStage2BlockEntity;
@@ -47,6 +48,15 @@ public class RandomCropStage2Block extends Block implements EntityBlock, Bonemea
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		RandomCropStage0NeighbourBlockChangesProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		RandomCropStage0OnTickUpdateProcedure.execute(world, x, y, z);
 	}
 
 	@Override

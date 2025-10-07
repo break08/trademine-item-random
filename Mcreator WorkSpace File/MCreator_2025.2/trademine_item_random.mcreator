@@ -62,10 +62,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -1211,6 +1207,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -1261,6 +1269,82 @@
           "src/main/resources/data/trademine_item_random/advancements/trader_machine.json"
         ]
       }
+    },
+    {
+      "name": "RandomSeedCompost",
+      "type": "itemextension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_seed_compost",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "RainbowDyeCompost",
+      "type": "itemextension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rainbow_dye_compost",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "AnyMineralsBurn",
+      "type": "itemextension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "any_minerals_burn",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "RandomSpawner",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_spawner",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomSpawnerBlock.java",
+          "src/main/resources/data/trademine_item_random/loot_tables/blocks/random_spawner.json",
+          "src/main/resources/assets/trademine_item_random/models/item/random_spawner.json",
+          "src/main/resources/assets/trademine_item_random/blockstates/random_spawner.json",
+          "src/main/resources/assets/trademine_item_random/models/block/random_spawner.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomSpawnerOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_spawner_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomSpawnerOnTickUpdateProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -1269,6 +1353,7 @@
     "ENCHANTMENTS:minecraft:on_random_loot": [],
     "ENCHANTMENTS:minecraft:non_treasure": [],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:RandomSpawner",
       "~CUSTOM:NetherOreOfRandomness",
       "~CUSTOM:DeepslateOreOfRandomness",
       "~CUSTOM:OreOfRandomness"
@@ -1459,7 +1544,22 @@
       "Items.SPAWN_EGG#61"
     ]
   },
-  "tab_element_order": {},
+  "tab_element_order": {
+    "CUSTOM:Random": [
+      "OreOfRandomness",
+      "DeepslateOreOfRandomness",
+      "NetherOreOfRandomness",
+      "PotionOfRandom",
+      "FlowerOfRandomness",
+      "RainbowDye",
+      "RandomSeed",
+      "AnyFood",
+      "AnyArmorTrim",
+      "AnyMinerals",
+      "SummonerArmor",
+      "RandomTrader"
+    ]
+  },
   "language_map": {
     "en_us": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1487,29 +1587,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1529,13 +1612,14 @@
       "advancements.make_anything_random.title": "Make Anything Random",
       "gui.trademine_item_random.random_trader_gui.label_empty1": "\u003d\u003d\u003e",
       "gui.trademine_item_random.random_trader_gui.label_empty": "+",
-      "gui.trademine_item_random.random_trader_gui.label_5_gold_ingot_1_book_1_random": "5 Gold Ingot + 1 Book \u003d 1 Random Enchatment Book",
-      "gui.trademine_item_random.random_trader_gui.label_2_nether_wart_1_water_potion": "2 Nether Wart + 1 Water Bucket \u003d 1 Random Potion",
+      "gui.trademine_item_random.random_trader_gui.label_5_gold_ingot_1_book_1_random": "7 Gold Ingot + 1 Book \u003d 1 Random Enchatment Book",
+      "gui.trademine_item_random.random_trader_gui.label_2_nether_wart_1_water_potion": "5 Nether Wart + 1 Water Bucket \u003d 1 Random Potion",
       "gui.trademine_item_random.random_trader_gui.button_receive_item": "Receive Item",
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "vi_vn": {
       "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
@@ -1563,29 +1647,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Thuốc Bắn Tung Tóe Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Mũi Tên Mob Infestation",
       "item_group.trademine_item_random.random": "Ngẫu Nhiên",
-      "block.trademine_item_random_forge.ore_of_randomness": "Quặng Ngẫu Nhiên",
-      "enchantment.trademine_item_random_forge.random_taken": "Lấy Ngẫu Nhiên",
       "item.trademine_item_random_forge.potion_of_random": "Thuốc Ngẫu Nhiên",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Trứng Sinh Ra Thù Địch Ngẫu Nhiên",
-      "entity.trademine_item_random_forge.randomness_hostile": "Thù Địch Ngẫu Nhiên",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Quặng Đá Phiến Sâu Ngẫu Nhiên",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Quặng Địa Ngục Ngẫu Nhiên",
-      "block.trademine_item_random_forge.flower_of_randomness": "Hoa Ngẫu Nhiên",
       "item.trademine_item_random_forge.rainbow_dye": "Thuốc Nhuộm Cầu Vồng",
       "item.trademine_item_random_forge.random_seed": "Hạt Giống Ngẫu Nhiên",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Cây Trồng Ngẫu Nhiên Giai Đoạn 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Cây Trồng Ngẫu Nhiên Giai Đoạn 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Cây Trồng Ngẫu Nhiên Giai Đoạn 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Cây Trồng Ngẫu Nhiên Giai Đoạn 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Cây Trồng Ngẫu Nhiên Giai Đoạn 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Cây Trồng Ngẫu Nhiên Giai Đoạn 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Ngẫu Nhiên",
       "item.trademine_item_random_forge.any_food": "Bất Kì Thức Ăn",
       "item.trademine_item_random_forge.any_armor_trim": "Bất Kì Mảnh Trang Trí Giáp",
       "item.trademine_item_random_forge.any_minerals": "Bất Kì Khoáng Sản",
-      "enchantment.trademine_item_random_forge.disaster": "Thảm họa",
       "block.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Quặng Đá Phiến Sâu Ngẫu Nhiên",
       "block.trademine_item_random.nether_ore_of_randomness": "Quặng Địa Ngục Ngẫu Nhiên",
@@ -1611,7 +1678,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ca": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1639,29 +1707,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1687,7 +1738,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_au": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1715,29 +1767,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1763,7 +1798,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ae": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1791,29 +1827,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1839,7 +1858,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_my": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1867,29 +1887,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1915,7 +1918,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ph": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1943,29 +1947,12 @@
       "item.minecraft.splash_potion.effect.potion_of_infested_mob": "Splash Potion of Mob Infestation",
       "item.minecraft.tipped_arrow.effect.potion_of_infested_mob": "Arrow of Mob Infestation",
       "item_group.trademine_item_random.random": "Random",
-      "block.trademine_item_random_forge.ore_of_randomness": "Ore Of Randomness",
-      "enchantment.trademine_item_random_forge.random_taken": "Random Taken",
       "item.trademine_item_random_forge.potion_of_random": "Potion Of Random",
-      "item.trademine_item_random_forge.randomness_hostile_spawn_egg": "Randomness Hostile Spawn Egg",
-      "entity.trademine_item_random_forge.randomness_hostile": "Randomness Hostile",
-      "block.trademine_item_random_forge.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
-      "block.trademine_item_random_forge.nether_ore_of_randomness": "Nether Ore Of Randomness",
-      "block.trademine_item_random_forge.flower_of_randomness": "Flower Of Randomness",
       "item.trademine_item_random_forge.rainbow_dye": "Rainbow Dye",
       "item.trademine_item_random_forge.random_seed": "Random Seed",
-      "block.trademine_item_random_forge.random_crop_stage_0": "Random Crop Stage 0",
-      "block.trademine_item_random_forge.random_crop_stage_1": "Random Crop Stage 1",
-      "block.trademine_item_random_forge.random_crop_stage_2": "Random Crop Stage 2",
-      "block.trademine_item_random_forge.random_crop_stage_3": "Random Crop Stage 3",
-      "block.trademine_item_random_forge.random_crop_stage_4": "Random Crop Stage 4",
-      "block.trademine_item_random_forge.random_crop_stage_5": "Random Crop Stage 5",
-      "effect.trademine_item_random_forge.infested_item": "Infested Item",
-      "effect.trademine_item_random_forge.infested_mob": "Infested Mob",
-      "item_group.trademine_item_random_forge.random": "Random",
       "item.trademine_item_random_forge.any_food": "Any Food",
       "item.trademine_item_random_forge.any_armor_trim": "Any Armor Trims",
       "item.trademine_item_random_forge.any_minerals": "Any Minerals",
-      "enchantment.trademine_item_random_forge.disaster": "Disaster",
       "block.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
       "block.trademine_item_random.deepslate_ore_of_randomness": "Deepslate Ore Of Randomness",
       "block.trademine_item_random.nether_ore_of_randomness": "Nether Ore Of Randomness",
@@ -1991,7 +1978,8 @@
       "gui.trademine_item_random.random_trader_gui.label_1_egg_1_rainbow_dye_1_random": "1 Egg + 1 Rainbow Dye \u003d 1 Random Spawn Egg",
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
-      "advancements.trader_machine.descr": "Trade With Trader Machine"
+      "advancements.trader_machine.descr": "Trade With Trader Machine",
+      "block.trademine_item_random.random_spawner": "Random Spawner"
     }
   },
   "metadata": {
@@ -2004,6 +1992,8 @@
       "src/main/java/net/mcreator/trademineitemrandom/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModMenus.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModScreens.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModFuels.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModCompostableItems.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModMobEffects.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModPotions.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModTrades.java",
@@ -2021,14 +2011,15 @@
     "modName": "TradeMine Item Random",
     "version": "1.0.0",
     "author": "break08",
-    "websiteURL": "https://mcreator.net",
-    "license": "MIT LICENSE",
+    "websiteURL": "https://modrinth.com/mod/trademine-item-random",
+    "license": "MIT License",
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.trademineitemrandom"
   },
   "mcreatorVersion": 202500228610

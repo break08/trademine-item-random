@@ -66,7 +66,7 @@
             "countOffer": 1,
             "level": 1,
             "maxTrades": 8,
-            "xp": 5,
+            "xp": 2,
             "priceMultiplier": 0.05
           },
           {
@@ -109,7 +109,7 @@
             "countOffer": 1,
             "level": 1,
             "maxTrades": 8,
-            "xp": 5,
+            "xp": 2,
             "priceMultiplier": 0.05
           },
           {
@@ -127,7 +127,7 @@
             "countOffer": 1,
             "level": 3,
             "maxTrades": 10,
-            "xp": 5,
+            "xp": 6,
             "priceMultiplier": 0.05
           }
         ]
@@ -152,7 +152,7 @@
             "countOffer": 5,
             "level": 1,
             "maxTrades": 10,
-            "xp": 5,
+            "xp": 2,
             "priceMultiplier": 0.05
           }
         ]
@@ -166,7 +166,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 1,
+            "countPrice1": 2,
             "price2": {
               "value": ""
             },
@@ -174,10 +174,10 @@
             "offer": {
               "value": "CUSTOM:PotionOfRandom"
             },
-            "countOffer": 3,
-            "level": 4,
+            "countOffer": 1,
+            "level": 3,
             "maxTrades": 10,
-            "xp": 5,
+            "xp": 6,
             "priceMultiplier": 0.05
           }
         ]
@@ -202,7 +202,7 @@
             "countOffer": 3,
             "level": 1,
             "maxTrades": 10,
-            "xp": 5,
+            "xp": 2,
             "priceMultiplier": 0.05
           },
           {
@@ -218,7 +218,25 @@
               "value": "CUSTOM:AnyFood"
             },
             "countOffer": 1,
-            "level": 2,
+            "level": 3,
+            "maxTrades": 10,
+            "xp": 3,
+            "priceMultiplier": 0.05
+          },
+          {
+            "price1": {
+              "value": "Items.EMERALD"
+            },
+            "countPrice1": 1,
+            "price2": {
+              "value": ""
+            },
+            "countPrice2": 1,
+            "offer": {
+              "value": "CUSTOM:RandomSeed"
+            },
+            "countOffer": 4,
+            "level": 1,
             "maxTrades": 10,
             "xp": 5,
             "priceMultiplier": 0.05

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trademine_item_random:block/random_spawner",
+    "up": "trademine_item_random:block/random_spawner",
+    "north": "trademine_item_random:block/random_spawner",
+    "east": "trademine_item_random:block/random_spawner",
+    "south": "trademine_item_random:block/random_spawner",
+    "west": "trademine_item_random:block/random_spawner",
+    "particle": "trademine_item_random:block/random_spawner"
+  },
+  "render_type": "solid"
+}

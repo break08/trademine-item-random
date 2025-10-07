@@ -32,7 +32,7 @@ public class EntitySpawnGiveSummonerArmorProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:give_summoner_helmet"))) && Math.random() <= 40) {
+		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:give_summoner_helmet"))) && Math.random() <= 20) {
 			{
 				Entity _entity = entity;
 				if (_entity instanceof Player _player) {
@@ -42,7 +42,7 @@ public class EntitySpawnGiveSummonerArmorProcedure {
 					_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
 				}
 			}
-		} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:skeleton_give_shelmet"))) && Math.random() <= 18) {
+		} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:skeleton_give_shelmet"))) && Math.random() <= 15) {
 			{
 				Entity _entity = entity;
 				if (_entity instanceof Player _player) {
