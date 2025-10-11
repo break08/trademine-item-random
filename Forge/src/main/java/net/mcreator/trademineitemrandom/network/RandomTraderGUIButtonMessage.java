@@ -60,7 +60,7 @@ public class RandomTraderGUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			RTGUIProcdureProcedure.execute(world, x, y, z, entity);
+			RTGUIProcdureProcedure.execute(world, entity);
 		}
 	}
 

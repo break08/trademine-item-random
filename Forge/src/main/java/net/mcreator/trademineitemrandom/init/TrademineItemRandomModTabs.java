@@ -34,6 +34,7 @@ public class TrademineItemRandomModTabs {
 				tabData.accept(TrademineItemRandomModItems.ANY_MINERALS.get());
 				tabData.accept(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get());
 				tabData.accept(TrademineItemRandomModBlocks.RANDOM_TRADER.get().asItem());
+				tabData.accept(TrademineItemRandomModBlocks.RANDOM_SPAWNER.get().asItem());
 			}).build());
 
 	@SubscribeEvent

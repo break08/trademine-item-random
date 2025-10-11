@@ -1,0 +1,36 @@
+{
+  "_fv": 79,
+  "_type": "structure",
+  "definition": {
+    "structure": "random_spawner_dungeon",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      }
+    ],
+    "spacing": 30,
+    "separation": 10,
+    "restrictionBiomes": [
+      {
+        "value": "plains"
+      },
+      {
+        "value": "forest"
+      },
+      {
+        "value": "taiga"
+      }
+    ],
+    "terrainAdaptation": "none",
+    "generationStep": "UNDERGROUND_STRUCTURES",
+    "surfaceDetectionType": "MOTION_BLOCKING_NO_LEAVES",
+    "useStartHeight": true,
+    "startHeightProviderType": "UNIFORM",
+    "startHeightMin": -64,
+    "startHeightMax": 67,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

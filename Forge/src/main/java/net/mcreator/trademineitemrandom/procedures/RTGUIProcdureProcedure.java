@@ -2,8 +2,6 @@ package net.mcreator.trademineitemrandom.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
@@ -17,7 +15,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
@@ -27,7 +24,7 @@ import net.mcreator.trademineitemrandom.init.TrademineItemRandomModMenus;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 
 public class RTGUIProcdureProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		String command_give = "";
@@ -61,7 +58,7 @@ public class RTGUIProcdureProcedure {
 						}
 						return 0;
 					}
-				}.getAmount(0) == 5
+				}.getAmount(0) >= 5
 				&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu14 ? _menu14.getSlots().get(1).getItem() : ItemStack.EMPTY).getItem() == Items.WATER_BUCKET) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(2);
@@ -89,15 +86,19 @@ public class RTGUIProcdureProcedure {
 			} else if (random_runner == 8) {
 				command_give = "minecraft:potion{Potion:\"minecraft:strength\"}";
 			}
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						("give @s" + " " + command_give));
+			{
+				Entity _ent = entity;
+				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("give" + " " + entity.getDisplayName().getString() + " " + command_give));
+				}
+			}
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(Items.BUCKET));
 				entityToSpawn.setPickUpDelay(1);
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu24 ? _menu24.getSlots().get(0).getItem() : ItemStack.EMPTY).getItem() == Items.GOLD_INGOT
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu25 ? _menu25.getSlots().get(0).getItem() : ItemStack.EMPTY).getItem() == Items.GOLD_INGOT
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof Player player && player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
@@ -107,10 +108,10 @@ public class RTGUIProcdureProcedure {
 						}
 						return 0;
 					}
-				}.getAmount(0) == 7
-				&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu27 ? _menu27.getSlots().get(1).getItem() : ItemStack.EMPTY).getItem() == Items.BOOK) {
+				}.getAmount(0) >= 7
+				&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu28 ? _menu28.getSlots().get(1).getItem() : ItemStack.EMPTY).getItem() == Items.BOOK) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(5);
+				_menu.getSlots().get(0).remove(7);
 				_player.containerMenu.broadcastChanges();
 			}
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
@@ -143,12 +144,18 @@ public class RTGUIProcdureProcedure {
 			} else if (enchant_level_chooser == 3) {
 				enchant_level = "lvl:3";
 			}
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						("give @s" + " " + "minecraft:enchanted_book" + "{" + "StoredEnchantments:" + "[{" + command_give + enchant_level + "}]" + "}"));
+			{
+				Entity _ent = entity;
+				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands()
+							.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
+									_ent.getDisplayName(), _ent.level().getServer(), _ent),
+									("give" + " " + entity.getDisplayName().getString() + " " + "minecraft:enchanted_book" + "{" + "StoredEnchantments:" + "[{" + command_give + enchant_level + "}]" + "}"));
+				}
+			}
 		}
-		if (!(entity instanceof ServerPlayer _plr34 && _plr34.level() instanceof ServerLevel
-				&& _plr34.getAdvancements().getOrStartProgress(_plr34.server.getAdvancements().getAdvancement(ResourceLocation.parse("trademine_item_random:trader_machine"))).isDone())) {
+		if (!(entity instanceof ServerPlayer _plr36 && _plr36.level() instanceof ServerLevel
+				&& _plr36.getAdvancements().getOrStartProgress(_plr36.server.getAdvancements().getAdvancement(ResourceLocation.parse("trademine_item_random:trader_machine"))).isDone())) {
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("trademine_item_random:trader_machine"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

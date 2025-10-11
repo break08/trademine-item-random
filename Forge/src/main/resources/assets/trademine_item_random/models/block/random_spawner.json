@@ -9,5 +9,5 @@
     "west": "trademine_item_random:block/random_spawner",
     "particle": "trademine_item_random:block/random_spawner"
   },
-  "render_type": "solid"
+  "render_type": "translucent"
 }

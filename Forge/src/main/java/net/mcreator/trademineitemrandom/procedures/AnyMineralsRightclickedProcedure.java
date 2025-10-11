@@ -19,7 +19,7 @@ public class AnyMineralsRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (Math.random() < 90) {
+		if (Math.random() < 0.95) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z,
 						new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:normal_minerals"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))));

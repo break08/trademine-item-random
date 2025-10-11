@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "trademine_item_random_forge:blocks/flower_of_randomness",
+  "random_sequence": "trademine_item_random:blocks/flower_of_randomness",
   "pools": [
     {
       "rolls": 1.0,
@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "trademine_item_random_forge:flower_of_randomness"
+          "name": "trademine_item_random:flower_of_randomness"
         }
       ]
     }

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "trademine_item_random:random_spawner_dungeon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 30,
+    "separation": 10,
+    "salt": 742625840
+  }
+}

@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
+import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
 import javax.annotation.Nullable;
 
@@ -22,36 +24,38 @@ import javax.annotation.Nullable;
 public class EntitySpawnGiveSummonerArmorProcedure {
 	@SubscribeEvent
 	public static void onEntitySpawned(EntityJoinLevelEvent event) {
-		execute(event, event.getEntity());
+		execute(event, event.getLevel(), event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:give_summoner_helmet"))) && Math.random() <= 20) {
-			{
-				Entity _entity = entity;
-				if (_entity instanceof Player _player) {
-					_player.getInventory().armor.set(3, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
-					_player.getInventory().setChanged();
-				} else if (_entity instanceof LivingEntity _living) {
-					_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
+		TrademineItemRandomMod.queueServerWork(1, () -> {
+			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:give_summoner_helmet"))) && Math.random() <= 0.08) {
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
+					}
+				}
+			} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:skeleton_give_shelmet"))) && Math.random() <= 0.05) {
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
+					}
 				}
 			}
-		} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:skeleton_give_shelmet"))) && Math.random() <= 15) {
-			{
-				Entity _entity = entity;
-				if (_entity instanceof Player _player) {
-					_player.getInventory().armor.set(3, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
-					_player.getInventory().setChanged();
-				} else if (_entity instanceof LivingEntity _living) {
-					_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get()));
-				}
-			}
-		}
+		});
 	}
 }

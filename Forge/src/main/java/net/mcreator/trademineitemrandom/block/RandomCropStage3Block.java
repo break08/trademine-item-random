@@ -26,7 +26,7 @@ import net.mcreator.trademineitemrandom.block.entity.RandomCropStage3BlockEntity
 
 public class RandomCropStage3Block extends Block implements EntityBlock, BonemealableBlock {
 	public RandomCropStage3Block() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(0f, 10f).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(0f, 10f).noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

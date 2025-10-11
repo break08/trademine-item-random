@@ -62,6 +62,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -328,37 +332,6 @@
           "src/main/resources/assets/trademine_item_random/models/block/random_crop_stage_0.json",
           "src/main/java/net/mcreator/trademineitemrandom/block/entity/RandomCropStage0BlockEntity.java",
           "src/main/resources/assets/trademine_item_random/blockstates/random_crop_stage_0.json"
-        ]
-      }
-    },
-    {
-      "name": "RandomCropStage0BlockValidPlacementCondition",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "random_crop_stage_0_block_valid_placement_condition",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomCropStage0BlockValidPlacementConditionProcedure.java"
         ]
       }
     },
@@ -1127,6 +1100,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -1205,18 +1182,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
           },
           {
             "name": "world",
@@ -1343,6 +1308,20 @@
         ],
         "files": [
           "src/main/java/net/mcreator/trademineitemrandom/procedures/RandomSpawnerOnTickUpdateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomSpawnerDungeon",
+      "type": "structure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_spawner_dungeon",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random/worldgen/structure_set/random_spawner_dungeon.json",
+          "src/main/resources/data/trademine_item_random/worldgen/structure/random_spawner_dungeon.json",
+          "src/main/resources/data/trademine_item_random/worldgen/template_pool/random_spawner_dungeon.json"
         ]
       }
     }
@@ -1557,7 +1536,8 @@
       "AnyArmorTrim",
       "AnyMinerals",
       "SummonerArmor",
-      "RandomTrader"
+      "RandomTrader",
+      "RandomSpawner"
     ]
   },
   "language_map": {

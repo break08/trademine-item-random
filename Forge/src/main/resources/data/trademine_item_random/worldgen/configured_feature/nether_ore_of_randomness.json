@@ -6,8 +6,10 @@
     "targets": [
       {
         "target": {
-          "predicate_type": "tag_match",
-          "tag": "minecraft:netherrack"
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "minecraft:netherrack"
+          }
         },
         "state": {
           "Name": "trademine_item_random:nether_ore_of_randomness"

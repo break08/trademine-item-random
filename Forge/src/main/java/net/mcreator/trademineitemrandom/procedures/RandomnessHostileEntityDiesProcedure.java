@@ -6,13 +6,19 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 
 import javax.annotation.Nullable;
 
@@ -21,17 +27,19 @@ public class RandomnessHostileEntityDiesProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z) {
-		execute(null, world, x, y, z);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
+			return;
 		double random_spawn = 0;
-		if (true) {
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get() && !(world instanceof Level _lvl2 && _lvl2.isDay())) {
 			random_spawn = Mth.nextInt(RandomSource.create(), 1, 17);
 			if (random_spawn == 1) {
 				if (world instanceof ServerLevel _level) {
@@ -91,7 +99,7 @@ public class RandomnessHostileEntityDiesProcedure {
 			}
 			if (random_spawn == 8) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.CAVE_SPIDER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = EntityType.PIGLIN_BRUTE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}

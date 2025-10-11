@@ -44,26 +44,12 @@
             "item": {
               "value": "Items.NETHERITE_SCRAP"
             },
-            "weight": 10,
+            "weight": 2,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
             "maxEnchantmentLevel": 0,
-            "affectedByFortune": true,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "Items.NETHERITE_INGOT"
-            },
-            "weight": 8,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": true,
+            "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
           }
