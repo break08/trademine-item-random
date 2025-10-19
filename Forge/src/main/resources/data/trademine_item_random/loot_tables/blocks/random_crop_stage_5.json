@@ -1,54 +1,665 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "trademine_item_random:blocks/random_crop_stage_5",
   "pools": [
     {
-      "rolls": 1.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "rolls": 1,
       "entries": [
-        { "type": "minecraft:item", "name": "minecraft:apple", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:bread", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_beef", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_porkchop", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_chicken", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_mutton", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_rabbit", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_cod", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cooked_salmon", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:carrot", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:golden_carrot", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:potato", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:baked_potato", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:beetroot", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:beetroot_soup", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:wheat", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:beef", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:porkchop", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:chicken", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:mutton", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:rabbit", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cod", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:salmon", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cookie", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:cake", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:pumpkin_pie", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:honey_bottle", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:sweet_berries", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:glow_berries", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.5 }] },
-        { "type": "minecraft:item", "name": "minecraft:chorus_fruit", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:golden_apple", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:enchanted_golden_apple", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:rotten_flesh", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:spider_eye", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:pufferfish", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:tropical_fish", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:suspicious_stew", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] },
-        { "type": "minecraft:item", "name": "minecraft:rabbit_stew", "conditions":[{ "condition": "minecraft:random_chance", "chance": 0.18 }] }
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:apple",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_mutton",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_chicken",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_rabbit",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_porkchop",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:porkchop",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beef",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chicken",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mutton",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:melon_slice",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cake",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cookie",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:honey_bottle",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cod",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_cod",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:salmon",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_salmon",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pufferfish",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beetroot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:poisonous_potato",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potato",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:baked_potato",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beetroot_soup",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mushroom_stew",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_stew",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sweet_berries",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glow_berries",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spider_eye",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:suspicious_stew",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chorus_fruit",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_carrot",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glistering_melon_slice",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "random_sequence": "trademine_item_random:blocks/random_crop_stage_5"
 }

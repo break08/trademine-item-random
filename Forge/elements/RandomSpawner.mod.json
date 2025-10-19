@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "random_spawner",
+    "texture": "minecraft:polished_deepslate",
     "textureTop": "random_spawner",
     "textureLeft": "random_spawner",
     "textureFront": "random_spawner",
@@ -64,8 +64,8 @@
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
     "lightOpacity": 15,
-    "tickRate": 0,
-    "tickRandomly": true,
+    "tickRate": 1500,
+    "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
     "emittedRedstonePower": {

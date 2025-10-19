@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:gold_ingot",
+    "minecraft:cooked_porkchop",
+    "minecraft:grass_block",
+    "minecraft:creeper_head",
+    "minecraft:dirt",
+    "minecraft:emerald",
+    "trademine_item_random:rainbow_dye",
+    "minecraft:iron_ingot",
+    "minecraft:diamond",
+    "minecraft:blaze_rod",
+    "minecraft:tnt",
+    "minecraft:cherry_log",
+    "minecraft:netherite_upgrade_smithing_template",
+    "minecraft:hay_block",
+    "minecraft:amethyst_cluster",
+    "minecraft:firework_rocket",
+    "minecraft:dragon_breath",
+    "minecraft:tnt_minecart",
+    "minecraft:bread",
+    "minecraft:raw_copper",
+    "minecraft:powered_rail",
+    "minecraft:pufferfish",
+    "minecraft:birch_log",
+    "minecraft:arrow"
+  ]
+}

@@ -1324,6 +1324,18 @@
           "src/main/resources/data/trademine_item_random/worldgen/template_pool/random_spawner_dungeon.json"
         ]
       }
+    },
+    {
+      "name": "RandomCropStage5Loot",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_crop_stage_5_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random/loot_tables/blocks/random_crop_stage_5.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -1521,7 +1533,9 @@
       "Items.FROG_SPAWN_EGG",
       "Items.WITHER_SKELETON_SPAWN_EGG",
       "Items.SPAWN_EGG#61"
-    ]
+    ],
+    "ENCHANTMENTS:minecraft:tradeable": [],
+    "ITEMS:minecraft:head_armor": []
   },
   "tab_element_order": {
     "CUSTOM:Random": [
@@ -1599,7 +1613,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "vi_vn": {
       "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
@@ -1659,7 +1675,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ca": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1719,7 +1737,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_au": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1779,7 +1799,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ae": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1839,7 +1861,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_my": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1899,7 +1923,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     },
     "en_ph": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1959,7 +1985,9 @@
       "block.trademine_item_random.random_trader": "Random Trader",
       "advancements.trader_machine.title": "Trader Machine",
       "advancements.trader_machine.descr": "Trade With Trader Machine",
-      "block.trademine_item_random.random_spawner": "Random Spawner"
+      "block.trademine_item_random.random_spawner": "Random Spawner",
+      "item.trademine_item_random.random_trader": "Random Trader",
+      "item.trademine_item_random.random_spawner": "Random Spawner"
     }
   },
   "metadata": {
@@ -1994,6 +2022,7 @@
     "websiteURL": "https://modrinth.com/mod/trademine-item-random",
     "license": "MIT License",
     "serverSideOnly": false,
+    "modPicture": "icon",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],

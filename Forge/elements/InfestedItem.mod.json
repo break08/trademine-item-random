@@ -19,9 +19,6 @@
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,
-    "modifiers": [],
-    "onMobHurt": {
-      "name": "InfestedItemOnEntityHurt"
-    }
+    "modifiers": []
   }
 }
