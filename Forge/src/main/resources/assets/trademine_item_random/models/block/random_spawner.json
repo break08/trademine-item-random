@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "minecraft:block/polished_deepslate",
+    "down": "trademine_item_random:block/random_spawner",
     "up": "trademine_item_random:block/random_spawner",
     "north": "trademine_item_random:block/random_spawner",
     "east": "trademine_item_random:block/random_spawner",
     "south": "trademine_item_random:block/random_spawner",
     "west": "trademine_item_random:block/random_spawner",
-    "particle": "minecraft:block/polished_deepslate"
+    "particle": "trademine_item_random:block/random_spawner"
   },
   "render_type": "translucent"
 }

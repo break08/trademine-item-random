@@ -110,6 +110,15 @@
     "restrictionBiomes": [
       {
         "value": "plains"
+      },
+      {
+        "value": "snowy_tundra"
+      },
+      {
+        "value": "mutated_plains"
+      },
+      {
+        "value": "jungle"
       }
     ],
     "generationType": "Flower",

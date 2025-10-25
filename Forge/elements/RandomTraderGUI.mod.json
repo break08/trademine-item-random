@@ -3,10 +3,10 @@
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 258,
-    "height": 172,
+    "width": 300,
+    "height": 225,
     "inventoryOffsetX": 0,
-    "inventoryOffsetY": 0,
+    "inventoryOffsetY": 25,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -24,8 +24,8 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 171,
-          "y": 40,
+          "x": 168,
+          "y": 18,
           "locked": false
         }
       },
@@ -43,72 +43,8 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 227,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 207,
-          "y": 43,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_1_egg_1_rainbow_dye_1_random",
-          "text": {
-            "fixedValue": "1 Egg + 1 Rainbow Dye = 1 Random Spawn Egg"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 105,
-          "y": 60,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_2_nether_wart_1_water_potion",
-          "text": {
-            "fixedValue": "5 Nether Wart + 1 Water Bucket = 1 Random Potion"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 88,
-          "y": 70,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_5_gold_ingot_1_book_1_random",
-          "text": {
-            "fixedValue": "7 Gold Ingot + 1 Book = 1 Random Enchatment Book"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 88,
-          "y": 80,
+          "x": 235,
+          "y": 19,
           "locked": false
         }
       },
@@ -123,8 +59,304 @@
           },
           "width": 87,
           "height": 20,
-          "x": 165,
+          "x": 168,
+          "y": 121,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plus.png",
+          "use1Xscale": false,
+          "x": 203,
+          "y": 20,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "egg.png",
+          "use1Xscale": false,
+          "x": 111,
+          "y": 42,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plus.png",
+          "use1Xscale": false,
+          "x": 155,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rainbow_dye.png",
+          "use1Xscale": false,
+          "x": 199,
+          "y": 42,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow.png",
+          "use1Xscale": false,
+          "x": 242,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "axolotl_spawn_egg.png",
+          "use1Xscale": false,
+          "x": 271,
+          "y": 34,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bat_spawn_egg.png",
+          "use1Xscale": false,
+          "x": 293,
+          "y": 34,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bee_spawn_egg.png",
+          "use1Xscale": false,
+          "x": 316,
+          "y": 34,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blaze_spawn_egg.png",
+          "use1Xscale": false,
+          "x": 336,
+          "y": 34,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bogged_spawn_egg.png",
+          "use1Xscale": false,
+          "x": 291,
+          "y": 49,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "blue_egg.png",
+          "use1Xscale": false,
+          "x": 315,
+          "y": 48,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "for_gui.png",
+          "use1Xscale": false,
+          "x": 304,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "gold_ingot.png",
+          "use1Xscale": false,
+          "x": 111,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plus.png",
+          "use1Xscale": false,
+          "x": 155,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "book.png",
+          "use1Xscale": false,
+          "x": 199,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow.png",
+          "use1Xscale": false,
+          "x": 242,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "enchanted_book.png",
+          "use1Xscale": false,
+          "x": 288,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "enchanted_book.png",
+          "use1Xscale": false,
+          "x": 278,
+          "y": 65,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "enchanted_book.png",
+          "use1Xscale": false,
+          "x": 297,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "for_gui.png",
+          "use1Xscale": true,
+          "x": 293,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_7",
+          "text": {
+            "fixedValue": "7"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 126,
+          "y": 74,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "nether_wart.png",
+          "use1Xscale": false,
+          "x": 111,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "water_bucket.png",
+          "use1Xscale": false,
+          "x": 199,
+          "y": 92,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plus.png",
+          "use1Xscale": false,
+          "x": 155,
           "y": 93,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow.png",
+          "use1Xscale": false,
+          "x": 241,
+          "y": 92,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "potion.png",
+          "use1Xscale": false,
+          "x": 274,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "potion.png",
+          "use1Xscale": false,
+          "x": 281,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "potion.png",
+          "use1Xscale": false,
+          "x": 288,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "for_gui.png",
+          "use1Xscale": true,
+          "x": 285,
+          "y": 96,
           "locked": false
         }
       }

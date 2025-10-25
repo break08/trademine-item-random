@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "minecraft:polished_deepslate",
+    "texture": "random_spawner",
     "textureTop": "random_spawner",
     "textureLeft": "random_spawner",
     "textureFront": "random_spawner",
@@ -62,10 +62,10 @@
     "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
-    "canRedstoneConnect": false,
+    "canRedstoneConnect": true,
     "lightOpacity": 15,
     "tickRate": 1500,
-    "tickRandomly": false,
+    "tickRandomly": true,
     "isReplaceable": false,
     "canProvidePower": false,
     "emittedRedstonePower": {
@@ -132,6 +132,9 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
+      "name": "RandomSpawnerOnTickUpdate"
+    },
+    "onRedstoneOn": {
       "name": "RandomSpawnerOnTickUpdate"
     },
     "generateFeature": false,

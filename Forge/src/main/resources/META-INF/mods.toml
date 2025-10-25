@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="[2,)"
 license="MIT License"
 
 [[mods]]
@@ -14,10 +14,21 @@ authors="break08"
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
+[[dependencies.trademine_item_random]]
+    modId="neoforge"
+    type="required"
+    versionRange="[20.4.250,)"
+    ordering="AFTER"
+    side="BOTH"
+
 [[dependencies.trademine_item_random]]
     modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1]"
+    type="required"
+    versionRange="[1.20.4]"
     ordering="AFTER"
     side="BOTH"
 

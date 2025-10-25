@@ -1,56 +1,50 @@
 package net.mcreator.trademineitemrandom.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.network.handling.PlayPayloadContext;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.procedures.RTGUIProcdureProcedure;
 import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 
-import java.util.function.Supplier;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class RandomTraderGUIButtonMessage {
-	private final int buttonID, x, y, z;
+public record RandomTraderGUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
 
+	public static final ResourceLocation ID = new ResourceLocation(TrademineItemRandomMod.MODID, "random_trader_gui_buttons");
 	public RandomTraderGUIButtonMessage(FriendlyByteBuf buffer) {
-		this.buttonID = buffer.readInt();
-		this.x = buffer.readInt();
-		this.y = buffer.readInt();
-		this.z = buffer.readInt();
+		this(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt());
 	}
 
-	public RandomTraderGUIButtonMessage(int buttonID, int x, int y, int z) {
-		this.buttonID = buttonID;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	@Override
+	public void write(final FriendlyByteBuf buffer) {
+		buffer.writeInt(buttonID);
+		buffer.writeInt(x);
+		buffer.writeInt(y);
+		buffer.writeInt(z);
 	}
 
-	public static void buffer(RandomTraderGUIButtonMessage message, FriendlyByteBuf buffer) {
-		buffer.writeInt(message.buttonID);
-		buffer.writeInt(message.x);
-		buffer.writeInt(message.y);
-		buffer.writeInt(message.z);
+	@Override
+	public ResourceLocation id() {
+		return ID;
 	}
 
-	public static void handler(RandomTraderGUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-		NetworkEvent.Context context = contextSupplier.get();
-		context.enqueueWork(() -> {
-			Player entity = context.getSender();
-			int buttonID = message.buttonID;
-			int x = message.x;
-			int y = message.y;
-			int z = message.z;
-			handleButtonAction(entity, buttonID, x, y, z);
-		});
-		context.setPacketHandled(true);
+	public static void handleData(final RandomTraderGUIButtonMessage message, final PlayPayloadContext context) {
+		if (context.flow() == PacketFlow.SERVERBOUND) {
+			context.workHandler().submitAsync(() -> handleButtonAction(context.player().get(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
+				context.packetHandler().disconnect(Component.literal(e.getMessage()));
+				return null;
+			});
+		}
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
@@ -66,6 +60,6 @@ public class RandomTraderGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TrademineItemRandomMod.addNetworkMessage(RandomTraderGUIButtonMessage.class, RandomTraderGUIButtonMessage::buffer, RandomTraderGUIButtonMessage::new, RandomTraderGUIButtonMessage::handler);
+		TrademineItemRandomMod.addNetworkMessage(RandomTraderGUIButtonMessage.ID, RandomTraderGUIButtonMessage::new, RandomTraderGUIButtonMessage::handleData);
 	}
 }

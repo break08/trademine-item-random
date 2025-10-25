@@ -1,7 +1,5 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +10,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
 
@@ -21,8 +20,8 @@ public class AnyMineralsRightclickedProcedure {
 			return;
 		if (Math.random() < 0.95) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z,
-						new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:normal_minerals"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(
+						(BuiltInRegistries.ITEM.getOrCreateTag(ItemTags.create(new ResourceLocation("minecraft:normal_minerals"))).getRandomElement(RandomSource.create()).orElseGet(() -> BuiltInRegistries.ITEM.wrapAsHolder(Items.AIR)).value())));
 				entityToSpawn.setPickUpDelay(1);
 				_level.addFreshEntity(entityToSpawn);
 			}

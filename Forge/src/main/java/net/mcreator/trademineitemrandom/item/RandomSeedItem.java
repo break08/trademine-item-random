@@ -1,7 +1,6 @@
 package net.mcreator.trademineitemrandom.item;
 
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.InteractionResult;
 
@@ -9,7 +8,7 @@ import net.mcreator.trademineitemrandom.procedures.RandomSeedRightclickedOnBlock
 
 public class RandomSeedItem extends Item {
 	public RandomSeedItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties());
 	}
 
 	@Override

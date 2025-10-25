@@ -58,5 +58,6 @@
   "advancements.trader_machine.descr": "Trade With Trader Machine",
   "block.trademine_item_random.random_spawner": "Random Spawner",
   "item.trademine_item_random.random_trader": "Random Trader",
-  "item.trademine_item_random.random_spawner": "Random Spawner"
+  "item.trademine_item_random.random_spawner": "Random Spawner",
+  "gui.trademine_item_random.random_trader_gui.label_7": "7"
 }

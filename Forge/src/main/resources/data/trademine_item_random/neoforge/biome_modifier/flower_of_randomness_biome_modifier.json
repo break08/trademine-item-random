@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "plains",
+    "snowy_plains",
+    "sunflower_plains",
+    "jungle"
+  ],
+  "features": "trademine_item_random:flower_of_randomness",
+  "step": "vegetal_decoration"
+}
