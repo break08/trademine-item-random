@@ -11,9 +11,9 @@
           "src/main/resources/assets/trademine_item_random/models/block/ore_of_randomness.json",
           "src/main/java/net/mcreator/trademineitemrandom/block/OreOfRandomnessBlock.java",
           "src/main/resources/assets/trademine_item_random/blockstates/ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random/forge/biome_modifier/ore_of_randomness_biome_modifier.json",
           "src/main/resources/assets/trademine_item_random/models/item/ore_of_randomness.json",
           "src/main/resources/data/trademine_item_random/worldgen/placed_feature/ore_of_randomness.json",
-          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/ore_of_randomness_biome_modifier.json",
           "src/main/resources/data/trademine_item_random/worldgen/configured_feature/ore_of_randomness.json"
         ]
       }
@@ -116,8 +116,8 @@
           "src/main/resources/data/trademine_item_random/worldgen/placed_feature/deepslate_ore_of_randomness.json",
           "src/main/resources/assets/trademine_item_random/models/block/deepslate_ore_of_randomness.json",
           "src/main/java/net/mcreator/trademineitemrandom/block/DeepslateOreOfRandomnessBlock.java",
-          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/deepslate_ore_of_randomness_biome_modifier.json",
           "src/main/resources/data/trademine_item_random/worldgen/configured_feature/deepslate_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random/forge/biome_modifier/deepslate_ore_of_randomness_biome_modifier.json",
           "src/main/resources/assets/trademine_item_random/blockstates/deepslate_ore_of_randomness.json",
           "src/main/resources/assets/trademine_item_random/models/item/deepslate_ore_of_randomness.json"
         ]
@@ -133,10 +133,10 @@
         "files": [
           "src/main/resources/data/trademine_item_random/worldgen/placed_feature/nether_ore_of_randomness.json",
           "src/main/java/net/mcreator/trademineitemrandom/block/NetherOreOfRandomnessBlock.java",
-          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/nether_ore_of_randomness_biome_modifier.json",
           "src/main/resources/assets/trademine_item_random/models/block/nether_ore_of_randomness.json",
           "src/main/resources/assets/trademine_item_random/models/item/nether_ore_of_randomness.json",
           "src/main/resources/data/trademine_item_random/worldgen/configured_feature/nether_ore_of_randomness.json",
+          "src/main/resources/data/trademine_item_random/forge/biome_modifier/nether_ore_of_randomness_biome_modifier.json",
           "src/main/resources/assets/trademine_item_random/blockstates/nether_ore_of_randomness.json"
         ]
       }
@@ -185,12 +185,12 @@
         "files": [
           "src/main/resources/data/trademine_item_random/loot_tables/blocks/flower_of_randomness.json",
           "src/main/resources/assets/trademine_item_random/models/item/flower_of_randomness.json",
+          "src/main/resources/data/trademine_item_random/forge/biome_modifier/flower_of_randomness_biome_modifier.json",
           "src/main/resources/data/trademine_item_random/worldgen/placed_feature/flower_of_randomness.json",
           "src/main/resources/assets/trademine_item_random/blockstates/flower_of_randomness.json",
           "src/main/java/net/mcreator/trademineitemrandom/block/FlowerOfRandomnessBlock.java",
           "src/main/resources/data/trademine_item_random/worldgen/configured_feature/flower_of_randomness.json",
-          "src/main/resources/assets/trademine_item_random/models/block/flower_of_randomness.json",
-          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/flower_of_randomness_biome_modifier.json"
+          "src/main/resources/assets/trademine_item_random/models/block/flower_of_randomness.json"
         ]
       }
     },
@@ -1178,7 +1178,7 @@
       "name": "RandomTraderGUI",
       "type": "gui",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "random_trader_gui",
       "metadata": {
         "files": [
@@ -1353,6 +1353,40 @@
           "src/main/resources/data/trademine_item_random/loot_tables/blocks/random_crop_stage_5.json"
         ]
       }
+    },
+    {
+      "name": "BoneMealGrassForFlowerOfRandom",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bone_meal_grass_for_flower_of_random",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/procedures/BoneMealGrassForFlowerOfRandomProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -1399,7 +1433,25 @@
       "Blocks.DIRT#0",
       "Blocks.GRASS",
       "Blocks.TNT",
-      "Items.TNT_MINECART"
+      "Items.TNT_MINECART",
+      "Blocks.LAPIS_ORE",
+      "Blocks.REINFORCED_DEEPSLATE",
+      "CUSTOM:SummonerArmor.helmet",
+      "Blocks.POINTED_DRIPSTONE",
+      "Items.POTIONITEM",
+      "Items.FIRE_CHARGE",
+      "Blocks.DEEPSLATE_BRICKS",
+      "Items.SHULKER_SHELL",
+      "Items.HEART_POTTERY_SHERD",
+      "Items.CHORUS_FRUIT_POPPED",
+      "Items.FEATHER",
+      "Items.FIREWORK_CHARGE",
+      "Items.SPIDER_EYE",
+      "Blocks.TRIPWIRE_HOOK",
+      "Items.RAW_IRON",
+      "Blocks.DECORATED_POT",
+      "Blocks.HOPPER",
+      "Blocks.UNPOWERED_REPEATER"
     ],
     "ITEMS:minecraft:infested_item_drop": [
       "Items.GOLD_INGOT",
@@ -1425,15 +1477,29 @@
       "Blocks.GLASS",
       "Items.NAME_TAG",
       "Items.POTIONITEM",
-      "Blocks.REDSTONE_BLOCK"
+      "Blocks.REDSTONE_BLOCK",
+      "Blocks.MAGMA",
+      "CUSTOM:AnyArmorTrim",
+      "Items.IRON_AXE",
+      "Blocks.BELL",
+      "Items.TOTEM_OF_UNDYING",
+      "Items.IRON_BOOTS",
+      "Blocks.END_PORTAL_FRAME",
+      "Blocks.IRON_BARS",
+      "Blocks.LOG#2",
+      "Blocks.BAMBOO_BLOCK",
+      "Blocks.BEE_NEST",
+      "Blocks.BLACK_GLAZED_TERRACOTTA",
+      "Blocks.DEEPSLATE_TILE_STAIRS",
+      "Items.NAUTILUS_SHELL",
+      "Items.TRIDENT",
+      "Blocks.WHEAT"
     ],
     "BLOCKS:minecraft:dirt": [],
     "BLOCKS:minecraft:sand": [],
     "BLOCKS:minecraft:logs": [],
     "BIOMES:minecraft:is_overworld": [],
-    "BLOCKS:minecraft:small_flowers": [
-      "CUSTOM:FlowerOfRandomness"
-    ],
+    "BLOCKS:minecraft:small_flowers": [],
     "ITEMS:minecraft:common_food": [
       "Items.APPLE",
       "Items.PORKCHOP",
@@ -1501,9 +1567,7 @@
       "Items.GOLD_INGOT",
       "Items.IRON_INGOT"
     ],
-    "ENTITIES:minecraft:randomness_hostile": [
-      "CUSTOM:RandomnessHostile"
-    ],
+    "ENTITIES:minecraft:randomness_hostile": [],
     "BLOCKS:minecraft:random_crop": [
       "CUSTOM:RandomCropStage0",
       "CUSTOM:RandomCropStage1",
@@ -1641,7 +1705,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "vi_vn": {
       "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
@@ -1704,7 +1769,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "en_ca": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1767,7 +1833,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "en_au": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1830,7 +1897,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "en_ae": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1893,7 +1961,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "en_my": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1956,7 +2025,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     },
     "en_ph": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -2019,7 +2089,8 @@
       "block.trademine_item_random.random_spawner": "Random Spawner",
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
-      "gui.trademine_item_random.random_trader_gui.label_7": "7"
+      "gui.trademine_item_random.random_trader_gui.label_7": "7",
+      "gui.trademine_item_random.random_trader_gui.label_5": "5"
     }
   },
   "metadata": {
@@ -2032,8 +2103,8 @@
       "src/main/java/net/mcreator/trademineitemrandom/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModMenus.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModScreens.java",
-      "src/main/resources/data/neoforge/data_maps/item/compostables.json",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModFuels.java",
+      "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModCompostableItems.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModMobEffects.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModPotions.java",
       "src/main/java/net/mcreator/trademineitemrandom/init/TrademineItemRandomModTrades.java",
@@ -2049,7 +2120,7 @@
   "workspaceSettings": {
     "modid": "trademine_item_random",
     "modName": "TradeMine Item Random",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "break08",
     "websiteURL": "https://modrinth.com/mod/trademine-item-random",
     "license": "MIT License",
@@ -2059,7 +2130,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.20.4",
+    "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.trademineitemrandom"
   },

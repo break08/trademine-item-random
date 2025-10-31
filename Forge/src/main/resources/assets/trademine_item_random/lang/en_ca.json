@@ -59,5 +59,6 @@
   "block.trademine_item_random.random_spawner": "Random Spawner",
   "item.trademine_item_random.random_trader": "Random Trader",
   "item.trademine_item_random.random_spawner": "Random Spawner",
-  "gui.trademine_item_random.random_trader_gui.label_7": "7"
+  "gui.trademine_item_random.random_trader_gui.label_7": "7",
+  "gui.trademine_item_random.random_trader_gui.label_5": "5"
 }

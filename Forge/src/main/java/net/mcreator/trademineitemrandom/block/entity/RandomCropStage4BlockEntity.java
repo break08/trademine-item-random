@@ -1,5 +1,11 @@
 package net.mcreator.trademineitemrandom.block.entity;
 
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.capabilities.Capability;
+
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +29,7 @@ import java.util.stream.IntStream;
 
 public class RandomCropStage4BlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(0, ItemStack.EMPTY);
+	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public RandomCropStage4BlockEntity(BlockPos position, BlockState state) {
 		super(TrademineItemRandomModBlockEntities.RANDOM_CROP_STAGE_4.get(), position, state);
@@ -110,5 +117,19 @@ public class RandomCropStage4BlockEntity extends RandomizableContainerBlockEntit
 	@Override
 	public boolean canTakeItemThroughFace(int index, ItemStack itemstack, Direction direction) {
 		return true;
+	}
+
+	@Override
+	public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
+		if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
+			return handlers[facing.ordinal()].cast();
+		return super.getCapability(capability, facing);
+	}
+
+	@Override
+	public void setRemoved() {
+		super.setRemoved();
+		for (LazyOptional<? extends IItemHandler> handler : handlers)
+			handler.invalidate();
 	}
 }

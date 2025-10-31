@@ -7,4 +7,9 @@ public class InfestedMobMobEffect extends MobEffect {
 	public InfestedMobMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -16724992);
 	}
+
+	@Override
+	public boolean isDurationEffectTick(int duration, int amplifier) {
+		return true;
+	}
 }

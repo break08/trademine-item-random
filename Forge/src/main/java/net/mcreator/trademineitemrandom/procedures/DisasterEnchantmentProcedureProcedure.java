@@ -1,9 +1,10 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,7 +29,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEnchantments;
@@ -57,7 +57,7 @@ public class DisasterEnchantmentProcedureProcedure {
 		double sx = 0;
 		double sz = 0;
 		double throw_item = 0;
-		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("minecraft:arrow_check"))) && !(sourceentity == null)) {
+		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrow_check"))) && !(sourceentity == null)) {
 			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 5);
 				if (disaster_id == 1) {
@@ -84,15 +84,13 @@ public class DisasterEnchantmentProcedureProcedure {
 							_entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 140, 1, false, true));
 					}
 				} else if (disaster_id == 2) {
-					block_in_wall_chooser = (BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.create(new ResourceLocation("minecraft:disaster_in_wall"))).getRandomElement(RandomSource.create())
-							.orElseGet(() -> BuiltInRegistries.BLOCK.wrapAsHolder(Blocks.AIR)).value()).defaultBlockState();
+					block_in_wall_chooser = (ForgeRegistries.BLOCKS.tags().getTag(BlockTags.create(ResourceLocation.parse("minecraft:disaster_in_wall"))).getRandomElement(RandomSource.create()).orElseGet(() -> Blocks.AIR)).defaultBlockState();
 					world.setBlock(BlockPos.containing(x, y, z), block_in_wall_chooser, 3);
 					world.setBlock(BlockPos.containing(x, y + 1, z), block_in_wall_chooser, 3);
 				} else if (disaster_id == 3) {
 					entity.setSecondsOnFire(8);
 				} else if (disaster_id == 4) {
-					block_in_wall_chooser = (BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.create(new ResourceLocation("minecraft:disaster_under_block"))).getRandomElement(RandomSource.create())
-							.orElseGet(() -> BuiltInRegistries.BLOCK.wrapAsHolder(Blocks.AIR)).value()).defaultBlockState();
+					block_in_wall_chooser = (ForgeRegistries.BLOCKS.tags().getTag(BlockTags.create(ResourceLocation.parse("minecraft:disaster_under_block"))).getRandomElement(RandomSource.create()).orElseGet(() -> Blocks.AIR)).defaultBlockState();
 					sx = -2;
 					for (int index0 = 0; index0 < 3; index0++) {
 						for (int index1 = 0; index1 < 3; index1++) {

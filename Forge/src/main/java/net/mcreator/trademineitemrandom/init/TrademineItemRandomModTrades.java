@@ -3,11 +3,11 @@
 */
 package net.mcreator.trademineitemrandom.init;
 
-import net.neoforged.neoforge.event.village.WandererTradesEvent;
-import net.neoforged.neoforge.event.village.VillagerTradesEvent;
-import net.neoforged.neoforge.common.BasicItemListing;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.common.BasicItemListing;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.Items;

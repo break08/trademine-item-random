@@ -1,6 +1,6 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
@@ -90,6 +90,12 @@ public class PotionOfRandomPlayerFinishesUsingItemProcedure {
 				} else if (random_receive_effects == 3) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, Mth.nextInt(RandomSource.create(), 7200, 9600), 1, false, true));
+				} else if (random_receive_effects == 4) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, Mth.nextInt(RandomSource.create(), 7200, 9600), 1, false, true));
+				} else if (random_receive_effects == 5) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, Mth.nextInt(RandomSource.create(), 7200, 9600), 1, false, true));
 				}
 			}
 		}

@@ -119,7 +119,7 @@
         "data": {
           "image": "axolotl_spawn_egg.png",
           "use1Xscale": false,
-          "x": 271,
+          "x": 269,
           "y": 34,
           "locked": false
         }
@@ -129,7 +129,7 @@
         "data": {
           "image": "bat_spawn_egg.png",
           "use1Xscale": false,
-          "x": 293,
+          "x": 290,
           "y": 34,
           "locked": false
         }
@@ -149,7 +149,7 @@
         "data": {
           "image": "blaze_spawn_egg.png",
           "use1Xscale": false,
-          "x": 336,
+          "x": 332,
           "y": 34,
           "locked": false
         }
@@ -159,8 +159,8 @@
         "data": {
           "image": "bogged_spawn_egg.png",
           "use1Xscale": false,
-          "x": 291,
-          "y": 49,
+          "x": 290,
+          "y": 50,
           "locked": false
         }
       },
@@ -169,8 +169,8 @@
         "data": {
           "image": "blue_egg.png",
           "use1Xscale": false,
-          "x": 315,
-          "y": 48,
+          "x": 316,
+          "y": 50,
           "locked": false
         }
       },
@@ -229,8 +229,8 @@
         "data": {
           "image": "enchanted_book.png",
           "use1Xscale": false,
-          "x": 288,
-          "y": 64,
+          "x": 303,
+          "y": 66,
           "locked": false
         }
       },
@@ -239,8 +239,8 @@
         "data": {
           "image": "enchanted_book.png",
           "use1Xscale": false,
-          "x": 278,
-          "y": 65,
+          "x": 286,
+          "y": 66,
           "locked": false
         }
       },
@@ -249,7 +249,7 @@
         "data": {
           "image": "enchanted_book.png",
           "use1Xscale": false,
-          "x": 297,
+          "x": 320,
           "y": 66,
           "locked": false
         }
@@ -259,8 +259,8 @@
         "data": {
           "image": "for_gui.png",
           "use1Xscale": true,
-          "x": 293,
-          "y": 68,
+          "x": 306,
+          "y": 71,
           "locked": false
         }
       },
@@ -325,8 +325,8 @@
         "data": {
           "image": "potion.png",
           "use1Xscale": false,
-          "x": 274,
-          "y": 91,
+          "x": 286,
+          "y": 94,
           "locked": false
         }
       },
@@ -335,8 +335,8 @@
         "data": {
           "image": "potion.png",
           "use1Xscale": false,
-          "x": 281,
-          "y": 91,
+          "x": 301,
+          "y": 89,
           "locked": false
         }
       },
@@ -345,8 +345,8 @@
         "data": {
           "image": "potion.png",
           "use1Xscale": false,
-          "x": 288,
-          "y": 91,
+          "x": 316,
+          "y": 94,
           "locked": false
         }
       },
@@ -355,8 +355,24 @@
         "data": {
           "image": "for_gui.png",
           "use1Xscale": true,
-          "x": 285,
-          "y": 96,
+          "x": 305,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_5",
+          "text": {
+            "fixedValue": "5"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 126,
+          "y": 101,
           "locked": false
         }
       }

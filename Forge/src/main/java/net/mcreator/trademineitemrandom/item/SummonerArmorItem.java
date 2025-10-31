@@ -1,5 +1,7 @@
 package net.mcreator.trademineitemrandom.item;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
@@ -9,7 +11,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
 
 public abstract class SummonerArmorItem extends ArmorItem {
 	public SummonerArmorItem(ArmorItem.Type type, Item.Properties properties) {
@@ -31,7 +32,7 @@ public abstract class SummonerArmorItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return BuiltInRegistries.SOUND_EVENT.get(new ResourceLocation("item.armor.equip_chain"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.armor.equip_chain"));
 			}
 
 			@Override

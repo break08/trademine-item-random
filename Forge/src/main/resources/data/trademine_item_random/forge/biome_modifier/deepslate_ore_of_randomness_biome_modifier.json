@@ -1,5 +1,5 @@
 {
-  "type": "neoforge:add_features",
+  "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
   "features": "trademine_item_random:deepslate_ore_of_randomness",
   "step": "underground_ores"

@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[2,)"
+loaderVersion="[47,)"
 license="MIT License"
 
 [[mods]]
 modId="trademine_item_random"
-version="1.0.0"
+version="1.0.1"
 displayName="TradeMine Item Random"
 displayURL="https://modrinth.com/mod/trademine-item-random"
 logoFile="logo.png"
@@ -14,21 +14,10 @@ authors="break08"
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-
-# Start of user code block custom mixins
-# End of user code block custom mixins
-
-[[dependencies.trademine_item_random]]
-    modId="neoforge"
-    type="required"
-    versionRange="[20.4.250,)"
-    ordering="AFTER"
-    side="BOTH"
-
 [[dependencies.trademine_item_random]]
     modId="minecraft"
-    type="required"
-    versionRange="[1.20.4]"
+    mandatory=true
+    versionRange="[1.20.1]"
     ordering="AFTER"
     side="BOTH"
 

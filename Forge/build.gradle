@@ -1,6 +1,6 @@
 plugins {
     id 'eclipse'
-    id 'net.neoforged.moddev' version '2.0.107'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.115'
 }
 
 version = '1.0'
@@ -8,8 +8,8 @@ base.archivesName = "modid"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-neoForge {
-    version = "20.4.250"
+legacyForge {
+    version = "1.20.1-47.4.10"
 
     runs {
         client {
@@ -41,6 +41,26 @@ neoForge {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+mixin {
+    if (file("src/main/resources/trademine_item_random.mixins.json").exists()) {
+        add sourceSets.main, "trademine_item_random.refmap.json"
+        config "trademine_item_random.mixins.json"
+    }
+}
+
+dependencies {
+    implementation(jarJar("io.github.llamalad7:mixinextras-neoforge:0.5.0"))
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+jar {
+    if (file("src/main/resources/trademine_item_random.mixins.json").exists()) {
+        manifest.attributes([
+                "MixinConfigs": "trademine_item_random.mixins.json"
+        ])
+    }
 }
 
 apply from: 'mcreator.gradle'
