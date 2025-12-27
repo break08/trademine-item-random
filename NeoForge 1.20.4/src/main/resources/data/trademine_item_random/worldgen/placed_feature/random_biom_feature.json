@@ -1,0 +1,8 @@
+{
+  "feature": "trademine_item_random:random_biom_feature",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    }
+  ]
+}

@@ -1387,6 +1387,89 @@
           "src/main/java/net/mcreator/trademineitemrandom/procedures/BoneMealGrassForFlowerOfRandomProcedure.java"
         ]
       }
+    },
+    {
+      "name": "RandomDimension",
+      "type": "dimension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_dimension",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/trademineitemrandom/item/RandomDimensionItem.java",
+          "src/main/resources/data/trademine_item_random/dimension_type/random_dimension.json",
+          "src/main/java/net/mcreator/trademineitemrandom/world/dimension/RandomDimensionDimension.java",
+          "src/main/resources/assets/trademine_item_random/blockstates/random_dimension_portal.json",
+          "src/main/resources/assets/trademine_item_random/models/block/random_dimension_portal_ns.json",
+          "src/main/java/net/mcreator/trademineitemrandom/world/teleporter/RandomDimensionPortalShape.java",
+          "src/main/resources/assets/trademine_item_random/models/block/random_dimension_portal_ew.json",
+          "src/main/resources/assets/trademine_item_random/models/item/random_dimension.json",
+          "src/main/resources/data/trademine_item_random/dimension/random_dimension.json",
+          "src/main/java/net/mcreator/trademineitemrandom/world/teleporter/RandomDimensionTeleporter.java",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomDimensionPortalBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomBiome",
+      "type": "biome",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_biome",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random/worldgen/placed_feature/random_biome_tree.json",
+          "src/main/java/net/mcreator/trademineitemrandom/world/features/treedecorators/RandomBiomeFruitDecorator.java",
+          "src/main/java/net/mcreator/trademineitemrandom/world/features/treedecorators/RandomBiomeLeaveDecorator.java",
+          "src/main/resources/data/trademine_item_random/worldgen/configured_feature/random_biome_tree.json",
+          "src/main/resources/data/trademine_item_random/worldgen/biome/random_biome.json",
+          "src/main/java/net/mcreator/trademineitemrandom/world/features/treedecorators/RandomBiomeTrunkDecorator.java"
+        ]
+      }
+    },
+    {
+      "name": "RandomLeaves",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_leaves",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/trademine_item_random/blockstates/random_leaves.json",
+          "src/main/java/net/mcreator/trademineitemrandom/block/RandomLeavesBlock.java",
+          "src/main/resources/assets/trademine_item_random/models/block/random_leaves.json",
+          "src/main/resources/data/trademine_item_random/loot_tables/blocks/random_leaves.json",
+          "src/main/resources/assets/trademine_item_random/models/item/random_leaves.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomBiomFeature",
+      "type": "feature",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_biom_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/random_biom_feature_biome_modifier.json",
+          "src/main/resources/data/trademine_item_random/worldgen/configured_feature/random_biom_feature.json",
+          "src/main/resources/data/trademine_item_random/worldgen/placed_feature/random_biom_feature.json"
+        ]
+      }
+    },
+    {
+      "name": "RandomBiomFeatureOre",
+      "type": "feature",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_biom_feature_ore",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/trademine_item_random/worldgen/placed_feature/random_biom_feature_ore.json",
+          "src/main/resources/data/trademine_item_random/neoforge/biome_modifier/random_biom_feature_ore_biome_modifier.json",
+          "src/main/resources/data/trademine_item_random/worldgen/configured_feature/random_biom_feature_ore.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -1567,7 +1650,6 @@
       "Items.GOLD_INGOT",
       "Items.IRON_INGOT"
     ],
-    "ENTITIES:minecraft:randomness_hostile": [],
     "BLOCKS:minecraft:random_crop": [
       "CUSTOM:RandomCropStage0",
       "CUSTOM:RandomCropStage1",
@@ -1624,6 +1706,70 @@
     "BLOCKS:minecraft:disaster_under_block": [
       "Blocks.MAGMA",
       "Blocks.SOUL_SAND"
+    ],
+    "BLOCKS:minecraft:overworld_carver_replaceables": [
+      "~Blocks.GRASS",
+      "~Blocks.DIRT#0"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/igloo": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/stronghold": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/pillager_outpost": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/woodland_mansion": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/jungle_temple": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/desert_pyramid": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/swamp_hut": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/ocean_monument": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/shipwreck": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/shipwreck_beached": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/buried_treasure": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/nether_fortress": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/nether_fossil": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/bastion_remnant": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/end_city": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/village_plains": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/ocean_ruin_warm": [
+      "~CUSTOM:RandomBiome"
+    ],
+    "BIOMES:minecraft:has_structure/ruined_portal_standard": [
+      "~CUSTOM:RandomBiome"
     ]
   },
   "tab_element_order": {
@@ -1640,7 +1786,8 @@
       "AnyMinerals",
       "SummonerArmor",
       "RandomTrader",
-      "RandomSpawner"
+      "RandomSpawner",
+      "RandomLeaves"
     ]
   },
   "language_map": {
@@ -1706,7 +1853,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "vi_vn": {
       "item.trademine_item_random.ore_of_randomness": "Quặng Ngẫu Nhiên",
@@ -1770,7 +1920,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "en_ca": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1834,7 +1987,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "en_au": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1898,7 +2054,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "en_ae": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -1962,7 +2121,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "en_my": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -2026,7 +2188,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     },
     "en_ph": {
       "item.trademine_item_random.ore_of_randomness": "Ore Of Randomness",
@@ -2090,7 +2255,10 @@
       "item.trademine_item_random.random_trader": "Random Trader",
       "item.trademine_item_random.random_spawner": "Random Spawner",
       "gui.trademine_item_random.random_trader_gui.label_7": "7",
-      "gui.trademine_item_random.random_trader_gui.label_5": "5"
+      "gui.trademine_item_random.random_trader_gui.label_5": "5",
+      "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+      "biome.trademine_item_random.random_biome": "Random Biome",
+      "block.trademine_item_random.random_leaves": "Random Leaves"
     }
   },
   "metadata": {

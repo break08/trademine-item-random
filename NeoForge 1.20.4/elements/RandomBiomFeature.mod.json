@@ -1,0 +1,14 @@
+{
+  "_fv": 79,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:RandomBiome"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_tree_mangrove\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"type\">mangrove</field><field name=\"foliage_density\">70</field><field name=\"base_height\">2</field><field name=\"height_variation_a\">1</field><field name=\"height_variation_b\">4</field><field name=\"branch_per_log_probability\">0.5</field><field name=\"force_dirt\">TRUE</field><field name=\"ignore_vines\">TRUE</field><value name=\"dirt\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.GRASS</field></block></value><value name=\"trunk\"><block type=\"state_provider_weighted\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"5\"></mutation><field name=\"weight0\">1</field><field name=\"weight1\">1</field><field name=\"weight2\">1</field><field name=\"weight3\">1</field><field name=\"weight4\">1</field><value name=\"entry0\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.LOG#3</field></block></value><value name=\"entry1\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.LOG2#0</field></block></value><value name=\"entry2\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.LOG#2</field></block></value><value name=\"entry3\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.LOG2#1</field></block></value><value name=\"entry4\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.LOG#0</field></block></value></block></value><value name=\"foliage\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:RandomLeaves</field></block></value><value name=\"root_placer\"><block type=\"root_placer_none\"></block></value><value name=\"can_grow_through\"><block type=\"block_holderset_tag\"><field name=\"tag\">minecraft:replaceable_by_trees</field></block></value></block></value><next><block type=\"placement_in_square\"></block></next></block></xml>"
+  }
+}

@@ -25,6 +25,8 @@ public class TrademineItemRandomModBlocks {
 	public static final DeferredBlock<Block> RANDOM_CROP_STAGE_5;
 	public static final DeferredBlock<Block> RANDOM_TRADER;
 	public static final DeferredBlock<Block> RANDOM_SPAWNER;
+	public static final DeferredBlock<Block> RANDOM_DIMENSION_PORTAL;
+	public static final DeferredBlock<Block> RANDOM_LEAVES;
 	static {
 		ORE_OF_RANDOMNESS = REGISTRY.register("ore_of_randomness", OreOfRandomnessBlock::new);
 		DEEPSLATE_ORE_OF_RANDOMNESS = REGISTRY.register("deepslate_ore_of_randomness", DeepslateOreOfRandomnessBlock::new);
@@ -38,6 +40,8 @@ public class TrademineItemRandomModBlocks {
 		RANDOM_CROP_STAGE_5 = REGISTRY.register("random_crop_stage_5", RandomCropStage5Block::new);
 		RANDOM_TRADER = REGISTRY.register("random_trader", RandomTraderBlock::new);
 		RANDOM_SPAWNER = REGISTRY.register("random_spawner", RandomSpawnerBlock::new);
+		RANDOM_DIMENSION_PORTAL = REGISTRY.register("random_dimension_portal", RandomDimensionPortalBlock::new);
+		RANDOM_LEAVES = REGISTRY.register("random_leaves", RandomLeavesBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

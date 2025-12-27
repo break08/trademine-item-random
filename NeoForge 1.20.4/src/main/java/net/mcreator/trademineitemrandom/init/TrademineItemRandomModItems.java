@@ -36,6 +36,8 @@ public class TrademineItemRandomModItems {
 	public static final DeferredItem<Item> SUMMONER_ARMOR_HELMET;
 	public static final DeferredItem<Item> RANDOM_TRADER;
 	public static final DeferredItem<Item> RANDOM_SPAWNER;
+	public static final DeferredItem<Item> RANDOM_DIMENSION;
+	public static final DeferredItem<Item> RANDOM_LEAVES;
 	static {
 		ORE_OF_RANDOMNESS = block(TrademineItemRandomModBlocks.ORE_OF_RANDOMNESS);
 		POTION_OF_RANDOM = REGISTRY.register("potion_of_random", PotionOfRandomItem::new);
@@ -56,6 +58,8 @@ public class TrademineItemRandomModItems {
 		SUMMONER_ARMOR_HELMET = REGISTRY.register("summoner_armor_helmet", SummonerArmorItem.Helmet::new);
 		RANDOM_TRADER = block(TrademineItemRandomModBlocks.RANDOM_TRADER);
 		RANDOM_SPAWNER = block(TrademineItemRandomModBlocks.RANDOM_SPAWNER);
+		RANDOM_DIMENSION = REGISTRY.register("random_dimension", RandomDimensionItem::new);
+		RANDOM_LEAVES = block(TrademineItemRandomModBlocks.RANDOM_LEAVES);
 	}
 
 	// Start of user code block custom items

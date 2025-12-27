@@ -18,7 +18,15 @@
   "biomes": [
     "plains",
     "forest",
-    "taiga"
+    "taiga",
+    "birch_forest",
+    "dripstone_caves",
+    "frozen_river",
+    "cold_ocean",
+    "cherry_grove",
+    "savanna",
+    "warm_ocean",
+    "badlands"
   ],
   "use_expansion_hack": false
 }

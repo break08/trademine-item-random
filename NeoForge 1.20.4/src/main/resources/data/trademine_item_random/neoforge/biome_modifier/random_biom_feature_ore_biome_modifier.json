@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "trademine_item_random:random_biome",
+  "features": "trademine_item_random:random_biom_feature_ore",
+  "step": "surface_structures"
+}

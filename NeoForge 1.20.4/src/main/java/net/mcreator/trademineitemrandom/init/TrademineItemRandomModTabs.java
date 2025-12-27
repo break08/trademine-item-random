@@ -35,6 +35,7 @@ public class TrademineItemRandomModTabs {
 				tabData.accept(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get());
 				tabData.accept(TrademineItemRandomModBlocks.RANDOM_TRADER.get().asItem());
 				tabData.accept(TrademineItemRandomModBlocks.RANDOM_SPAWNER.get().asItem());
+				tabData.accept(TrademineItemRandomModBlocks.RANDOM_LEAVES.get().asItem());
 			}).build());
 
 	@SubscribeEvent
@@ -47,6 +48,10 @@ public class TrademineItemRandomModTabs {
 			tabData.accept(TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(TrademineItemRandomModBlocks.RANDOM_TRADER.get().asItem());
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			tabData.accept(TrademineItemRandomModItems.RANDOM_DIMENSION.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+			tabData.accept(TrademineItemRandomModBlocks.RANDOM_LEAVES.get().asItem());
 		}
 	}
 }

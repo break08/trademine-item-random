@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "trademine_item_random:block/random_dimension_portal_ew"
+    },
+    "axis=x": {
+      "model": "trademine_item_random:block/random_dimension_portal_ns"
+    }
+  }
+}

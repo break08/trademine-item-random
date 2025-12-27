@@ -30,7 +30,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 5,
+            "countPrice1": 10,
             "price2": {
               "value": ""
             },
@@ -73,7 +73,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 5,
+            "countPrice1": 10,
             "price2": {
               "value": ""
             },
@@ -109,14 +109,14 @@
             "countOffer": 1,
             "level": 1,
             "maxTrades": 8,
-            "xp": 2,
+            "xp": 3,
             "priceMultiplier": 0.05
           },
           {
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 4,
+            "countPrice1": 18,
             "price2": {
               "value": ""
             },
@@ -127,7 +127,7 @@
             "countOffer": 1,
             "level": 3,
             "maxTrades": 10,
-            "xp": 6,
+            "xp": 10,
             "priceMultiplier": 0.05
           }
         ]
@@ -141,7 +141,7 @@
             "price1": {
               "value": "Blocks.BIRCH_WOOD"
             },
-            "countPrice1": 12,
+            "countPrice1": 15,
             "price2": {
               "value": ""
             },
@@ -166,7 +166,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 2,
+            "countPrice1": 10,
             "price2": {
               "value": ""
             },
@@ -191,7 +191,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 1,
+            "countPrice1": 2,
             "price2": {
               "value": ""
             },
@@ -199,7 +199,7 @@
             "offer": {
               "value": "CUSTOM:RainbowDye"
             },
-            "countOffer": 3,
+            "countOffer": 4,
             "level": 1,
             "maxTrades": 10,
             "xp": 2,
@@ -209,7 +209,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 3,
+            "countPrice1": 4,
             "price2": {
               "value": ""
             },
@@ -227,7 +227,7 @@
             "price1": {
               "value": "Items.EMERALD"
             },
-            "countPrice1": 1,
+            "countPrice1": 2,
             "price2": {
               "value": ""
             },

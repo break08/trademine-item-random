@@ -12,11 +12,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.Snowball;
-import net.minecraft.world.entity.projectile.SmallFireball;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.LlamaSpit;
-import net.minecraft.world.entity.projectile.LargeFireball;
+import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -159,7 +155,7 @@ public class DisasterEnchantmentProcedureProcedure {
 							Entity _shootFrom = sourceentity;
 							Level projectileLevel = _shootFrom.level();
 							if (!projectileLevel.isClientSide()) {
-								Projectile _entityToSpawn = initProjectileProperties(new LargeFireball(EntityType.FIREBALL, projectileLevel), sourceentity,
+								Projectile _entityToSpawn = initProjectileProperties(new DragonFireball(EntityType.DRAGON_FIREBALL, projectileLevel), sourceentity,
 										new Vec3((sourceentity.getLookAngle().x), (sourceentity.getLookAngle().y), (sourceentity.getLookAngle().z)));
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);

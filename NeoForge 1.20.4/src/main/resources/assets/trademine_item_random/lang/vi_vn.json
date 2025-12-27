@@ -60,5 +60,8 @@
   "item.trademine_item_random.random_trader": "Random Trader",
   "item.trademine_item_random.random_spawner": "Random Spawner",
   "gui.trademine_item_random.random_trader_gui.label_7": "7",
-  "gui.trademine_item_random.random_trader_gui.label_5": "5"
+  "gui.trademine_item_random.random_trader_gui.label_5": "5",
+  "item.trademine_item_random.random_dimension": "Random Dimension Portal Igniter",
+  "biome.trademine_item_random.random_biome": "Random Biome",
+  "block.trademine_item_random.random_leaves": "Random Leaves"
 }

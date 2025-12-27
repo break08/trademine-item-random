@@ -20,6 +20,36 @@
       },
       {
         "value": "taiga"
+      },
+      {
+        "value": "birch_forest"
+      },
+      {
+        "value": "dripstone_caves"
+      },
+      {
+        "value": "desert_hills"
+      },
+      {
+        "value": "frozen_river"
+      },
+      {
+        "value": "cold_ocean"
+      },
+      {
+        "value": "cherry_grove"
+      },
+      {
+        "value": "savanna"
+      },
+      {
+        "value": "warm_ocean"
+      },
+      {
+        "value": "badlands"
+      },
+      {
+        "value": "badlands_plateau"
       }
     ],
     "terrainAdaptation": "none",

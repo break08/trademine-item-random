@@ -1,0 +1,17 @@
+{
+  "feature": "trademine_item_random:random_biom_feature_ore",
+  "placement": [
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "min_inclusive": {
+          "absolute": -4
+        },
+        "max_inclusive": {
+          "absolute": 206
+        }
+      }
+    }
+  ]
+}
