@@ -1,10 +1,9 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,8 +13,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.LlamaSpit;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -29,6 +30,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModEnchantments;
@@ -57,7 +59,7 @@ public class DisasterEnchantmentProcedureProcedure {
 		double sx = 0;
 		double sz = 0;
 		double throw_item = 0;
-		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft:arrow_check"))) && !(sourceentity == null)) {
+		if (damagesource.is(TagKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("minecraft:arrow_check"))) && !(sourceentity == null)) {
 			if (EnchantmentHelper.getItemEnchantmentLevel(TrademineItemRandomModEnchantments.DISASTER.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
 				disaster_id = Mth.nextInt(RandomSource.create(), 1, 5);
 				if (disaster_id == 1) {
@@ -84,13 +86,15 @@ public class DisasterEnchantmentProcedureProcedure {
 							_entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 140, 1, false, true));
 					}
 				} else if (disaster_id == 2) {
-					block_in_wall_chooser = (ForgeRegistries.BLOCKS.tags().getTag(BlockTags.create(ResourceLocation.parse("minecraft:disaster_in_wall"))).getRandomElement(RandomSource.create()).orElseGet(() -> Blocks.AIR)).defaultBlockState();
+					block_in_wall_chooser = (BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.create(new ResourceLocation("minecraft:disaster_in_wall"))).getRandomElement(RandomSource.create())
+							.orElseGet(() -> BuiltInRegistries.BLOCK.wrapAsHolder(Blocks.AIR)).value()).defaultBlockState();
 					world.setBlock(BlockPos.containing(x, y, z), block_in_wall_chooser, 3);
 					world.setBlock(BlockPos.containing(x, y + 1, z), block_in_wall_chooser, 3);
 				} else if (disaster_id == 3) {
 					entity.setSecondsOnFire(8);
 				} else if (disaster_id == 4) {
-					block_in_wall_chooser = (ForgeRegistries.BLOCKS.tags().getTag(BlockTags.create(ResourceLocation.parse("minecraft:disaster_under_block"))).getRandomElement(RandomSource.create()).orElseGet(() -> Blocks.AIR)).defaultBlockState();
+					block_in_wall_chooser = (BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.create(new ResourceLocation("minecraft:disaster_under_block"))).getRandomElement(RandomSource.create())
+							.orElseGet(() -> BuiltInRegistries.BLOCK.wrapAsHolder(Blocks.AIR)).value()).defaultBlockState();
 					sx = -2;
 					for (int index0 = 0; index0 < 3; index0++) {
 						for (int index1 = 0; index1 < 3; index1++) {
@@ -103,7 +107,7 @@ public class DisasterEnchantmentProcedureProcedure {
 						sx = sx + 1;
 					}
 				} else if (disaster_id == 5) {
-					throw_item = Mth.nextInt(RandomSource.create(), 1, 2);
+					throw_item = Mth.nextInt(RandomSource.create(), 1, 5);
 					if (throw_item == 1) {
 						{
 							Entity _shootFrom = sourceentity;
@@ -121,6 +125,42 @@ public class DisasterEnchantmentProcedureProcedure {
 							Level projectileLevel = _shootFrom.level();
 							if (!projectileLevel.isClientSide()) {
 								Projectile _entityToSpawn = initProjectileProperties(new LlamaSpit(EntityType.LLAMA_SPIT, projectileLevel), sourceentity, Vec3.ZERO);
+								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+								projectileLevel.addFreshEntity(_entityToSpawn);
+							}
+						}
+					} else if (throw_item == 3) {
+						{
+							Entity _shootFrom = sourceentity;
+							Level projectileLevel = _shootFrom.level();
+							if (!projectileLevel.isClientSide()) {
+								Projectile _entityToSpawn = initProjectileProperties(new SmallFireball(EntityType.SMALL_FIREBALL, projectileLevel), sourceentity,
+										new Vec3((sourceentity.getLookAngle().x), (sourceentity.getLookAngle().y), (sourceentity.getLookAngle().z)));
+								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+								projectileLevel.addFreshEntity(_entityToSpawn);
+							}
+						}
+					} else if (throw_item == 4) {
+						{
+							Entity _shootFrom = sourceentity;
+							Level projectileLevel = _shootFrom.level();
+							if (!projectileLevel.isClientSide()) {
+								Projectile _entityToSpawn = initProjectileProperties(new LargeFireball(EntityType.FIREBALL, projectileLevel), sourceentity,
+										new Vec3((sourceentity.getLookAngle().x), (sourceentity.getLookAngle().y), (sourceentity.getLookAngle().z)));
+								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+								projectileLevel.addFreshEntity(_entityToSpawn);
+							}
+						}
+					} else if (throw_item == 5) {
+						{
+							Entity _shootFrom = sourceentity;
+							Level projectileLevel = _shootFrom.level();
+							if (!projectileLevel.isClientSide()) {
+								Projectile _entityToSpawn = initProjectileProperties(new LargeFireball(EntityType.FIREBALL, projectileLevel), sourceentity,
+										new Vec3((sourceentity.getLookAngle().x), (sourceentity.getLookAngle().y), (sourceentity.getLookAngle().z)));
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 								projectileLevel.addFreshEntity(_entityToSpawn);

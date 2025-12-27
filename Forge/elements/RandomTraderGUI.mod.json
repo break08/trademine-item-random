@@ -187,9 +187,9 @@
       {
         "type": "image",
         "data": {
-          "image": "gold_ingot.png",
+          "image": "plus.png",
           "use1Xscale": false,
-          "x": 111,
+          "x": 155,
           "y": 66,
           "locked": false
         }
@@ -197,10 +197,10 @@
       {
         "type": "image",
         "data": {
-          "image": "plus.png",
+          "image": ".big_enchanted_book.png",
           "use1Xscale": false,
-          "x": 155,
-          "y": 66,
+          "x": 303,
+          "y": 67,
           "locked": false
         }
       },
@@ -221,36 +221,6 @@
           "use1Xscale": false,
           "x": 242,
           "y": 64,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "enchanted_book.png",
-          "use1Xscale": false,
-          "x": 303,
-          "y": 66,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "enchanted_book.png",
-          "use1Xscale": false,
-          "x": 286,
-          "y": 66,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "enchanted_book.png",
-          "use1Xscale": false,
-          "x": 320,
-          "y": 66,
           "locked": false
         }
       },
@@ -283,20 +253,10 @@
       {
         "type": "image",
         "data": {
-          "image": "nether_wart.png",
+          "image": "enchanted_book.png",
           "use1Xscale": false,
-          "x": 111,
-          "y": 91,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "water_bucket.png",
-          "use1Xscale": false,
-          "x": 199,
-          "y": 92,
+          "x": 320,
+          "y": 66,
           "locked": false
         }
       },
@@ -313,40 +273,20 @@
       {
         "type": "image",
         "data": {
+          "image": "screenbottle3.png",
+          "use1Xscale": false,
+          "x": 302,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
           "image": "arrow.png",
           "use1Xscale": false,
           "x": 241,
           "y": 92,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "potion.png",
-          "use1Xscale": false,
-          "x": 286,
-          "y": 94,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "potion.png",
-          "use1Xscale": false,
-          "x": 301,
-          "y": 89,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "potion.png",
-          "use1Xscale": false,
-          "x": 316,
-          "y": 94,
           "locked": false
         }
       },
@@ -373,6 +313,86 @@
           },
           "x": 126,
           "y": 101,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "aerolyte_ingot.png",
+          "use1Xscale": false,
+          "x": 114,
+          "y": 65,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "chicken_egg_custom.png",
+          "use1Xscale": false,
+          "x": 113,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": ".big_enchanted_book.png",
+          "use1Xscale": false,
+          "x": 286,
+          "y": 67,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": ".big_enchanted_book.png",
+          "use1Xscale": false,
+          "x": 322,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "non_enchanted.png",
+          "use1Xscale": false,
+          "x": 199,
+          "y": 66,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "redraw_waterbucket.png",
+          "use1Xscale": false,
+          "x": 199,
+          "y": 91,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "screenbottle1.png",
+          "use1Xscale": false,
+          "x": 293,
+          "y": 92,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "screenbottle2.png",
+          "use1Xscale": false,
+          "x": 312,
+          "y": 92,
           "locked": false
         }
       }

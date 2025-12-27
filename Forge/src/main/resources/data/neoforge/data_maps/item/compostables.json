@@ -1,0 +1,10 @@
+{
+  "values": {
+    "trademine_item_random:random_seed": {
+      "chance": 0.3
+    },
+    "trademine_item_random:rainbow_dye": {
+      "chance": 0.3
+    }
+  }
+}

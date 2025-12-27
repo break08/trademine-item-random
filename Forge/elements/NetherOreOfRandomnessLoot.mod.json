@@ -9,7 +9,7 @@
         "maxrolls": 1,
         "minbonusrolls": 1,
         "maxbonusrolls": 1,
-        "hasbonusrolls": false,
+        "hasbonusrolls": true,
         "entries": [
           {
             "type": "item",
@@ -44,7 +44,7 @@
             "item": {
               "value": "Items.NETHERITE_SCRAP"
             },
-            "weight": 2,
+            "weight": 5,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,

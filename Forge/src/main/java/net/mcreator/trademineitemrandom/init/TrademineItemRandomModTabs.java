@@ -3,11 +3,11 @@
  */
 package net.mcreator.trademineitemrandom.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -20,7 +20,7 @@ import net.mcreator.trademineitemrandom.TrademineItemRandomMod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TrademineItemRandomModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TrademineItemRandomMod.MODID);
-	public static final RegistryObject<CreativeModeTab> RANDOM = REGISTRY.register("random",
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> RANDOM = REGISTRY.register("random",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.trademine_item_random.random")).icon(() -> new ItemStack(TrademineItemRandomModItems.RAINBOW_DYE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TrademineItemRandomModBlocks.ORE_OF_RANDOMNESS.get().asItem());
 				tabData.accept(TrademineItemRandomModBlocks.DEEPSLATE_ORE_OF_RANDOMNESS.get().asItem());

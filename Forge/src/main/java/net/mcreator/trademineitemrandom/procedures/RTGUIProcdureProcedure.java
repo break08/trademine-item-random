@@ -1,7 +1,5 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
@@ -15,10 +13,11 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModMenus;
 import net.mcreator.trademineitemrandom.init.TrademineItemRandomModItems;
@@ -36,15 +35,12 @@ public class RTGUIProcdureProcedure {
 						.getItem() == TrademineItemRandomModItems.RAINBOW_DYE.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(1);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(1).remove(1);
 				_player.containerMenu.broadcastChanges();
 			}
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()),
-						new ItemStack((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(ResourceLocation.parse("minecraft:all_spawn_egg"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))));
+				ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(
+						(BuiltInRegistries.ITEM.getOrCreateTag(ItemTags.create(new ResourceLocation("minecraft:all_spawn_egg"))).getRandomElement(RandomSource.create()).orElseGet(() -> BuiltInRegistries.ITEM.wrapAsHolder(Items.AIR)).value())));
 				entityToSpawn.setPickUpDelay(1);
 				_level.addFreshEntity(entityToSpawn);
 			}
@@ -53,9 +49,6 @@ public class RTGUIProcdureProcedure {
 				&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu14 ? _menu14.getSlots().get(1).getItem() : ItemStack.EMPTY).getItem() == Items.WATER_BUCKET) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(2);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(1).remove(1);
 				_player.containerMenu.broadcastChanges();
 			}
@@ -94,9 +87,6 @@ public class RTGUIProcdureProcedure {
 				&& (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu28 ? _menu28.getSlots().get(1).getItem() : ItemStack.EMPTY).getItem() == Items.BOOK) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(7);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof TrademineItemRandomModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(1).remove(1);
 				_player.containerMenu.broadcastChanges();
 			}
@@ -136,14 +126,16 @@ public class RTGUIProcdureProcedure {
 				}
 			}
 		}
-		if (!(entity instanceof ServerPlayer _plr36 && _plr36.level() instanceof ServerLevel
-				&& _plr36.getAdvancements().getOrStartProgress(_plr36.server.getAdvancements().getAdvancement(ResourceLocation.parse("trademine_item_random:trader_machine"))).isDone())) {
+		if (!(entity instanceof ServerPlayer _plr36 && _plr36.level() instanceof ServerLevel _serverLevel36
+				&& _plr36.getAdvancements().getOrStartProgress(_serverLevel36.getServer().getAdvancements().get(new ResourceLocation("trademine_item_random:trader_machine"))).isDone())) {
 			if (entity instanceof ServerPlayer _player) {
-				Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("trademine_item_random:trader_machine"));
-				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-				if (!_ap.isDone()) {
-					for (String criteria : _ap.getRemainingCriteria())
-						_player.getAdvancements().award(_adv, criteria);
+				AdvancementHolder _adv = _player.server.getAdvancements().get(new ResourceLocation("trademine_item_random:trader_machine"));
+				if (_adv != null) {
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
 				}
 			}
 		}

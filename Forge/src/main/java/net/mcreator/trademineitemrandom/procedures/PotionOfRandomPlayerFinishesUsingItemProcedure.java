@@ -1,6 +1,6 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;

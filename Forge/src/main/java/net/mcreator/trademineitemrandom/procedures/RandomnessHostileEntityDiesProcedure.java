@@ -1,9 +1,9 @@
 package net.mcreator.trademineitemrandom.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -40,140 +40,199 @@ public class RandomnessHostileEntityDiesProcedure {
 			return;
 		double random_spawn = 0;
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TrademineItemRandomModItems.SUMMONER_ARMOR_HELMET.get() && !(world instanceof Level _lvl2 && _lvl2.isDay())) {
-			random_spawn = Mth.nextInt(RandomSource.create(), 1, 17);
-			if (random_spawn == 1) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+			if (world instanceof ServerLevel _level3 && _level3.isRaided(BlockPos.containing(x, y, z))) {
+				random_spawn = Mth.nextInt(RandomSource.create(), 1, 7);
+				if (random_spawn == 1) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.PILLAGER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 2) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.VINDICATOR.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 3) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.EVOKER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 4) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.RAVAGER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 5) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.VEX.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 6) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 7) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.WITCH.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
 				}
-			}
-			if (random_spawn == 2) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.SKELETON.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+			} else {
+				random_spawn = Mth.nextInt(RandomSource.create(), 1, 20);
+				if (random_spawn == 2) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.SKELETON.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 3) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.CREEPER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 3) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.CREEPER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 4) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.SLIME.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 4) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.SLIME.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 5) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.GUARDIAN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 5) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.GUARDIAN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 6) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.VINDICATOR.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 6) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.VINDICATOR.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 7) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.ILLUSIONER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 7) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ILLUSIONER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 8) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.PIGLIN_BRUTE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 8) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.PIGLIN_BRUTE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 9) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.EVOKER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 9) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.EVOKER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 10) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.ZOMBIE_VILLAGER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 10) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ZOMBIE_VILLAGER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 11) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.BLAZE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 11) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.BLAZE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 12) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.GHAST.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 12) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.GHAST.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 13) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.VEX.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 13) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.VEX.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 14) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.SILVERFISH.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 14) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.SILVERFISH.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 15) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.SHULKER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 15) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.SHULKER.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 16) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.STRAY.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 16) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.STRAY.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-				}
-			}
-			if (random_spawn == 17) {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = EntityType.ENDERMITE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else if (random_spawn == 17) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ENDERMITE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 18) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.WITHER_SKELETON.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 19) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.HOGLIN.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 1) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
+					}
+				} else if (random_spawn == 20) {
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.WITCH.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
 				}
 			}
