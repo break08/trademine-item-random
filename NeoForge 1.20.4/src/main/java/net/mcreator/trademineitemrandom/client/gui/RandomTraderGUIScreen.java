@@ -85,6 +85,7 @@ public class RandomTraderGUIScreen extends AbstractContainerScreen<RandomTraderG
 		guiGraphics.blit(new ResourceLocation("trademine_item_random:textures/screens/redraw_waterbucket.png"), this.leftPos + 135, this.topPos + 83, 0, 0, 16, 16, 16, 16);
 		guiGraphics.blit(new ResourceLocation("trademine_item_random:textures/screens/screenbottle1.png"), this.leftPos + 229, this.topPos + 84, 0, 0, 16, 16, 16, 16);
 		guiGraphics.blit(new ResourceLocation("trademine_item_random:textures/screens/screenbottle2.png"), this.leftPos + 248, this.topPos + 84, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("trademine_item_random:textures/screens/nether_wart_redraw.png"), this.leftPos + 51, this.topPos + 85, 0, 0, 16, 16, 16, 16);
 		RenderSystem.disableBlend();
 	}
 

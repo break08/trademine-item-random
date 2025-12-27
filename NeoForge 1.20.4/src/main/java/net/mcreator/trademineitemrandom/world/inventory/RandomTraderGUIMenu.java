@@ -32,7 +32,7 @@ public class RandomTraderGUIMenu extends AbstractContainerMenu implements Tradem
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 35)
+			if (!this.containsKey(key) && this.size() >= 36)
 				return null;
 			return super.put(key, value);
 		}

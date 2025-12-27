@@ -395,6 +395,16 @@
           "y": 92,
           "locked": false
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "nether_wart_redraw.png",
+          "use1Xscale": false,
+          "x": 115,
+          "y": 93,
+          "locked": false
+        }
       }
     ],
     "gridSettings": {
